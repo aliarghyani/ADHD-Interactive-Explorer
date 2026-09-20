@@ -1,7 +1,25 @@
 <script setup lang="ts">
-await navigateTo('/en/spike/map', { redirectCode: 302 })
+const { locale, t } = useI18n()
+const switchLocalePath = useSwitchLocalePath()
+
+const currentLocale = computed<'en' | 'fa'>(() => locale.value === 'fa' ? 'fa' : 'en')
+const direction = computed<'ltr' | 'rtl'>(() => currentLocale.value === 'fa' ? 'rtl' : 'ltr')
+const alternateLocale = computed<'en' | 'fa'>(() => currentLocale.value === 'en' ? 'fa' : 'en')
+
+useHead(() => ({
+  htmlAttrs: { lang: currentLocale.value, dir: direction.value },
+  title: t('foundation.metaTitle'),
+}))
 </script>
 
 <template>
-  <p>Opening the validation spike…</p>
+  <FoundationShell
+    :locale="currentLocale"
+    :direction="direction"
+    :kicker="t('foundation.kicker')"
+    :title="t('foundation.title')"
+    :summary="t('foundation.summary')"
+    :switch-href="switchLocalePath(alternateLocale)"
+    :switch-label="t('foundation.switchLocale')"
+  />
 </template>

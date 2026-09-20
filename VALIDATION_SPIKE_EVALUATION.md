@@ -86,13 +86,15 @@ The renderer stayed declarative. The only defect found during browser validation
 
 ## 10. Problems Encountered
 
-- The empty project did not contain the frozen edge-to-relationship-type mapping. A provisional spike-only assignment was necessary to exercise all three required visual grammars.
+- The frozen edge-to-relationship-type mapping was unavailable during initial implementation. The closure review verified that the fixture already matches the authoritative frozen canonical knowledge contract exactly, so no fixture change was required.
 - ELK's Feedback route was not educationally legible enough as part of the cyclic layered input, so E07 uses the specification-permitted explicit route override in the layout generator.
 - The first tablet browser capture exposed stale responsive scale. The fix remained local to two viewport helpers and one observer.
 - The Computer Use browser connection failed its request-header policy. Existing local Chrome headless and DevTools Protocol were used instead, without adding a project dependency.
 - Nuxt static generation initially treated the missing root route as an error; a spike-only root redirect resolved it.
 
-**KNOWLEDGE CHANGE REQUEST:** confirm the authoritative relationship-type mapping for E01–E06. The spike uses E01/E05 as `MODULATES`, E02/E03/E04/E06 as `CONTRIBUTES_TO`, and E07 as `FEEDBACK_WITH` only to validate the renderer. No endpoint or canonical ID was changed, and this provisional assignment must not be promoted as scientific knowledge without confirmation.
+**KNOWLEDGE CHANGE REQUEST — RESOLVED:** the authoritative frozen knowledge contract confirms E01/E05 as `MODULATES`, E02/E03/E04/E06 as `CONTRIBUTES_TO`, and E07 as `FEEDBACK_WITH`. The spike fixture mapping was verified against that frozen canonical knowledge contract. Its canonical IDs, endpoints, and relationship types already match, so no knowledge or implementation change remains.
+
+**Visual grammar note:** the visual line styles used by the spike are validation-only. Production edge styling must use the frozen ADHD Visual Grammar v1.0. The spike proves renderer capability; it does not redefine canonical visual semantics.
 
 No Product Architecture Change Request was required.
 
@@ -118,6 +120,6 @@ No Product Architecture Change Request was required.
 
 ## 12. Architecture Recommendation
 
-The implementation remained product-specific and understandable. Fixed geometry, native HTML controls, SVG polylines, a single external selection, and a one-variable viewport fit were enough to satisfy the spike. The browser-discovered responsive defect was fixed locally and did not expand into a framework. The custom renderer therefore meets the architecture hypothesis; the provisional scientific type mapping remains a separate knowledge-contract follow-up and does not weaken the renderer result.
+The implementation remained product-specific and understandable. Fixed geometry, native HTML controls, SVG polylines, a single external selection, and a one-variable viewport fit were enough to satisfy the spike. The browser-discovered responsive defect was fixed locally and did not expand into a framework. The verified canonical relationship mapping closes the remaining knowledge-contract follow-up, and the custom renderer meets the architecture hypothesis.
 
 GO — retain Custom Vue DOM/SVG renderer

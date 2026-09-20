@@ -5,6 +5,8 @@ import { isCanonicalNodeId, nodeById } from '~/domain/spike-data'
 import { spikeLayout } from '~/domain/layout'
 import type { Locale } from '~/domain/spike-types'
 
+definePageMeta({ i18n: false })
+
 const route = useRoute()
 const locale = computed<Locale>(() => route.params.locale === 'fa' ? 'fa' : 'en')
 const rawNodeId = computed(() => Array.isArray(route.params.nodeId) ? route.params.nodeId[0] : route.params.nodeId)
@@ -86,3 +88,5 @@ async function select(id: string) {
     <SemanticRelationshipBrowser :selected-node-id="selectedNodeId" :locale="locale" @select="select" />
   </main>
 </template>
+
+<style src="~/assets/spike.css"></style>

@@ -22,7 +22,7 @@ socket.addEventListener('message', (event) => {
 for (const method of ['Runtime.enable', 'Log.enable', 'Page.enable']) {
   socket.send(JSON.stringify({ id: nextId++, method }))
 }
-socket.send(JSON.stringify({ id: nextId++, method: 'Page.reload', params: { ignoreCache: true } }))
+socket.send(JSON.stringify({ id: nextId, method: 'Page.reload', params: { ignoreCache: true } }))
 
 await new Promise((resolve) => {
   const timeout = setTimeout(resolve, 3500)

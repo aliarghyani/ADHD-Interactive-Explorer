@@ -1,11 +1,11 @@
 {
     "schema_version": 2,
-    "commit": "",
-    "indexed_at": "2026-09-20T11:19:13Z",
-    "project": "adhd-project",
-    "nodes": 200,
-    "edges": 477,
-    "original_size": 1835008,
-    "compressed_size": 99186,
-    "compression_level": 9
+    "commit": "61889f9f7bf1b5e2f4d52391979f1000486a80ba",
+    "indexed_at": "2026-09-20T12:42:15Z",
+    "project": "E-personal-adhd-project",
+    "nodes": 245,
+    "edges": 532,
+    "original_size": 2555904,
+    "compressed_size": 127477,
+    "compression_level": 3
 }

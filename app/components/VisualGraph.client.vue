@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watchEffect } from 'vue'
 import GraphNode from './GraphNode.vue'
-import { categoryLabels, copy } from '~/domain/copy'
+import { copy } from '~/domain/copy'
 import { geometryByNodeId } from '~/domain/layout'
 import { moveFocus, orderedNodes, type NavigableNode } from '~/domain/keyboard-navigation'
 import type { GraphReadModel, LayoutArtifact, Locale } from '~/domain/spike-types'

@@ -1,5 +1,5 @@
 {
-  "name": "adhd-interactive-explorer-validation-spike",
+  "name": "adhd-interactive-explorer",
   "private": true,
   "type": "module",
   "scripts": {
@@ -8,23 +8,33 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "typecheck": "nuxt typecheck",
+    "lint": "eslint .",
     "test": "nuxt prepare && vitest run",
     "test:watch": "vitest",
+    "test:e2e": "playwright test",
     "layout:generate": "node scripts/generate-spike-layout.mjs",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "nuxt": "^4.0.0",
-    "vue": "^3.5.0"
+    "nuxt": "4.5.2",
+    "vue": "3.5.43"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^6.0.0",
-    "@vue/test-utils": "^2.4.6",
+    "@nuxt/eslint": "1.17.0",
+    "@nuxtjs/i18n": "10.6.0",
+    "@playwright/test": "1.63.0",
+    "@vitejs/plugin-vue": "6.0.9",
+    "@vue/test-utils": "2.5.1",
     "elkjs": "0.12.0",
-    "happy-dom": "^18.0.0",
-    "typescript": "^5.9.0",
-    "vitest": "^3.2.0",
-    "vue-tsc": "^3.0.0"
+    "eslint": "10.11.0",
+    "happy-dom": "18.0.1",
+    "typescript": "5.9.3",
+    "vitest": "3.2.7",
+    "vue-tsc": "3.3.11"
+  },
+  "engines": {
+    "node": ">=22.19.0 <23",
+    "pnpm": ">=9.12.1 <10"
   },
   "packageManager": "pnpm@9.12.1"
 }
