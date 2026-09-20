@@ -75,6 +75,8 @@ describe('System Map components', () => {
     expect(wrapper.text()).toContain('CONTRIBUTES_TO')
     expect(wrapper.text()).toContain('FEEDBACK_WITH')
     expect(wrapper.text()).toContain('neither necessary nor sufficient')
+    expect(wrapper.findAll('[data-edge-id]')).toHaveLength(0)
+    expect(wrapper.findAll('[data-relationship-type]')).toHaveLength(0)
   })
 
   it('detail panel presents progressive selected-concept content', () => {

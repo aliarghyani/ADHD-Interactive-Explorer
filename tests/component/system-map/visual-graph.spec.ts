@@ -20,6 +20,34 @@ beforeAll(() => {
 })
 
 describe('VisualGraph', () => {
+  it('renders exactly the projected canonical scientific edges', () => {
+    const model = buildGraphReadModel({
+      repository: systemMapRepository,
+      localization: new DomainLocalization(systemMapRepository),
+      locale: 'en',
+      selectedNodeId: null,
+      visibleLayers: new Set(allFilterableLayers),
+    })
+    const wrapper = mount(VisualGraph, {
+      props: { model, layout: productionLayout, locale: 'en', copy: systemMapCopy.en },
+    })
+
+    const canonicalEdgeIds = systemMapRepository.edges.map((edge) => edge.id).sort()
+    const projectedVisibleEdgeIds = model.edges.filter((edge) => edge.visible).map((edge) => edge.id).sort()
+    const renderedScientificEdges = wrapper.findAll('[data-edge-id]')
+    const renderedEdgeIds = renderedScientificEdges.map((edge) => edge.attributes('data-edge-id')).sort()
+
+    expect(canonicalEdgeIds).toHaveLength(49)
+    expect(systemMapRepository.edges.filter((edge) => edge.relationshipType === 'FEEDBACK_WITH')).toHaveLength(5)
+    expect(model.edges).toHaveLength(49)
+    expect(model.edges.filter((edge) => edge.relationshipType === 'FEEDBACK_WITH')).toHaveLength(5)
+    expect(renderedScientificEdges.filter(
+      (edge) => edge.attributes('data-relationship-type') === 'FEEDBACK_WITH',
+    )).toHaveLength(5)
+    expect(projectedVisibleEdgeIds).toEqual(canonicalEdgeIds)
+    expect(renderedEdgeIds).toEqual(projectedVisibleEdgeIds)
+  })
+
   it('renders the separate Clinical Anchor region and emits reset/focus/select events', async () => {
     const model = buildGraphReadModel({
       repository: systemMapRepository,
