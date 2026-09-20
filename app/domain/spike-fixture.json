@@ -1,0 +1,25 @@
+{
+  "version": "spike-fixture-v1",
+  "nodes": [
+    { "id": "CA1", "category": "clinical-anchor", "labels": { "en": "Inattention", "fa": "بی‌توجهی" } },
+    { "id": "CA2", "category": "clinical-anchor", "labels": { "en": "Hyperactivity–Impulsivity", "fa": "بیش‌فعالی–تکانشگری" } },
+    { "id": "CTX4", "category": "context", "labels": { "en": "Urgency", "fa": "فوریت" } },
+    { "id": "CTX6", "category": "context", "labels": { "en": "Task Demand / Complexity", "fa": "تقاضا / پیچیدگی کار" } },
+    { "id": "CTX8", "category": "context", "labels": { "en": "Distraction / Interruptions", "fa": "حواس‌پرتی / وقفه‌ها" } },
+    { "id": "REG1", "category": "regulation", "labels": { "en": "Attention Regulation", "fa": "تنظیم توجه" } },
+    { "id": "REG3", "category": "regulation", "labels": { "en": "Goal Management", "fa": "مدیریت هدف" } },
+    { "id": "BEH1", "category": "behaviour", "labels": { "en": "Starting", "fa": "شروع کردن" } },
+    { "id": "BEH2", "category": "behaviour", "labels": { "en": "Sustaining", "fa": "ادامه دادن" } },
+    { "id": "PAT1", "category": "pattern", "labels": { "en": "Procrastination", "fa": "اهمال‌کاری" } },
+    { "id": "FUN1", "category": "functional-domain", "labels": { "en": "Work", "fa": "کار" } }
+  ],
+  "edges": [
+    { "id": "E01", "sourceId": "CTX6", "targetId": "REG3", "relationshipType": "MODULATES" },
+    { "id": "E02", "sourceId": "REG3", "targetId": "BEH1", "relationshipType": "CONTRIBUTES_TO" },
+    { "id": "E03", "sourceId": "BEH1", "targetId": "PAT1", "relationshipType": "CONTRIBUTES_TO" },
+    { "id": "E04", "sourceId": "PAT1", "targetId": "FUN1", "relationshipType": "CONTRIBUTES_TO" },
+    { "id": "E05", "sourceId": "CTX8", "targetId": "REG1", "relationshipType": "MODULATES" },
+    { "id": "E06", "sourceId": "REG1", "targetId": "BEH2", "relationshipType": "CONTRIBUTES_TO" },
+    { "id": "E07", "sourceId": "PAT1", "targetId": "CTX4", "relationshipType": "FEEDBACK_WITH" }
+  ]
+}

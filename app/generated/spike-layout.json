@@ -1,0 +1,182 @@
+{
+  "width": 908,
+  "height": 1298,
+  "layoutVersion": "spike-layout-v1",
+  "generatorVersion": "elk-layout-generator-v1",
+  "elkVersion": "0.12.0",
+  "knowledgeVersion": "spike-fixture-v1",
+  "nodes": [
+    {
+      "id": "BEH1",
+      "x": 584,
+      "y": 742,
+      "width": 220,
+      "height": 96
+    },
+    {
+      "id": "BEH2",
+      "x": 344,
+      "y": 742,
+      "width": 220,
+      "height": 96
+    },
+    {
+      "id": "CA1",
+      "x": 344,
+      "y": 68,
+      "width": 220,
+      "height": 88
+    },
+    {
+      "id": "CA2",
+      "x": 344,
+      "y": 176,
+      "width": 220,
+      "height": 88
+    },
+    {
+      "id": "CTX4",
+      "x": 104,
+      "y": 370,
+      "width": 220,
+      "height": 96
+    },
+    {
+      "id": "CTX6",
+      "x": 584,
+      "y": 370,
+      "width": 220,
+      "height": 96
+    },
+    {
+      "id": "CTX8",
+      "x": 344,
+      "y": 370,
+      "width": 220,
+      "height": 96
+    },
+    {
+      "id": "FUN1",
+      "x": 584,
+      "y": 1114,
+      "width": 220,
+      "height": 96
+    },
+    {
+      "id": "PAT1",
+      "x": 584,
+      "y": 928,
+      "width": 220,
+      "height": 96
+    },
+    {
+      "id": "REG1",
+      "x": 344,
+      "y": 556,
+      "width": 220,
+      "height": 96
+    },
+    {
+      "id": "REG3",
+      "x": 584,
+      "y": 556,
+      "width": 220,
+      "height": 96
+    }
+  ],
+  "edges": [
+    {
+      "id": "E01",
+      "start": {
+        "x": 694,
+        "y": 466
+      },
+      "bendPoints": [],
+      "end": {
+        "x": 694,
+        "y": 556
+      }
+    },
+    {
+      "id": "E02",
+      "start": {
+        "x": 694,
+        "y": 652
+      },
+      "bendPoints": [],
+      "end": {
+        "x": 694,
+        "y": 742
+      }
+    },
+    {
+      "id": "E03",
+      "start": {
+        "x": 694,
+        "y": 838
+      },
+      "bendPoints": [],
+      "end": {
+        "x": 694,
+        "y": 928
+      }
+    },
+    {
+      "id": "E04",
+      "start": {
+        "x": 694,
+        "y": 1024
+      },
+      "bendPoints": [],
+      "end": {
+        "x": 694,
+        "y": 1114
+      }
+    },
+    {
+      "id": "E05",
+      "start": {
+        "x": 454,
+        "y": 466
+      },
+      "bendPoints": [],
+      "end": {
+        "x": 454,
+        "y": 556
+      }
+    },
+    {
+      "id": "E06",
+      "start": {
+        "x": 454,
+        "y": 652
+      },
+      "bendPoints": [],
+      "end": {
+        "x": 454,
+        "y": 742
+      }
+    },
+    {
+      "id": "E07",
+      "start": {
+        "x": 584,
+        "y": 976
+      },
+      "bendPoints": [
+        {
+          "x": 28,
+          "y": 976
+        },
+        {
+          "x": 28,
+          "y": 418
+        }
+      ],
+      "end": {
+        "x": 104,
+        "y": 418
+      }
+    }
+  ]
+}

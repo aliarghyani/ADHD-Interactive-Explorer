@@ -1,0 +1,30 @@
+{
+  "name": "adhd-interactive-explorer-validation-spike",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "typecheck": "nuxt typecheck",
+    "test": "nuxt prepare && vitest run",
+    "test:watch": "vitest",
+    "layout:generate": "node scripts/generate-spike-layout.mjs",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "nuxt": "^4.0.0",
+    "vue": "^3.5.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.0",
+    "@vue/test-utils": "^2.4.6",
+    "elkjs": "0.12.0",
+    "happy-dom": "^18.0.0",
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.0",
+    "vue-tsc": "^3.0.0"
+  },
+  "packageManager": "pnpm@9.12.1"
+}

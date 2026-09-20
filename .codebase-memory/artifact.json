@@ -1,0 +1,11 @@
+{
+    "schema_version": 2,
+    "commit": "",
+    "indexed_at": "2026-09-20T11:19:13Z",
+    "project": "adhd-project",
+    "nodes": 200,
+    "edges": 477,
+    "original_size": 1835008,
+    "compressed_size": 99186,
+    "compression_level": 9
+}
