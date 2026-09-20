@@ -1,0 +1,68 @@
+{
+  "feedbackLoops": [
+    {
+      "id": "LOOP_PROCRASTINATION_URGENCY",
+      "nodeIds": [
+        "BEH1",
+        "PAT1",
+        "CTX4",
+        "REG5",
+        "BEH1",
+        "BEH2"
+      ],
+      "edgeIds": [
+        "EDGE_BEH1_PAT1_CONTRIBUTES_TO",
+        "EDGE_PAT1_CTX4_FEEDBACK_WITH",
+        "EDGE_CTX4_REG5_MODULATES",
+        "EDGE_REG5_BEH1_CONTRIBUTES_TO",
+        "EDGE_REG5_BEH2_CONTRIBUTES_TO"
+      ],
+      "evidenceIds": [
+        "EVID_URGENCY_FEEDBACK_LOOP",
+        "EVID_PROCRASTINATION_PATTERN",
+        "EVID_REWARD_DELAY"
+      ],
+      "interruptionPoints": "Show recurring-pattern caution before PAT1; Show evidence limitation before the feedback return; Offer Alternative Explanations before any individualized interpretation",
+      "contentId": "LOOP_PROCRASTINATION_URGENCY"
+    },
+    {
+      "id": "LOOP_FUNCTIONAL_DIFFICULTY_STRESS",
+      "nodeIds": [
+        "FUN1",
+        "FUN2",
+        "FUN3",
+        "FUN4",
+        "CTX2",
+        "REG1",
+        "REG2",
+        "REG6",
+        "BEH1",
+        "BEH2",
+        "BEH4",
+        "BEH5",
+        "BEH7"
+      ],
+      "edgeIds": [
+        "EDGE_FUN1_CTX2_FEEDBACK_WITH",
+        "EDGE_FUN2_CTX2_FEEDBACK_WITH",
+        "EDGE_FUN3_CTX2_FEEDBACK_WITH",
+        "EDGE_FUN4_CTX2_FEEDBACK_WITH",
+        "EDGE_CTX2_REG1_MODULATES",
+        "EDGE_CTX2_REG2_MODULATES",
+        "EDGE_CTX2_REG6_MODULATES",
+        "EDGE_REG1_BEH2_CONTRIBUTES_TO",
+        "EDGE_REG2_BEH4_CONTRIBUTES_TO",
+        "EDGE_REG2_BEH5_CONTRIBUTES_TO",
+        "EDGE_REG6_BEH1_CONTRIBUTES_TO",
+        "EDGE_REG6_BEH7_CONTRIBUTES_TO"
+      ],
+      "evidenceIds": [
+        "EVID_FUNCTION_STRESS_FEEDBACK_LOOP",
+        "EVID_STRESS_CONTEXT",
+        "EVID_FUNCTIONAL_DOMAINS"
+      ],
+      "interruptionPoints": "Show Functional-impact caution before the feedback return; Show group-level evidence caution; Offer Alternative Explanations before interpretation",
+      "contentId": "LOOP_FUNCTIONAL_DIFFICULTY_STRESS"
+    }
+  ]
+}

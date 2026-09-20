@@ -10,9 +10,12 @@
     "typecheck": "nuxt typecheck",
     "lint": "eslint .",
     "test": "nuxt prepare && vitest run",
+    "test:contract": "nuxt prepare && vitest run tests/contract/knowledge-validation.spec.ts",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "layout:generate": "node scripts/generate-spike-layout.mjs",
+    "knowledge:ingest": "node scripts/knowledge/ingest-production-pack.mjs",
+    "knowledge:validate": "node scripts/knowledge/validate.mjs",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
@@ -25,6 +28,8 @@
     "@playwright/test": "1.63.0",
     "@vitejs/plugin-vue": "6.0.9",
     "@vue/test-utils": "2.5.1",
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
     "elkjs": "0.12.0",
     "eslint": "10.11.0",
     "happy-dom": "18.0.1",

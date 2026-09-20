@@ -1,0 +1,400 @@
+{
+  "evidence": [
+    {
+      "id": "EVID_CLINICAL_ANCHORS",
+      "level": "Clinical",
+      "epistemicStatus": "`formal-clinical`",
+      "constructStatus": "`formal-diagnostic-domain`",
+      "languageStrategy": "language-neutral core + localized consumer caution",
+      "summary": "ADHD clinical criteria are organized around inattention and hyperactivity/impulsivity, with diagnosis requiring persistent symptoms, functional impact and multi-setting assessment.",
+      "limitations": [
+        "Formal clinical definitions do not make explanatory Regulation constructs diagnostic criteria."
+      ],
+      "sourceIds": [
+        "SRC_NIMH_ADHD_2024",
+        "SRC_CDC_ADHD_SYMPTOMS_2026",
+        "SRC_NICE_NG87_2018"
+      ],
+      "lastReviewed": "2026-09-20",
+      "reviewVersion": "1.1.0"
+    },
+    {
+      "id": "EVID_PRESENTATION_TERMINOLOGY",
+      "level": "Clinical",
+      "epistemicStatus": "`formal-clinical`",
+      "constructStatus": "`formal-presentation-terminology`",
+      "languageStrategy": "language-neutral core + localized consumer caution",
+      "summary": "Current educational terminology distinguishes inattentive, hyperactive-impulsive, and combined presentations; historical ADD is not a fourth current presentation.",
+      "limitations": [
+        "Presentation terminology must not be inferred from Behaviour Explorer state."
+      ],
+      "sourceIds": [
+        "SRC_NIMH_ADHD_2024",
+        "SRC_CDC_ADHD_SYMPTOMS_2026"
+      ],
+      "lastReviewed": "2026-09-20",
+      "reviewVersion": "1.1.0"
+    },
+    {
+      "id": "EVID_ATTENTION_REGULATION",
+      "level": "Strong",
+      "epistemicStatus": "`group-level-association`",
+      "constructStatus": "`associated-process`",
+      "languageStrategy": "language-neutral core + localized consumer caution",
+      "summary": "Attention/vigilance difficulties are well represented in ADHD research at group level.",
+      "limitations": [
+        "Attention findings are heterogeneous, task-dependent, not ADHD-specific, and do not define an individual profile."
+      ],
+      "sourceIds": [
+        "SRC_WILLCUTT_EF_META_2005",
+        "SRC_HUANG_VIGILANCE_META_2012"
+      ],
+      "lastReviewed": "2026-09-20",
+      "reviewVersion": "1.1.0"
+    },
+    {
+      "id": "EVID_WORKING_MEMORY",
+      "level": "Strong",
+      "epistemicStatus": "`group-level-association`",
+      "constructStatus": "`associated-process`",
+      "languageStrategy": "language-neutral core + localized consumer caution",
+      "summary": "Working-memory weaknesses are supported across ADHD research, including adult meta-analytic evidence.",
+      "limitations": [
+        "Group differences are heterogeneous and working-memory performance is not a diagnostic criterion."
+      ],
+      "sourceIds": [
+        "SRC_WILLCUTT_EF_META_2005",
+        "SRC_ALDERSON_WM_META_2013"
+      ],
+      "lastReviewed": "2026-09-20",
+      "reviewVersion": "1.1.0"
+    },
+    {
+      "id": "EVID_GOAL_MANAGEMENT",
+      "level": "Moderate",
+      "epistemicStatus": "`group-level-association`",
+      "constructStatus": "`associated-process`",
+      "languageStrategy": "language-neutral core + localized consumer caution",
+      "summary": "Planning and goal-directed executive processes are relevant to ADHD research and to everyday organization and follow-through.",
+      "limitations": [
+        "The frozen Goal Management node is a broader educational construct than any single laboratory measure."
+      ],
+      "sourceIds": [
+        "SRC_WILLCUTT_EF_META_2005",
+        "SRC_NIMH_ADHD_2024"
+      ],
+      "lastReviewed": "2026-09-20",
+      "reviewVersion": "1.1.0"
+    },
+    {
+      "id": "EVID_RESPONSE_INHIBITION",
+      "level": "Strong",
+      "epistemicStatus": "`group-level-association`",
+      "constructStatus": "`associated-process`",
+      "languageStrategy": "language-neutral core + localized consumer caution",
+      "summary": "Response-inhibition differences are supported in ADHD research, while some stop-signal findings may also reflect broader attention/cognitive processing.",
+      "limitations": [
+        "Response inhibition is associated, not necessary, sufficient, or equivalent to clinical impulsivity."
+      ],
+      "sourceIds": [
+        "SRC_WILLCUTT_EF_META_2005",
+        "SRC_ALDERSON_INHIBITION_META_2007"
+      ],
+      "lastReviewed": "2026-09-20",
+      "reviewVersion": "1.1.0"
+    },
+    {
+      "id": "EVID_REWARD_DELAY",
+      "level": "Moderate",
+      "epistemicStatus": "`group-level-association`",
+      "constructStatus": "`associated-process`",
+      "languageStrategy": "language-neutral core + localized consumer caution",
+      "summary": "ADHD groups show a reliable association with steeper monetary delay discounting, supporting relevance of reward/delay processing.",
+      "limitations": [
+        "Delay discounting is not an ADHD-specific marker and cannot predict an individual's choices."
+      ],
+      "sourceIds": [
+        "SRC_JACKSON_DELAY_META_2016",
+        "SRC_NIMH_ADHD_2024"
+      ],
+      "lastReviewed": "2026-09-20",
+      "reviewVersion": "1.1.0"
+    },
+    {
+      "id": "EVID_EMOTIONAL_REGULATION",
+      "level": "Strong",
+      "epistemicStatus": "`group-level-association`",
+      "constructStatus": "`associated-process`",
+      "languageStrategy": "language-neutral core + localized consumer caution",
+      "summary": "Emotional dysregulation is strongly associated with adult ADHD samples.",
+      "limitations": [
+        "It is not one of the two formal Clinical Anchor symptom domains and is not diagnostic by itself."
+      ],
+      "sourceIds": [
+        "SRC_BEHESHTI_EMOTION_META_2020",
+        "SRC_NIMH_ADHD_2024"
+      ],
+      "lastReviewed": "2026-09-20",
+      "reviewVersion": "1.1.0"
+    },
+    {
+      "id": "EVID_TASK_SWITCHING",
+      "level": "Moderate",
+      "epistemicStatus": "`mixed-association`",
+      "constructStatus": "`associated-process`",
+      "languageStrategy": "language-neutral core + localized consumer caution",
+      "summary": "Set shifting/task switching has moderate group-level support in prior meta-analytic literature, but construct validity and specificity are contested.",
+      "limitations": [
+        "Do not present task switching as a universal or uniquely ADHD-specific deficit."
+      ],
+      "sourceIds": [
+        "SRC_WILLCUTT_EF_META_2005",
+        "SRC_IRWIN_SHIFTING_2019"
+      ],
+      "lastReviewed": "2026-09-20",
+      "reviewVersion": "1.1.0"
+    },
+    {
+      "id": "EVID_SLEEP_CONTEXT",
+      "level": "Strong",
+      "epistemicStatus": "`transdiagnostic-context`",
+      "constructStatus": "`non-specific-context`",
+      "languageStrategy": "language-neutral core + localized consumer caution",
+      "summary": "Sleep loss can alter attention and executive performance, including inhibitory control and flexibility.",
+      "limitations": [
+        "This evidence is transdiagnostic; sleep-related effects do not indicate ADHD."
+      ],
+      "sourceIds": [
+        "SRC_CAO_SLEEP_META_2025",
+        "SRC_CDC_ADHD_DIAGNOSIS_2026",
+        "SRC_NIMH_ADHD_2024"
+      ],
+      "lastReviewed": "2026-09-20",
+      "reviewVersion": "1.1.0"
+    },
+    {
+      "id": "EVID_STRESS_CONTEXT",
+      "level": "Moderate",
+      "epistemicStatus": "`transdiagnostic-context`",
+      "constructStatus": "`non-specific-context`",
+      "languageStrategy": "language-neutral core + localized consumer caution",
+      "summary": "Acute stress can alter working memory and cognitive flexibility, with more nuanced effects on inhibition.",
+      "limitations": [
+        "Stress effects vary by task and person and are not specific to ADHD."
+      ],
+      "sourceIds": [
+        "SRC_SHIELDS_STRESS_META_2016",
+        "SRC_NIMH_ADHD_2024"
+      ],
+      "lastReviewed": "2026-09-20",
+      "reviewVersion": "1.1.0"
+    },
+    {
+      "id": "EVID_INTERRUPTION_CONTEXT",
+      "level": "Strong",
+      "epistemicStatus": "`transdiagnostic-context`",
+      "constructStatus": "`non-specific-context`",
+      "languageStrategy": "language-neutral core + localized consumer caution",
+      "summary": "Interruptions and distractions can impair ongoing performance and create resumption/reorientation demands.",
+      "limitations": [
+        "The review is general human-performance evidence, not ADHD-specific evidence."
+      ],
+      "sourceIds": [
+        "SRC_COUFFE_INTERRUPTION_REVIEW_2017"
+      ],
+      "lastReviewed": "2026-09-20",
+      "reviewVersion": "1.1.0"
+    },
+    {
+      "id": "EVID_EXTERNAL_STRUCTURE",
+      "level": "Moderate",
+      "epistemicStatus": "`clinical-guidance-plus-synthesis`",
+      "constructStatus": "`supportive-context`",
+      "languageStrategy": "language-neutral core + localized consumer caution",
+      "summary": "Clinical guidance recognizes environmental modifications and daily structure as relevant supports for functioning with ADHD.",
+      "limitations": [
+        "Guidance supports the practical relevance of structure; it does not directly prove each frozen Working Memory or Goal Management mechanism."
+      ],
+      "sourceIds": [
+        "SRC_NICE_NG87_2018",
+        "SRC_NIMH_ADHD_2024"
+      ],
+      "lastReviewed": "2026-09-20",
+      "reviewVersion": "1.1.0"
+    },
+    {
+      "id": "EVID_TASK_COMPLEXITY",
+      "level": "Strong",
+      "epistemicStatus": "`construct-level-synthesis`",
+      "constructStatus": "`non-specific-context`",
+      "languageStrategy": "language-neutral core + localized consumer caution",
+      "summary": "Greater multi-step cognitive/organizational demand is compatible with increased working-memory and planning demands.",
+      "limitations": [
+        "The context-to-specific-regulation links are educational construct mappings, not ADHD-specific causal claims."
+      ],
+      "sourceIds": [
+        "SRC_WILLCUTT_EF_META_2005",
+        "SRC_ALDERSON_WM_META_2013",
+        "SRC_NIMH_ADHD_2024"
+      ],
+      "lastReviewed": "2026-09-20",
+      "reviewVersion": "1.1.0"
+    },
+    {
+      "id": "EVID_SALIENCE_REWARD_CONTEXT",
+      "level": "Moderate",
+      "epistemicStatus": "`construct-level-synthesis`",
+      "constructStatus": "`non-specific-context`",
+      "languageStrategy": "language-neutral core + localized consumer caution",
+      "summary": "Task salience, reward value and temporal immediacy can influence attention, motivation and cognitive control; ADHD research also supports delay-related differences at group level.",
+      "limitations": [
+        "Specific Context → Regulation edges are qualitative educational mappings, not individual predictions."
+      ],
+      "sourceIds": [
+        "SRC_JACKSON_DELAY_META_2016",
+        "SRC_BOTVINICK_MOTIVATION_REVIEW_2015",
+        "SRC_NIMH_ADHD_2024"
+      ],
+      "lastReviewed": "2026-09-20",
+      "reviewVersion": "1.1.0"
+    },
+    {
+      "id": "EVID_PROCRASTINATION_PATTERN",
+      "level": "Moderate",
+      "epistemicStatus": "`association`",
+      "constructStatus": "`recurring-pattern`",
+      "languageStrategy": "language-neutral core + localized consumer caution",
+      "summary": "A 2026 systematic review supports an association between ADHD and procrastination, especially with inattentive symptoms, while mechanisms remain incompletely resolved.",
+      "limitations": [
+        "Procrastination is transdiagnostic; one delayed start is insufficient and no diagnostic threshold is encoded."
+      ],
+      "sourceIds": [
+        "SRC_SURIANO_PROCRASTINATION_2026",
+        "SRC_NIMH_ADHD_2024"
+      ],
+      "lastReviewed": "2026-09-20",
+      "reviewVersion": "1.1.0"
+    },
+    {
+      "id": "EVID_PERFORMANCE_VARIABILITY_EXPERIMENTAL",
+      "level": "Strong",
+      "epistemicStatus": "`experimental-association`",
+      "constructStatus": "`recurring-pattern`",
+      "languageStrategy": "language-neutral core + localized consumer caution",
+      "summary": "Reaction-time variability is robustly elevated in ADHD groups relative to nonclinical controls across many laboratory studies.",
+      "limitations": [
+        "Experimental reaction-time variability is not specific to ADHD and is not equivalent to every everyday experience of inconsistency."
+      ],
+      "sourceIds": [
+        "SRC_KOFLER_RTV_META_2013"
+      ],
+      "lastReviewed": "2026-09-20",
+      "reviewVersion": "1.1.0"
+    },
+    {
+      "id": "EVID_PERFORMANCE_VARIABILITY_EVERYDAY",
+      "level": "Moderate",
+      "epistemicStatus": "`educational-synthesis`",
+      "constructStatus": "`recurring-pattern`",
+      "languageStrategy": "language-neutral core + localized consumer caution",
+      "summary": "The frozen everyday Performance Variability pattern is an educational bridge from repeated context/time variation to a broader lived-experience concept.",
+      "limitations": [
+        "Do not equate everyday inconsistency with laboratory reaction-time variability or use it as a diagnostic marker."
+      ],
+      "sourceIds": [
+        "SRC_KOFLER_RTV_META_2013",
+        "SRC_NIMH_ADHD_2024"
+      ],
+      "lastReviewed": "2026-09-20",
+      "reviewVersion": "1.1.0"
+    },
+    {
+      "id": "EVID_FUNCTIONAL_DOMAINS",
+      "level": "Clinical",
+      "epistemicStatus": "`formal-functional-relevance`",
+      "constructStatus": "`functional-domain`",
+      "languageStrategy": "language-neutral core + localized consumer caution",
+      "summary": "ADHD diagnosis and clinical guidance require attention to interference/impairment across important life settings and domains.",
+      "limitations": [
+        "A FunctionalExample in this product illustrates where a difficulty could matter; it does not establish clinically significant impairment."
+      ],
+      "sourceIds": [
+        "SRC_NIMH_ADHD_2024",
+        "SRC_NICE_NG87_2018"
+      ],
+      "lastReviewed": "2026-09-20",
+      "reviewVersion": "1.1.0"
+    },
+    {
+      "id": "EVID_FUNCTIONAL_EDGE_SYNTHESIS",
+      "level": "Moderate",
+      "epistemicStatus": "`educational-synthesis`",
+      "constructStatus": "`functional-link`",
+      "languageStrategy": "language-neutral core + localized consumer caution",
+      "summary": "Frozen Behaviour/Pattern → Functional Domain links are curated educational mappings consistent with recognized work, learning, relationship and daily-life impacts.",
+      "limitations": [
+        "Specific edges are not quantitative causal estimates and do not predict impairment."
+      ],
+      "sourceIds": [
+        "SRC_NIMH_ADHD_2024",
+        "SRC_NICE_NG87_2018"
+      ],
+      "lastReviewed": "2026-09-20",
+      "reviewVersion": "1.1.0"
+    },
+    {
+      "id": "EVID_URGENCY_FEEDBACK_LOOP",
+      "level": "Limited",
+      "epistemicStatus": "`educational-synthesis`",
+      "constructStatus": "`feedback-loop`",
+      "languageStrategy": "language-neutral core + localized consumer caution",
+      "summary": "The Procrastination/Urgency loop combines supported procrastination, reward/delay and urgency concepts into a plausible educational reciprocal sequence.",
+      "limitations": [
+        "The complete loop has not been established as one universal ADHD mechanism; it is not ADHD-specific."
+      ],
+      "sourceIds": [
+        "SRC_SURIANO_PROCRASTINATION_2026",
+        "SRC_JACKSON_DELAY_META_2016",
+        "SRC_BOTVINICK_MOTIVATION_REVIEW_2015"
+      ],
+      "lastReviewed": "2026-09-20",
+      "reviewVersion": "1.1.0"
+    },
+    {
+      "id": "EVID_FUNCTION_STRESS_FEEDBACK_LOOP",
+      "level": "Limited",
+      "epistemicStatus": "`transdiagnostic-educational-synthesis`",
+      "constructStatus": "`feedback-loop`",
+      "languageStrategy": "language-neutral core + localized consumer caution",
+      "summary": "Functional difficulty and stress can plausibly reinforce each other through transdiagnostic executive demands.",
+      "limitations": [
+        "The frozen feedback edges are educational synthesis, not proof of a deterministic reciprocal causal loop."
+      ],
+      "sourceIds": [
+        "SRC_SHIELDS_STRESS_META_2016",
+        "SRC_NICE_NG87_2018",
+        "SRC_NIMH_ADHD_2024"
+      ],
+      "lastReviewed": "2026-09-20",
+      "reviewVersion": "1.1.0"
+    },
+    {
+      "id": "EVID_ALTERNATIVE_EXPLANATIONS",
+      "level": "Clinical",
+      "epistemicStatus": "`clinical-safety-context`",
+      "constructStatus": "`differential-caution`",
+      "languageStrategy": "language-neutral core + localized consumer caution",
+      "summary": "Sleep problems, stress, anxiety, depression/low mood, physical illness and other factors can produce ADHD-like difficulties, requiring clinical evaluation rather than product inference.",
+      "limitations": [
+        "The product must present these only as broad possible contributors and must not perform differential diagnosis."
+      ],
+      "sourceIds": [
+        "SRC_NIMH_ADHD_2024",
+        "SRC_CDC_ADHD_DIAGNOSIS_2026",
+        "SRC_NICE_NG87_2018"
+      ],
+      "lastReviewed": "2026-09-20",
+      "reviewVersion": "1.1.0"
+    }
+  ]
+}

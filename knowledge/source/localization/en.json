@@ -1,0 +1,907 @@
+{
+  "locale": "en",
+  "records": [
+    {
+      "targetId": "CA1",
+      "fields": {
+        "label": "Inattention"
+      }
+    },
+    {
+      "targetId": "CA2",
+      "fields": {
+        "label": "Hyperactivity–Impulsivity"
+      }
+    },
+    {
+      "targetId": "CTX1",
+      "fields": {
+        "label": "Sleep / Energy"
+      }
+    },
+    {
+      "targetId": "CTX2",
+      "fields": {
+        "label": "Stress / Emotional Load"
+      }
+    },
+    {
+      "targetId": "CTX3",
+      "fields": {
+        "label": "Task Salience / Interest"
+      }
+    },
+    {
+      "targetId": "CTX4",
+      "fields": {
+        "label": "Urgency / Time Pressure"
+      }
+    },
+    {
+      "targetId": "CTX5",
+      "fields": {
+        "label": "Reward Salience / Immediacy"
+      }
+    },
+    {
+      "targetId": "CTX6",
+      "fields": {
+        "label": "Task Demand / Complexity"
+      }
+    },
+    {
+      "targetId": "CTX7",
+      "fields": {
+        "label": "External Structure"
+      }
+    },
+    {
+      "targetId": "CTX8",
+      "fields": {
+        "label": "Distraction / Interruptions"
+      }
+    },
+    {
+      "targetId": "REG1",
+      "fields": {
+        "label": "Attention Regulation"
+      }
+    },
+    {
+      "targetId": "REG2",
+      "fields": {
+        "label": "Working Memory"
+      }
+    },
+    {
+      "targetId": "REG3",
+      "fields": {
+        "label": "Goal Management"
+      }
+    },
+    {
+      "targetId": "REG4",
+      "fields": {
+        "label": "Response Inhibition"
+      }
+    },
+    {
+      "targetId": "REG5",
+      "fields": {
+        "label": "Reward / Delay Processing"
+      }
+    },
+    {
+      "targetId": "REG6",
+      "fields": {
+        "label": "Emotional Regulation"
+      }
+    },
+    {
+      "targetId": "REG7",
+      "fields": {
+        "label": "Task Switching"
+      }
+    },
+    {
+      "targetId": "BEH1",
+      "fields": {
+        "label": "Starting"
+      }
+    },
+    {
+      "targetId": "BEH2",
+      "fields": {
+        "label": "Sustaining"
+      }
+    },
+    {
+      "targetId": "BEH3",
+      "fields": {
+        "label": "Switching Tasks"
+      }
+    },
+    {
+      "targetId": "BEH4",
+      "fields": {
+        "label": "Keeping Track"
+      }
+    },
+    {
+      "targetId": "BEH5",
+      "fields": {
+        "label": "Organizing / Sequencing"
+      }
+    },
+    {
+      "targetId": "BEH6",
+      "fields": {
+        "label": "Completing / Following Through"
+      }
+    },
+    {
+      "targetId": "BEH7",
+      "fields": {
+        "label": "Pausing / Waiting Before Acting"
+      }
+    },
+    {
+      "targetId": "PAT1",
+      "fields": {
+        "label": "Procrastination"
+      }
+    },
+    {
+      "targetId": "PAT2",
+      "fields": {
+        "label": "Performance Variability"
+      }
+    },
+    {
+      "targetId": "FUN1",
+      "fields": {
+        "label": "Work"
+      }
+    },
+    {
+      "targetId": "FUN2",
+      "fields": {
+        "label": "Learning"
+      }
+    },
+    {
+      "targetId": "FUN3",
+      "fields": {
+        "label": "Relationships"
+      }
+    },
+    {
+      "targetId": "FUN4",
+      "fields": {
+        "label": "Daily Living / Self-Management"
+      }
+    },
+    {
+      "targetId": "BES_BEH1_01",
+      "fields": {
+        "text": "I know I need to do this, but I keep putting off taking the first step."
+      }
+    },
+    {
+      "targetId": "BES_BEH2_01",
+      "fields": {
+        "text": "I start the task, but after a while my mind drifts to something else."
+      }
+    },
+    {
+      "targetId": "BES_BEH3_01",
+      "fields": {
+        "text": "When I need to move from one task to the next, it takes me time to shift gears."
+      }
+    },
+    {
+      "targetId": "BES_BEH4_01",
+      "fields": {
+        "text": "In the middle of a multi-step task, I sometimes forget exactly where I was."
+      }
+    },
+    {
+      "targetId": "BES_BEH5_01",
+      "fields": {
+        "text": "When a task has several steps, it can be hard for me to work out the right order."
+      }
+    },
+    {
+      "targetId": "BES_BEH6_01",
+      "fields": {
+        "text": "I start several tasks, but getting them all the way to the finish can be difficult."
+      }
+    },
+    {
+      "targetId": "BES_BEH7_01",
+      "fields": {
+        "text": "Sometimes I react before I have had a chance to think."
+      }
+    },
+    {
+      "targetId": "PATH_BEH1_COMPLEXITY_GOAL",
+      "fields": {
+        "explanation": "Higher task demand or complexity may increase Goal Management demand, which may make Starting more difficult.",
+        "scientificCaution": "This is one educationally plausible pathway, not a diagnosis, probability, or individualized explanation."
+      }
+    },
+    {
+      "targetId": "PATH_BEH1_DELAYED_REWARD",
+      "fields": {
+        "explanation": "Reward salience or immediacy may interact with Reward / Delay Processing and alter immediate engagement with Starting.",
+        "scientificCaution": "This is one educationally plausible pathway, not a diagnosis, probability, or individualized explanation."
+      }
+    },
+    {
+      "targetId": "PATH_BEH1_URGENCY",
+      "fields": {
+        "explanation": "Urgency or time pressure changes the immediacy of consequences through Reward / Delay Processing and may change the timing of Starting; the effect is not uniformly helpful.",
+        "scientificCaution": "This is one educationally plausible pathway, not a diagnosis, probability, or individualized explanation."
+      }
+    },
+    {
+      "targetId": "PATH_BEH1_STRESS",
+      "fields": {
+        "explanation": "Stress or emotional load may increase demands on Emotional Regulation and make Starting more difficult in some situations.",
+        "scientificCaution": "This is one educationally plausible pathway, not a diagnosis, probability, or individualized explanation."
+      }
+    },
+    {
+      "targetId": "PATH_BEH2_INTERRUPTION",
+      "fields": {
+        "explanation": "Distraction or interruptions can increase attentional demand, which may make Sustaining less stable.",
+        "scientificCaution": "This is one educationally plausible pathway, not a diagnosis, probability, or individualized explanation."
+      }
+    },
+    {
+      "targetId": "PATH_BEH2_SLEEP",
+      "fields": {
+        "explanation": "Sleep and available energy can modulate Attention Regulation and may influence Sustaining.",
+        "scientificCaution": "This is one educationally plausible pathway, not a diagnosis, probability, or individualized explanation."
+      }
+    },
+    {
+      "targetId": "PATH_BEH2_TASK_SALIENCE",
+      "fields": {
+        "explanation": "Task salience or interest can alter engagement-related processing through Reward / Delay Processing and may influence persistence.",
+        "scientificCaution": "This is one educationally plausible pathway, not a diagnosis, probability, or individualized explanation."
+      }
+    },
+    {
+      "targetId": "PATH_BEH2_REWARD_IMMEDIACY",
+      "fields": {
+        "explanation": "Reward salience or immediacy may interact with Reward / Delay Processing and influence continued engagement.",
+        "scientificCaution": "This is one educationally plausible pathway, not a diagnosis, probability, or individualized explanation."
+      }
+    },
+    {
+      "targetId": "PATH_BEH3_INTERRUPTION_REORIENTATION",
+      "fields": {
+        "explanation": "Interruptions can increase switching or reorientation demand, which may make Switching Tasks more difficult.",
+        "scientificCaution": "This is one educationally plausible pathway, not a diagnosis, probability, or individualized explanation."
+      }
+    },
+    {
+      "targetId": "PATH_BEH3_REPEATED_INTERRUPTION",
+      "fields": {
+        "explanation": "Repeated interruptions repeatedly recruit Task Switching and may increase transition burden. This is a second educational framing of the same canonical pathway, not a new mechanism.",
+        "scientificCaution": "This is one educationally plausible pathway, not a diagnosis, probability, or individualized explanation."
+      }
+    },
+    {
+      "targetId": "PATH_BEH4_COMPLEXITY",
+      "fields": {
+        "explanation": "Task demand or complexity may increase Working Memory demand and make Keeping Track harder.",
+        "scientificCaution": "This is one educationally plausible pathway, not a diagnosis, probability, or individualized explanation."
+      }
+    },
+    {
+      "targetId": "PATH_BEH4_STRESS",
+      "fields": {
+        "explanation": "Stress or emotional load may compete with or increase Working Memory demand and affect Keeping Track.",
+        "scientificCaution": "This is one educationally plausible pathway, not a diagnosis, probability, or individualized explanation."
+      }
+    },
+    {
+      "targetId": "PATH_BEH4_STRUCTURE",
+      "fields": {
+        "explanation": "External structure may reduce internal Working Memory demand and support Keeping Track.",
+        "scientificCaution": "This is one educationally plausible pathway, not a diagnosis, probability, or individualized explanation."
+      }
+    },
+    {
+      "targetId": "PATH_BEH5_COMPLEXITY_GOAL",
+      "fields": {
+        "explanation": "Task complexity may increase Goal Management demand and affect Organizing / Sequencing.",
+        "scientificCaution": "This is one educationally plausible pathway, not a diagnosis, probability, or individualized explanation."
+      }
+    },
+    {
+      "targetId": "PATH_BEH5_COMPLEXITY_WM",
+      "fields": {
+        "explanation": "Task complexity may increase Working Memory demand and make maintaining an action sequence harder.",
+        "scientificCaution": "This is one educationally plausible pathway, not a diagnosis, probability, or individualized explanation."
+      }
+    },
+    {
+      "targetId": "PATH_BEH5_STRESS",
+      "fields": {
+        "explanation": "Stress or emotional load may increase effective Working Memory demand and contribute to difficulty maintaining a sequence.",
+        "scientificCaution": "This is one educationally plausible pathway, not a diagnosis, probability, or individualized explanation."
+      }
+    },
+    {
+      "targetId": "PATH_BEH5_STRUCTURE_WM",
+      "fields": {
+        "explanation": "External structure may reduce Working Memory demand and support Organizing / Sequencing.",
+        "scientificCaution": "This is one educationally plausible pathway, not a diagnosis, probability, or individualized explanation."
+      }
+    },
+    {
+      "targetId": "PATH_BEH5_STRUCTURE_GOAL",
+      "fields": {
+        "explanation": "External structure may reduce Goal Management demand and support Organizing / Sequencing.",
+        "scientificCaution": "This is one educationally plausible pathway, not a diagnosis, probability, or individualized explanation."
+      }
+    },
+    {
+      "targetId": "PATH_BEH6_COMPLEXITY",
+      "fields": {
+        "explanation": "Complex multi-step work may increase Goal Management demand and make Completing / Following Through more difficult.",
+        "scientificCaution": "This is one educationally plausible pathway, not a diagnosis, probability, or individualized explanation."
+      }
+    },
+    {
+      "targetId": "PATH_BEH6_STRUCTURE",
+      "fields": {
+        "explanation": "External structure may reduce Goal Management demand and support Following Through.",
+        "scientificCaution": "This is one educationally plausible pathway, not a diagnosis, probability, or individualized explanation."
+      }
+    },
+    {
+      "targetId": "PATH_BEH7_SLEEP",
+      "fields": {
+        "explanation": "Sleep or energy state may influence Response Inhibition and affect Pausing / Waiting Before Acting.",
+        "scientificCaution": "This is one educationally plausible pathway, not a diagnosis, probability, or individualized explanation."
+      }
+    },
+    {
+      "targetId": "PATH_BEH7_EMOTIONAL_LOAD",
+      "fields": {
+        "explanation": "Stress or emotional load may increase demand on Emotional Regulation and affect the ability to pause in emotionally intense situations.",
+        "scientificCaution": "This is one educationally plausible pathway, not a diagnosis, probability, or individualized explanation."
+      }
+    },
+    {
+      "targetId": "CM_CTX6_BEH1_REG3",
+      "fields": {
+        "explanation": "Higher task demand or complexity may increase Goal Management demand and make Starting harder."
+      }
+    },
+    {
+      "targetId": "CM_CTX5_BEH1_REG5",
+      "fields": {
+        "explanation": "More or less immediate reward may change immediate engagement with Starting through Reward / Delay Processing."
+      }
+    },
+    {
+      "targetId": "CM_CTX4_BEH1_REG5",
+      "fields": {
+        "explanation": "Urgency can change the immediacy of consequences and may alter when Starting occurs; it is not uniformly helpful."
+      }
+    },
+    {
+      "targetId": "CM_CTX2_BEH1_REG6",
+      "fields": {
+        "explanation": "Emotional load may increase Emotional Regulation demand and make Starting harder in some situations."
+      }
+    },
+    {
+      "targetId": "CM_CTX7_BEH1_REG3",
+      "fields": {
+        "explanation": "Clear external structure may reduce Goal Management demand and can support Starting."
+      }
+    },
+    {
+      "targetId": "CM_CTX3_BEH1_REG5",
+      "fields": {
+        "explanation": "Task salience or interest may alter engagement through Reward / Delay Processing and can influence Starting."
+      }
+    },
+    {
+      "targetId": "CM_CTX8_BEH2_REG1",
+      "fields": {
+        "explanation": "Interruptions can increase attentional demand and make Sustaining less stable."
+      }
+    },
+    {
+      "targetId": "CM_CTX1_BEH2_REG1",
+      "fields": {
+        "explanation": "Sleep and energy state can modulate Attention Regulation and influence Sustaining."
+      }
+    },
+    {
+      "targetId": "CM_CTX3_BEH2_REG5",
+      "fields": {
+        "explanation": "Greater task salience or interest may alter engagement-related processing and influence persistence."
+      }
+    },
+    {
+      "targetId": "CM_CTX5_BEH2_REG5",
+      "fields": {
+        "explanation": "Reward immediacy may influence continued engagement through Reward / Delay Processing."
+      }
+    },
+    {
+      "targetId": "CM_CTX2_BEH2_REG1",
+      "fields": {
+        "explanation": "Stress or emotional load may increase attentional demand and make Sustaining less stable."
+      }
+    },
+    {
+      "targetId": "CM_CTX8_BEH3_REG7",
+      "fields": {
+        "explanation": "Repeated interruptions or forced transitions can increase Task Switching demand."
+      }
+    },
+    {
+      "targetId": "CM_CTX6_BEH4_REG2",
+      "fields": {
+        "explanation": "Multi-step complexity may increase Working Memory demand and make Keeping Track harder."
+      }
+    },
+    {
+      "targetId": "CM_CTX2_BEH4_REG2",
+      "fields": {
+        "explanation": "Stress can increase effective Working Memory demand and affect Keeping Track."
+      }
+    },
+    {
+      "targetId": "CM_CTX7_BEH4_REG2",
+      "fields": {
+        "explanation": "External reminders or structure may reduce internal Working Memory demand and support Keeping Track."
+      }
+    },
+    {
+      "targetId": "CM_CTX6_BEH5_REG3",
+      "fields": {
+        "explanation": "Complex tasks may increase Goal Management demand and affect Organizing / Sequencing."
+      }
+    },
+    {
+      "targetId": "CM_CTX6_BEH5_REG2",
+      "fields": {
+        "explanation": "Complex tasks may increase Working Memory demand and make maintaining a sequence harder."
+      }
+    },
+    {
+      "targetId": "CM_CTX2_BEH5_REG2",
+      "fields": {
+        "explanation": "Emotional load may increase effective Working Memory demand and destabilize sequencing."
+      }
+    },
+    {
+      "targetId": "CM_CTX7_BEH5_REG2",
+      "fields": {
+        "explanation": "External organization may reduce Working Memory demand and support sequencing."
+      }
+    },
+    {
+      "targetId": "CM_CTX7_BEH5_REG3",
+      "fields": {
+        "explanation": "External organization may reduce Goal Management demand and support sequencing."
+      }
+    },
+    {
+      "targetId": "CM_CTX6_BEH6_REG3",
+      "fields": {
+        "explanation": "Complex multi-step work may increase Goal Management demand and make Following Through harder."
+      }
+    },
+    {
+      "targetId": "CM_CTX7_BEH6_REG3",
+      "fields": {
+        "explanation": "External structure and a clear sequence may reduce Goal Management demand and support completion."
+      }
+    },
+    {
+      "targetId": "CM_CTX1_BEH7_REG4",
+      "fields": {
+        "explanation": "Sleep or energy state may influence Response Inhibition and affect the ability to pause before acting."
+      }
+    },
+    {
+      "targetId": "CM_CTX2_BEH7_REG6",
+      "fields": {
+        "explanation": "Emotional load may increase Emotional Regulation demand and make pausing harder in emotionally intense situations."
+      }
+    },
+    {
+      "targetId": "RULE_PAT1_PROCRASTINATION",
+      "fields": {
+        "conceptualThreshold": "When intended actions are repeatedly started substantially later than intended and the delay is maladaptive or has meaningful consequences, Procrastination may be a useful educational description.",
+        "singleEventCaution": "One delayed start is not enough to establish a recurring Procrastination pattern.",
+        "examples": "Example that does not meet the pattern: one important task starts late. Example that may fit educationally: important intended tasks are repeatedly started late and this repeatedly creates meaningful negative consequences."
+      }
+    },
+    {
+      "targetId": "RULE_PAT2_PERFORMANCE_VARIABILITY",
+      "fields": {
+        "conceptualThreshold": "When performance or engagement varies meaningfully across repeated occasions, contexts, or time, Performance Variability may be a useful educational description.",
+        "singleEventCaution": "One bad day or one unusually productive day is insufficient. Everyday inconsistency must not be treated as equivalent to laboratory reaction-time variability findings.",
+        "examples": "Example that does not meet the pattern: performance is poor once. Example that may fit educationally: performance is repeatedly much more stable in some contexts than others across multiple occasions."
+      }
+    },
+    {
+      "targetId": "FEX_BEH1_FUN1",
+      "fields": {
+        "example": "If this behaviour is frequent or consequential enough, one possible example in this domain could be delaying the start of a report."
+      }
+    },
+    {
+      "targetId": "FEX_BEH1_FUN2",
+      "fields": {
+        "example": "If this behaviour is frequent or consequential enough, one possible example in this domain could be delaying the start of studying or an assignment."
+      }
+    },
+    {
+      "targetId": "FEX_BEH1_FUN3",
+      "fields": {
+        "example": "If this behaviour is frequent or consequential enough, one possible example in this domain could be postponing a shared responsibility."
+      }
+    },
+    {
+      "targetId": "FEX_BEH1_FUN4",
+      "fields": {
+        "example": "If this behaviour is frequent or consequential enough, one possible example in this domain could be putting off paperwork or appointments."
+      }
+    },
+    {
+      "targetId": "FEX_BEH2_FUN1",
+      "fields": {
+        "example": "If this behaviour is frequent or consequential enough, one possible example in this domain could be repeatedly drifting away during long work."
+      }
+    },
+    {
+      "targetId": "FEX_BEH2_FUN2",
+      "fields": {
+        "example": "If this behaviour is frequent or consequential enough, one possible example in this domain could be difficulty staying with reading or study material."
+      }
+    },
+    {
+      "targetId": "FEX_BEH2_FUN3",
+      "fields": {
+        "example": "If this behaviour is frequent or consequential enough, one possible example in this domain could be losing track during long conversations."
+      }
+    },
+    {
+      "targetId": "FEX_BEH2_FUN4",
+      "fields": {
+        "example": "If this behaviour is frequent or consequential enough, one possible example in this domain could be leaving chores unfinished after starting them."
+      }
+    },
+    {
+      "targetId": "FEX_BEH3_FUN1",
+      "fields": {
+        "example": "If this behaviour is frequent or consequential enough, one possible example in this domain could be a slow transition between meetings or projects."
+      }
+    },
+    {
+      "targetId": "FEX_BEH3_FUN2",
+      "fields": {
+        "example": "If this behaviour is frequent or consequential enough, one possible example in this domain could be difficulty moving from one subject to another."
+      }
+    },
+    {
+      "targetId": "FEX_BEH3_FUN3",
+      "fields": {
+        "example": "If this behaviour is frequent or consequential enough, one possible example in this domain could be difficulty shifting attention when an interaction requires it."
+      }
+    },
+    {
+      "targetId": "FEX_BEH3_FUN4",
+      "fields": {
+        "example": "If this behaviour is frequent or consequential enough, one possible example in this domain could be remaining in one activity while another task becomes due."
+      }
+    },
+    {
+      "targetId": "FEX_BEH4_FUN1",
+      "fields": {
+        "example": "If this behaviour is frequent or consequential enough, one possible example in this domain could be losing track of action items."
+      }
+    },
+    {
+      "targetId": "FEX_BEH4_FUN2",
+      "fields": {
+        "example": "If this behaviour is frequent or consequential enough, one possible example in this domain could be losing one’s place in multi-step learning material."
+      }
+    },
+    {
+      "targetId": "FEX_BEH4_FUN3",
+      "fields": {
+        "example": "If this behaviour is frequent or consequential enough, one possible example in this domain could be forgetting part of an agreed plan."
+      }
+    },
+    {
+      "targetId": "FEX_BEH4_FUN4",
+      "fields": {
+        "example": "If this behaviour is frequent or consequential enough, one possible example in this domain could be forgetting steps in errands or administrative tasks."
+      }
+    },
+    {
+      "targetId": "FEX_BEH5_FUN1",
+      "fields": {
+        "example": "If this behaviour is frequent or consequential enough, one possible example in this domain could be having difficulty establishing an execution order for a project."
+      }
+    },
+    {
+      "targetId": "FEX_BEH5_FUN2",
+      "fields": {
+        "example": "If this behaviour is frequent or consequential enough, one possible example in this domain could be having difficulty structuring an assignment."
+      }
+    },
+    {
+      "targetId": "FEX_BEH5_FUN3",
+      "fields": {
+        "example": "If this behaviour is frequent or consequential enough, one possible example in this domain could be having difficulty coordinating a shared plan."
+      }
+    },
+    {
+      "targetId": "FEX_BEH5_FUN4",
+      "fields": {
+        "example": "If this behaviour is frequent or consequential enough, one possible example in this domain could be having trouble ordering several daily tasks."
+      }
+    },
+    {
+      "targetId": "FEX_BEH6_FUN1",
+      "fields": {
+        "example": "If this behaviour is frequent or consequential enough, one possible example in this domain could be deliverables remaining unfinished."
+      }
+    },
+    {
+      "targetId": "FEX_BEH6_FUN2",
+      "fields": {
+        "example": "If this behaviour is frequent or consequential enough, one possible example in this domain could be assignments remaining incomplete."
+      }
+    },
+    {
+      "targetId": "FEX_BEH6_FUN3",
+      "fields": {
+        "example": "If this behaviour is frequent or consequential enough, one possible example in this domain could be a shared commitment not being carried through."
+      }
+    },
+    {
+      "targetId": "FEX_BEH6_FUN4",
+      "fields": {
+        "example": "If this behaviour is frequent or consequential enough, one possible example in this domain could be administrative or household tasks remaining incomplete."
+      }
+    },
+    {
+      "targetId": "FEX_BEH7_FUN1",
+      "fields": {
+        "example": "If this behaviour is frequent or consequential enough, one possible example in this domain could be responding before enough reflection in a meeting."
+      }
+    },
+    {
+      "targetId": "FEX_BEH7_FUN2",
+      "fields": {
+        "example": "If this behaviour is frequent or consequential enough, one possible example in this domain could be answering before fully processing a question."
+      }
+    },
+    {
+      "targetId": "FEX_BEH7_FUN3",
+      "fields": {
+        "example": "If this behaviour is frequent or consequential enough, one possible example in this domain could be interrupting or reacting rapidly in an interaction."
+      }
+    },
+    {
+      "targetId": "FEX_BEH7_FUN4",
+      "fields": {
+        "example": "If this behaviour is frequent or consequential enough, one possible example in this domain could be making a quick day-to-day decision before enough reflection."
+      }
+    },
+    {
+      "targetId": "ALT_SLEEP_PHYSICAL_STATE",
+      "fields": {
+        "label": "Sleep / physical state",
+        "explanation": "Insufficient sleep, fatigue, or another temporary physical state can affect attention, energy, inhibition, and task performance.",
+        "safeWording": "Current physical state can also affect this behaviour."
+      }
+    },
+    {
+      "targetId": "ALT_ACUTE_STRESS",
+      "fields": {
+        "label": "Acute stress",
+        "explanation": "Acute stress can compete with cognitive resources and alter attention, working memory, flexibility, and emotional responding.",
+        "safeWording": "Acute stress can produce similar difficulties without establishing ADHD."
+      }
+    },
+    {
+      "targetId": "ALT_ANXIETY_EMOTIONAL_DISTRESS",
+      "fields": {
+        "label": "Anxiety / emotional distress",
+        "explanation": "Anxiety or emotional distress can make concentration, task engagement, organization, and pausing before reaction more difficult.",
+        "safeWording": "Emotional difficulties can produce similar patterns; this does not mean anxiety is the explanation for a specific person."
+      }
+    },
+    {
+      "targetId": "ALT_LOW_MOOD",
+      "fields": {
+        "label": "Low mood",
+        "explanation": "Low mood can reduce energy, engagement, concentration, and follow-through in ways that may resemble some of these behaviours.",
+        "safeWording": "Low mood is one possible non-ADHD contributor, not a conclusion about the user."
+      }
+    },
+    {
+      "targetId": "ALT_BURNOUT",
+      "fields": {
+        "label": "Burnout",
+        "explanation": "Sustained overload or burnout can reduce available energy and cognitive capacity for starting, sustaining, organizing, tracking, and completing tasks.",
+        "safeWording": "Burnout can create similar difficulties and should not be ranked against ADHD by this product."
+      }
+    },
+    {
+      "targetId": "ALT_GRIEF",
+      "fields": {
+        "label": "Grief",
+        "explanation": "Grief can temporarily affect attention, memory, energy, emotional load, and everyday task functioning.",
+        "safeWording": "Grief may contribute to similar difficulties; the product does not determine whether it applies."
+      }
+    },
+    {
+      "targetId": "ALT_TASK_DESIGN",
+      "fields": {
+        "label": "Task design",
+        "explanation": "Unclear definitions, excessive complexity, poor sequencing, or ambiguous completion criteria can make a task difficult regardless of ADHD.",
+        "safeWording": "The structure of the task itself may contribute."
+      }
+    },
+    {
+      "targetId": "ALT_WORKLOAD",
+      "fields": {
+        "label": "Workload",
+        "explanation": "Excessive or competing workload can increase cognitive and organizational demand and leave tasks delayed, unstable, or unfinished.",
+        "safeWording": "Excessive workload is a possible contributor and is not evidence of ADHD."
+      }
+    },
+    {
+      "targetId": "ALT_ENVIRONMENT",
+      "fields": {
+        "label": "Environment / distraction",
+        "explanation": "Noise, interruptions, competing stimuli, or frequent forced transitions can make attention and task continuity more difficult.",
+        "safeWording": "Some environments make this behaviour harder even without ADHD."
+      }
+    },
+    {
+      "targetId": "ALT_SKILL_GAP",
+      "fields": {
+        "label": "Skill gap",
+        "explanation": "An unfamiliar process, missing knowledge, or insufficient practice can make starting, tracking, sequencing, switching, or completing a task harder.",
+        "safeWording": "Difficulty may reflect missing knowledge or experience rather than a regulation problem."
+      }
+    },
+    {
+      "targetId": "ALT_ORDINARY_MOTIVATION",
+      "fields": {
+        "label": "Ordinary motivation / preference",
+        "explanation": "Low personal relevance, ordinary dislike of a task, or competing priorities can reduce engagement without implying a clinical problem.",
+        "safeWording": "Not every difficult or uninteresting task reflects a clinical problem."
+      }
+    },
+    {
+      "targetId": "ALT_PHYSICAL_ILLNESS",
+      "fields": {
+        "label": "Physical illness",
+        "explanation": "Physical illness can alter energy, concentration, memory, and everyday functioning.",
+        "safeWording": "Physical illness can produce similar difficulties; the product does not infer whether this applies to a user."
+      }
+    },
+    {
+      "targetId": "ALT_MEDICATION_SUBSTANCE",
+      "fields": {
+        "label": "Medication / substance effects",
+        "explanation": "Medication or substance effects can alter attention, arousal, inhibition, memory, or energy in ways that may affect these behaviours.",
+        "safeWording": "Medication or substance effects are a possible contributor where relevant; this product does not make medication or substance-use judgments."
+      }
+    },
+    {
+      "targetId": "LOOP_PROCRASTINATION_URGENCY",
+      "fields": {
+        "title": "Procrastination / Urgency",
+        "orderedSteps": "Starting is delayed → Repeated maladaptive delay may form a Procrastination pattern → The deadline becomes closer → Urgency / Time Pressure increases → Consequences or rewards become more immediate → Reward / Delay Processing changes → Starting or Sustaining may change → A task may sometimes be completed under pressure → Future reliance on urgency may be reinforced",
+        "explanation": "This loop is an educational synthesis showing how delayed Starting and Procrastination can alter future urgency, which can in turn change reward immediacy and task engagement.",
+        "caution": "This loop is not universal, not ADHD-specific, and not a proven single neurobiological mechanism."
+      }
+    },
+    {
+      "targetId": "LOOP_FUNCTIONAL_DIFFICULTY_STRESS",
+      "fields": {
+        "title": "Functional Difficulty → Stress",
+        "orderedSteps": "A Behaviour or Pattern difficulty occurs → Difficulty may matter in a Functional Domain → Stress / Emotional Load may increase → Regulatory demands may increase → Behaviour may become less stable → Further functional difficulty may occur",
+        "explanation": "This loop is a transdiagnostic educational synthesis: functional difficulty may increase stress, and stress may increase demands on regulation systems that can affect subsequent behaviour.",
+        "caution": "The relationship is probabilistic and transdiagnostic. The application must not infer a deterministic stress cycle for a specific person."
+      }
+    },
+    {
+      "targetId": "PRESENTATION_INATTENTIVE",
+      "fields": {
+        "label": "Predominantly Inattentive Presentation",
+        "description": "A current ADHD presentation in which the formal inattention symptom domain predominates under clinical diagnostic criteria."
+      }
+    },
+    {
+      "targetId": "PRESENTATION_HYPERACTIVE_IMPULSIVE",
+      "fields": {
+        "label": "Predominantly Hyperactive-Impulsive Presentation",
+        "description": "A current ADHD presentation in which the formal hyperactivity–impulsivity symptom domain predominates under clinical diagnostic criteria."
+      }
+    },
+    {
+      "targetId": "PRESENTATION_COMBINED",
+      "fields": {
+        "label": "Combined Presentation",
+        "description": "A current ADHD presentation in which formal symptoms from both inattention and hyperactivity–impulsivity domains meet clinical criteria."
+      }
+    },
+    {
+      "targetId": "HISTORICAL_ADD_NOTE",
+      "fields": {
+        "label": "Historical ADD terminology",
+        "description": "ADD is an older diagnostic term still commonly encountered, especially in references to predominantly inattentive ADHD. It is not a separate current disorder, a fourth presentation, or a current canonical synonym for ADHD."
+      }
+    },
+    {
+      "targetId": "SAFETY_GLOBAL_EDUCATIONAL_DISCLAIMER",
+      "fields": {
+        "text": "This is an educational model of ADHD-related concepts and research. It does not diagnose ADHD or provide individualized medical advice."
+      }
+    },
+    {
+      "targetId": "SAFETY_GRAPH_DISCLAIMER",
+      "fields": {
+        "text": "Connections show possible associations or influences, not universal causal pathways."
+      }
+    },
+    {
+      "targetId": "SAFETY_BEHAVIOUR_EXPLORER",
+      "fields": {
+        "text": "This behaviour alone does not indicate ADHD and may have several different explanations."
+      }
+    },
+    {
+      "targetId": "SAFETY_ALTERNATIVE_EXPLANATION",
+      "fields": {
+        "text": "Similar difficulties can occur for reasons unrelated to ADHD."
+      }
+    },
+    {
+      "targetId": "SAFETY_RECURRING_PATTERN",
+      "fields": {
+        "text": "One event is not enough to establish a recurring pattern."
+      }
+    },
+    {
+      "targetId": "SAFETY_FUNCTIONAL_IMPACT",
+      "fields": {
+        "text": "A difficulty in this area does not automatically mean clinically significant impairment."
+      }
+    },
+    {
+      "targetId": "SAFETY_PRESENTATION_CAUTION",
+      "fields": {
+        "text": "ADHD presentations are based on formal clinical symptom domains, not this explanatory graph."
+      }
+    },
+    {
+      "targetId": "SAFETY_GROUP_LEVEL_EVIDENCE",
+      "fields": {
+        "text": "Research findings describe group-level tendencies and do not define an individual profile."
+      }
+    }
+  ]
+}

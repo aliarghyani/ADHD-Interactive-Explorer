@@ -1,0 +1,46 @@
+{
+  "behaviours": [
+    {
+      "id": "BES_BEH1_01",
+      "behaviourId": "BEH1",
+      "publicationStatus": "active",
+      "contentId": "BES_BEH1_01"
+    },
+    {
+      "id": "BES_BEH2_01",
+      "behaviourId": "BEH2",
+      "publicationStatus": "active",
+      "contentId": "BES_BEH2_01"
+    },
+    {
+      "id": "BES_BEH3_01",
+      "behaviourId": "BEH3",
+      "publicationStatus": "active",
+      "contentId": "BES_BEH3_01"
+    },
+    {
+      "id": "BES_BEH4_01",
+      "behaviourId": "BEH4",
+      "publicationStatus": "active",
+      "contentId": "BES_BEH4_01"
+    },
+    {
+      "id": "BES_BEH5_01",
+      "behaviourId": "BEH5",
+      "publicationStatus": "active",
+      "contentId": "BES_BEH5_01"
+    },
+    {
+      "id": "BES_BEH6_01",
+      "behaviourId": "BEH6",
+      "publicationStatus": "active",
+      "contentId": "BES_BEH6_01"
+    },
+    {
+      "id": "BES_BEH7_01",
+      "behaviourId": "BEH7",
+      "publicationStatus": "active",
+      "contentId": "BES_BEH7_01"
+    }
+  ]
+}

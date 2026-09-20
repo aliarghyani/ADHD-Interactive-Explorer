@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0.0",
+  "ontologyVersion": "1.0.1",
+  "visualGrammarVersion": "1.0.1",
+  "behaviourFrameworkVersion": "1.0.0",
+  "contentModelVersion": "1.0.0",
+  "evidenceReviewVersion": "1.1.0",
+  "knowledgeReleaseId": "ADHD-KNOWLEDGE-2026-09-20-R1",
+  "languages": [
+    "en",
+    "fa"
+  ],
+  "publicationStatus": "reviewed-production",
+  "releaseExpectations": {
+    "nodes": 30,
+    "edges": 49,
+    "pathways": 22,
+    "mappings": 24,
+    "functionalExamples": 28,
+    "alternatives": 13,
+    "feedbackLoops": 2,
+    "presentations": 4,
+    "sources": 17,
+    "evidence": 23
+  }
+}

@@ -1,0 +1,636 @@
+{
+  "edges": [
+    {
+      "id": "EDGE_CTX1_REG1_MODULATES",
+      "sourceId": "CTX1",
+      "targetId": "REG1",
+      "relationshipType": "MODULATES",
+      "meaning": "Sleep / Energy modulates Attention Regulation",
+      "evidenceIds": [
+        "EVID_SLEEP_CONTEXT",
+        "EVID_ATTENTION_REGULATION"
+      ],
+      "supportClassification": "construct-level",
+      "limitation": "Sleep effects are transdiagnostic; no individual prediction."
+    },
+    {
+      "id": "EDGE_CTX1_REG4_MODULATES",
+      "sourceId": "CTX1",
+      "targetId": "REG4",
+      "relationshipType": "MODULATES",
+      "meaning": "Sleep / Energy modulates Response Inhibition",
+      "evidenceIds": [
+        "EVID_SLEEP_CONTEXT",
+        "EVID_RESPONSE_INHIBITION"
+      ],
+      "supportClassification": "construct-level",
+      "limitation": "Sleep effects are transdiagnostic and task-dependent."
+    },
+    {
+      "id": "EDGE_CTX2_REG1_MODULATES",
+      "sourceId": "CTX2",
+      "targetId": "REG1",
+      "relationshipType": "MODULATES",
+      "meaning": "Stress / Emotional Load modulates Attention Regulation",
+      "evidenceIds": [
+        "EVID_STRESS_CONTEXT",
+        "EVID_ATTENTION_REGULATION"
+      ],
+      "supportClassification": "construct-level",
+      "limitation": "Stress effects vary by task and are not ADHD-specific."
+    },
+    {
+      "id": "EDGE_CTX2_REG2_MODULATES",
+      "sourceId": "CTX2",
+      "targetId": "REG2",
+      "relationshipType": "MODULATES",
+      "meaning": "Stress / Emotional Load modulates Working Memory",
+      "evidenceIds": [
+        "EVID_STRESS_CONTEXT",
+        "EVID_WORKING_MEMORY"
+      ],
+      "supportClassification": "direct",
+      "limitation": "Meta-analytic acute-stress evidence supports Working Memory effects; still transdiagnostic."
+    },
+    {
+      "id": "EDGE_CTX2_REG6_MODULATES",
+      "sourceId": "CTX2",
+      "targetId": "REG6",
+      "relationshipType": "MODULATES",
+      "meaning": "Stress / Emotional Load modulates Emotional Regulation",
+      "evidenceIds": [
+        "EVID_STRESS_CONTEXT",
+        "EVID_EMOTIONAL_REGULATION"
+      ],
+      "supportClassification": "construct-level",
+      "limitation": "The exact Context→Regulation formulation is qualitative."
+    },
+    {
+      "id": "EDGE_CTX3_REG1_MODULATES",
+      "sourceId": "CTX3",
+      "targetId": "REG1",
+      "relationshipType": "MODULATES",
+      "meaning": "Task Salience / Interest modulates Attention Regulation",
+      "evidenceIds": [
+        "EVID_SALIENCE_REWARD_CONTEXT",
+        "EVID_ATTENTION_REGULATION"
+      ],
+      "supportClassification": "construct-level",
+      "limitation": "Motivation/salience can shape attention generally; not an ADHD-specific edge."
+    },
+    {
+      "id": "EDGE_CTX3_REG5_MODULATES",
+      "sourceId": "CTX3",
+      "targetId": "REG5",
+      "relationshipType": "MODULATES",
+      "meaning": "Task Salience / Interest modulates Reward / Delay Processing",
+      "evidenceIds": [
+        "EVID_SALIENCE_REWARD_CONTEXT",
+        "EVID_REWARD_DELAY"
+      ],
+      "supportClassification": "construct-level",
+      "limitation": "Task interest/salience is broader than laboratory delay-discounting measures."
+    },
+    {
+      "id": "EDGE_CTX4_REG5_MODULATES",
+      "sourceId": "CTX4",
+      "targetId": "REG5",
+      "relationshipType": "MODULATES",
+      "meaning": "Urgency / Time Pressure modulates Reward / Delay Processing",
+      "evidenceIds": [
+        "EVID_SALIENCE_REWARD_CONTEXT",
+        "EVID_REWARD_DELAY"
+      ],
+      "supportClassification": "synthesis",
+      "limitation": "Urgency is represented as changing consequence immediacy; direction is variable."
+    },
+    {
+      "id": "EDGE_CTX5_REG5_MODULATES",
+      "sourceId": "CTX5",
+      "targetId": "REG5",
+      "relationshipType": "MODULATES",
+      "meaning": "Reward Salience / Immediacy modulates Reward / Delay Processing",
+      "evidenceIds": [
+        "EVID_SALIENCE_REWARD_CONTEXT",
+        "EVID_REWARD_DELAY"
+      ],
+      "supportClassification": "direct",
+      "limitation": "Reward delay/immediacy is directly relevant at construct level; no individual prediction."
+    },
+    {
+      "id": "EDGE_CTX6_REG2_MODULATES",
+      "sourceId": "CTX6",
+      "targetId": "REG2",
+      "relationshipType": "MODULATES",
+      "meaning": "Task Demand / Complexity increases Working Memory demand",
+      "evidenceIds": [
+        "EVID_TASK_COMPLEXITY",
+        "EVID_WORKING_MEMORY"
+      ],
+      "supportClassification": "construct-level",
+      "limitation": "Non-specific cognitive-demand mapping; not ADHD-specific causality."
+    },
+    {
+      "id": "EDGE_CTX6_REG3_MODULATES",
+      "sourceId": "CTX6",
+      "targetId": "REG3",
+      "relationshipType": "MODULATES",
+      "meaning": "Task Demand / Complexity increases Goal Management demand",
+      "evidenceIds": [
+        "EVID_TASK_COMPLEXITY",
+        "EVID_GOAL_MANAGEMENT"
+      ],
+      "supportClassification": "construct-level",
+      "limitation": "Non-specific planning/organizational-demand mapping."
+    },
+    {
+      "id": "EDGE_CTX7_REG2_MODULATES",
+      "sourceId": "CTX7",
+      "targetId": "REG2",
+      "relationshipType": "MODULATES",
+      "meaning": "External Structure may buffer Working Memory demand",
+      "evidenceIds": [
+        "EVID_EXTERNAL_STRUCTURE",
+        "EVID_WORKING_MEMORY"
+      ],
+      "supportClassification": "synthesis",
+      "limitation": "Guidance supports external structure; the Working Memory mechanism is an educational synthesis."
+    },
+    {
+      "id": "EDGE_CTX7_REG3_MODULATES",
+      "sourceId": "CTX7",
+      "targetId": "REG3",
+      "relationshipType": "MODULATES",
+      "meaning": "External Structure may buffer Goal Management demand",
+      "evidenceIds": [
+        "EVID_EXTERNAL_STRUCTURE",
+        "EVID_GOAL_MANAGEMENT"
+      ],
+      "supportClassification": "synthesis",
+      "limitation": "Guidance supports external structure; the Goal Management mechanism is an educational synthesis."
+    },
+    {
+      "id": "EDGE_CTX8_REG1_MODULATES",
+      "sourceId": "CTX8",
+      "targetId": "REG1",
+      "relationshipType": "MODULATES",
+      "meaning": "Distraction / Interruptions interferes with Attention Regulation",
+      "evidenceIds": [
+        "EVID_INTERRUPTION_CONTEXT",
+        "EVID_ATTENTION_REGULATION"
+      ],
+      "supportClassification": "direct",
+      "limitation": "General interruption evidence, not ADHD-specific."
+    },
+    {
+      "id": "EDGE_CTX8_REG7_MODULATES",
+      "sourceId": "CTX8",
+      "targetId": "REG7",
+      "relationshipType": "MODULATES",
+      "meaning": "Distraction / Interruptions increases Task Switching demand",
+      "evidenceIds": [
+        "EVID_INTERRUPTION_CONTEXT",
+        "EVID_TASK_SWITCHING"
+      ],
+      "supportClassification": "construct-level",
+      "limitation": "Interruptions create resumption/reorientation demand; ADHD-specific switching evidence is mixed."
+    },
+    {
+      "id": "EDGE_REG1_BEH2_CONTRIBUTES_TO",
+      "sourceId": "REG1",
+      "targetId": "BEH2",
+      "relationshipType": "CONTRIBUTES_TO",
+      "meaning": "Attention Regulation contributes to Sustaining",
+      "evidenceIds": [
+        "EVID_ATTENTION_REGULATION"
+      ],
+      "supportClassification": "construct-level",
+      "limitation": "Sustaining is an observable educational Behaviour, not a laboratory vigilance score."
+    },
+    {
+      "id": "EDGE_REG2_BEH4_CONTRIBUTES_TO",
+      "sourceId": "REG2",
+      "targetId": "BEH4",
+      "relationshipType": "CONTRIBUTES_TO",
+      "meaning": "Working Memory contributes to Keeping Track",
+      "evidenceIds": [
+        "EVID_WORKING_MEMORY"
+      ],
+      "supportClassification": "construct-level",
+      "limitation": "Keeping Track is an educational behavioural expression, not a direct Working Memory test."
+    },
+    {
+      "id": "EDGE_REG2_BEH5_CONTRIBUTES_TO",
+      "sourceId": "REG2",
+      "targetId": "BEH5",
+      "relationshipType": "CONTRIBUTES_TO",
+      "meaning": "Working Memory contributes to Organizing / Sequencing",
+      "evidenceIds": [
+        "EVID_WORKING_MEMORY",
+        "EVID_GOAL_MANAGEMENT"
+      ],
+      "supportClassification": "construct-level",
+      "limitation": "Organizing/Sequencing can draw on multiple executive processes."
+    },
+    {
+      "id": "EDGE_REG3_BEH1_CONTRIBUTES_TO",
+      "sourceId": "REG3",
+      "targetId": "BEH1",
+      "relationshipType": "CONTRIBUTES_TO",
+      "meaning": "Goal Management contributes to Starting",
+      "evidenceIds": [
+        "EVID_GOAL_MANAGEMENT"
+      ],
+      "supportClassification": "synthesis",
+      "limitation": "Starting is multi-determined; Goal Management is one plausible contributor."
+    },
+    {
+      "id": "EDGE_REG3_BEH5_CONTRIBUTES_TO",
+      "sourceId": "REG3",
+      "targetId": "BEH5",
+      "relationshipType": "CONTRIBUTES_TO",
+      "meaning": "Goal Management contributes to Organizing / Sequencing",
+      "evidenceIds": [
+        "EVID_GOAL_MANAGEMENT"
+      ],
+      "supportClassification": "construct-level",
+      "limitation": "Planning/sequencing evidence supports the construct-level mapping."
+    },
+    {
+      "id": "EDGE_REG3_BEH6_CONTRIBUTES_TO",
+      "sourceId": "REG3",
+      "targetId": "BEH6",
+      "relationshipType": "CONTRIBUTES_TO",
+      "meaning": "Goal Management contributes to Completing / Following Through",
+      "evidenceIds": [
+        "EVID_GOAL_MANAGEMENT"
+      ],
+      "supportClassification": "synthesis",
+      "limitation": "Follow-through is multi-determined; this is not a unique mechanism."
+    },
+    {
+      "id": "EDGE_REG4_BEH7_CONTRIBUTES_TO",
+      "sourceId": "REG4",
+      "targetId": "BEH7",
+      "relationshipType": "CONTRIBUTES_TO",
+      "meaning": "Response Inhibition contributes to Pausing / Waiting",
+      "evidenceIds": [
+        "EVID_RESPONSE_INHIBITION"
+      ],
+      "supportClassification": "construct-level",
+      "limitation": "Response Inhibition is distinct from formal clinical impulsivity."
+    },
+    {
+      "id": "EDGE_REG5_BEH1_CONTRIBUTES_TO",
+      "sourceId": "REG5",
+      "targetId": "BEH1",
+      "relationshipType": "CONTRIBUTES_TO",
+      "meaning": "Reward / Delay Processing contributes to Starting",
+      "evidenceIds": [
+        "EVID_REWARD_DELAY"
+      ],
+      "supportClassification": "construct-level",
+      "limitation": "Group-level delay/reward evidence does not predict an individual's Starting."
+    },
+    {
+      "id": "EDGE_REG5_BEH2_CONTRIBUTES_TO",
+      "sourceId": "REG5",
+      "targetId": "BEH2",
+      "relationshipType": "CONTRIBUTES_TO",
+      "meaning": "Reward / Delay Processing contributes to Sustaining",
+      "evidenceIds": [
+        "EVID_REWARD_DELAY",
+        "EVID_SALIENCE_REWARD_CONTEXT"
+      ],
+      "supportClassification": "synthesis",
+      "limitation": "Persistence/continued engagement is a broader behavioural interpretation."
+    },
+    {
+      "id": "EDGE_REG6_BEH1_CONTRIBUTES_TO",
+      "sourceId": "REG6",
+      "targetId": "BEH1",
+      "relationshipType": "CONTRIBUTES_TO",
+      "meaning": "Emotional Regulation contributes to Starting",
+      "evidenceIds": [
+        "EVID_EMOTIONAL_REGULATION",
+        "EVID_STRESS_CONTEXT"
+      ],
+      "supportClassification": "synthesis",
+      "limitation": "Emotional Regulation is one possible contributor to Starting."
+    },
+    {
+      "id": "EDGE_REG6_BEH7_CONTRIBUTES_TO",
+      "sourceId": "REG6",
+      "targetId": "BEH7",
+      "relationshipType": "CONTRIBUTES_TO",
+      "meaning": "Emotional Regulation contributes to Pausing / Waiting",
+      "evidenceIds": [
+        "EVID_EMOTIONAL_REGULATION"
+      ],
+      "supportClassification": "synthesis",
+      "limitation": "Pausing behaviour is not equivalent to an Emotional Regulation measure."
+    },
+    {
+      "id": "EDGE_REG7_BEH3_CONTRIBUTES_TO",
+      "sourceId": "REG7",
+      "targetId": "BEH3",
+      "relationshipType": "CONTRIBUTES_TO",
+      "meaning": "Task Switching contributes to Switching Tasks",
+      "evidenceIds": [
+        "EVID_TASK_SWITCHING"
+      ],
+      "supportClassification": "construct-level",
+      "limitation": "Task-switching specificity in ADHD is mixed; keep Moderate status."
+    },
+    {
+      "id": "EDGE_BEH1_PAT1_CONTRIBUTES_TO",
+      "sourceId": "BEH1",
+      "targetId": "PAT1",
+      "relationshipType": "CONTRIBUTES_TO",
+      "meaning": "BEH1 may contribute to recurring PAT1 when the pattern criteria are met",
+      "evidenceIds": [
+        "EVID_PROCRASTINATION_PATTERN"
+      ],
+      "supportClassification": "construct-level",
+      "limitation": "Repeated intended maladaptive delay is required; one delayed start is insufficient."
+    },
+    {
+      "id": "EDGE_BEH2_PAT2_CONTRIBUTES_TO",
+      "sourceId": "BEH2",
+      "targetId": "PAT2",
+      "relationshipType": "CONTRIBUTES_TO",
+      "meaning": "BEH2 may contribute to recurring PAT2 when the pattern criteria are met",
+      "evidenceIds": [
+        "EVID_PERFORMANCE_VARIABILITY_EXPERIMENTAL",
+        "EVID_PERFORMANCE_VARIABILITY_EVERYDAY"
+      ],
+      "supportClassification": "synthesis",
+      "limitation": "Everyday inconsistency must not be equated with laboratory reaction-time variability."
+    },
+    {
+      "id": "EDGE_BEH4_PAT2_CONTRIBUTES_TO",
+      "sourceId": "BEH4",
+      "targetId": "PAT2",
+      "relationshipType": "CONTRIBUTES_TO",
+      "meaning": "BEH4 may contribute to recurring PAT2 when the pattern criteria are met",
+      "evidenceIds": [
+        "EVID_PERFORMANCE_VARIABILITY_EXPERIMENTAL",
+        "EVID_PERFORMANCE_VARIABILITY_EVERYDAY"
+      ],
+      "supportClassification": "synthesis",
+      "limitation": "Everyday inconsistency must not be equated with laboratory reaction-time variability."
+    },
+    {
+      "id": "EDGE_BEH6_PAT2_CONTRIBUTES_TO",
+      "sourceId": "BEH6",
+      "targetId": "PAT2",
+      "relationshipType": "CONTRIBUTES_TO",
+      "meaning": "BEH6 may contribute to recurring PAT2 when the pattern criteria are met",
+      "evidenceIds": [
+        "EVID_PERFORMANCE_VARIABILITY_EXPERIMENTAL",
+        "EVID_PERFORMANCE_VARIABILITY_EVERYDAY"
+      ],
+      "supportClassification": "synthesis",
+      "limitation": "Everyday inconsistency must not be equated with laboratory reaction-time variability."
+    },
+    {
+      "id": "EDGE_BEH4_FUN1_CONTRIBUTES_TO",
+      "sourceId": "BEH4",
+      "targetId": "FUN1",
+      "relationshipType": "CONTRIBUTES_TO",
+      "meaning": "BEH4 may contribute to difficulty within FUN1",
+      "evidenceIds": [
+        "EVID_FUNCTIONAL_DOMAINS",
+        "EVID_FUNCTIONAL_EDGE_SYNTHESIS"
+      ],
+      "supportClassification": "synthesis",
+      "limitation": "Functional-domain linkage is educational; it does not establish clinically significant impairment."
+    },
+    {
+      "id": "EDGE_BEH4_FUN4_CONTRIBUTES_TO",
+      "sourceId": "BEH4",
+      "targetId": "FUN4",
+      "relationshipType": "CONTRIBUTES_TO",
+      "meaning": "BEH4 may contribute to difficulty within FUN4",
+      "evidenceIds": [
+        "EVID_FUNCTIONAL_DOMAINS",
+        "EVID_FUNCTIONAL_EDGE_SYNTHESIS"
+      ],
+      "supportClassification": "synthesis",
+      "limitation": "Functional-domain linkage is educational; it does not establish clinically significant impairment."
+    },
+    {
+      "id": "EDGE_BEH5_FUN1_CONTRIBUTES_TO",
+      "sourceId": "BEH5",
+      "targetId": "FUN1",
+      "relationshipType": "CONTRIBUTES_TO",
+      "meaning": "BEH5 may contribute to difficulty within FUN1",
+      "evidenceIds": [
+        "EVID_FUNCTIONAL_DOMAINS",
+        "EVID_FUNCTIONAL_EDGE_SYNTHESIS"
+      ],
+      "supportClassification": "synthesis",
+      "limitation": "Functional-domain linkage is educational; it does not establish clinically significant impairment."
+    },
+    {
+      "id": "EDGE_BEH5_FUN2_CONTRIBUTES_TO",
+      "sourceId": "BEH5",
+      "targetId": "FUN2",
+      "relationshipType": "CONTRIBUTES_TO",
+      "meaning": "BEH5 may contribute to difficulty within FUN2",
+      "evidenceIds": [
+        "EVID_FUNCTIONAL_DOMAINS",
+        "EVID_FUNCTIONAL_EDGE_SYNTHESIS"
+      ],
+      "supportClassification": "synthesis",
+      "limitation": "Functional-domain linkage is educational; it does not establish clinically significant impairment."
+    },
+    {
+      "id": "EDGE_BEH6_FUN1_CONTRIBUTES_TO",
+      "sourceId": "BEH6",
+      "targetId": "FUN1",
+      "relationshipType": "CONTRIBUTES_TO",
+      "meaning": "BEH6 may contribute to difficulty within FUN1",
+      "evidenceIds": [
+        "EVID_FUNCTIONAL_DOMAINS",
+        "EVID_FUNCTIONAL_EDGE_SYNTHESIS"
+      ],
+      "supportClassification": "synthesis",
+      "limitation": "Functional-domain linkage is educational; it does not establish clinically significant impairment."
+    },
+    {
+      "id": "EDGE_BEH6_FUN2_CONTRIBUTES_TO",
+      "sourceId": "BEH6",
+      "targetId": "FUN2",
+      "relationshipType": "CONTRIBUTES_TO",
+      "meaning": "BEH6 may contribute to difficulty within FUN2",
+      "evidenceIds": [
+        "EVID_FUNCTIONAL_DOMAINS",
+        "EVID_FUNCTIONAL_EDGE_SYNTHESIS"
+      ],
+      "supportClassification": "synthesis",
+      "limitation": "Functional-domain linkage is educational; it does not establish clinically significant impairment."
+    },
+    {
+      "id": "EDGE_BEH6_FUN4_CONTRIBUTES_TO",
+      "sourceId": "BEH6",
+      "targetId": "FUN4",
+      "relationshipType": "CONTRIBUTES_TO",
+      "meaning": "BEH6 may contribute to difficulty within FUN4",
+      "evidenceIds": [
+        "EVID_FUNCTIONAL_DOMAINS",
+        "EVID_FUNCTIONAL_EDGE_SYNTHESIS"
+      ],
+      "supportClassification": "synthesis",
+      "limitation": "Functional-domain linkage is educational; it does not establish clinically significant impairment."
+    },
+    {
+      "id": "EDGE_BEH7_FUN3_CONTRIBUTES_TO",
+      "sourceId": "BEH7",
+      "targetId": "FUN3",
+      "relationshipType": "CONTRIBUTES_TO",
+      "meaning": "BEH7 may contribute to difficulty within FUN3",
+      "evidenceIds": [
+        "EVID_FUNCTIONAL_DOMAINS",
+        "EVID_FUNCTIONAL_EDGE_SYNTHESIS"
+      ],
+      "supportClassification": "synthesis",
+      "limitation": "Functional-domain linkage is educational; it does not establish clinically significant impairment."
+    },
+    {
+      "id": "EDGE_PAT1_FUN1_CONTRIBUTES_TO",
+      "sourceId": "PAT1",
+      "targetId": "FUN1",
+      "relationshipType": "CONTRIBUTES_TO",
+      "meaning": "PAT1 may contribute to difficulty within FUN1",
+      "evidenceIds": [
+        "EVID_FUNCTIONAL_DOMAINS",
+        "EVID_FUNCTIONAL_EDGE_SYNTHESIS"
+      ],
+      "supportClassification": "synthesis",
+      "limitation": "Functional-domain linkage is educational; it does not establish clinically significant impairment."
+    },
+    {
+      "id": "EDGE_PAT1_FUN2_CONTRIBUTES_TO",
+      "sourceId": "PAT1",
+      "targetId": "FUN2",
+      "relationshipType": "CONTRIBUTES_TO",
+      "meaning": "PAT1 may contribute to difficulty within FUN2",
+      "evidenceIds": [
+        "EVID_FUNCTIONAL_DOMAINS",
+        "EVID_FUNCTIONAL_EDGE_SYNTHESIS"
+      ],
+      "supportClassification": "synthesis",
+      "limitation": "Functional-domain linkage is educational; it does not establish clinically significant impairment."
+    },
+    {
+      "id": "EDGE_PAT1_FUN4_CONTRIBUTES_TO",
+      "sourceId": "PAT1",
+      "targetId": "FUN4",
+      "relationshipType": "CONTRIBUTES_TO",
+      "meaning": "PAT1 may contribute to difficulty within FUN4",
+      "evidenceIds": [
+        "EVID_FUNCTIONAL_DOMAINS",
+        "EVID_FUNCTIONAL_EDGE_SYNTHESIS"
+      ],
+      "supportClassification": "synthesis",
+      "limitation": "Functional-domain linkage is educational; it does not establish clinically significant impairment."
+    },
+    {
+      "id": "EDGE_PAT2_FUN1_CONTRIBUTES_TO",
+      "sourceId": "PAT2",
+      "targetId": "FUN1",
+      "relationshipType": "CONTRIBUTES_TO",
+      "meaning": "PAT2 may contribute to difficulty within FUN1",
+      "evidenceIds": [
+        "EVID_FUNCTIONAL_DOMAINS",
+        "EVID_FUNCTIONAL_EDGE_SYNTHESIS"
+      ],
+      "supportClassification": "synthesis",
+      "limitation": "Functional-domain linkage is educational; it does not establish clinically significant impairment."
+    },
+    {
+      "id": "EDGE_PAT2_FUN2_CONTRIBUTES_TO",
+      "sourceId": "PAT2",
+      "targetId": "FUN2",
+      "relationshipType": "CONTRIBUTES_TO",
+      "meaning": "PAT2 may contribute to difficulty within FUN2",
+      "evidenceIds": [
+        "EVID_FUNCTIONAL_DOMAINS",
+        "EVID_FUNCTIONAL_EDGE_SYNTHESIS"
+      ],
+      "supportClassification": "synthesis",
+      "limitation": "Functional-domain linkage is educational; it does not establish clinically significant impairment."
+    },
+    {
+      "id": "EDGE_PAT1_CTX4_FEEDBACK_WITH",
+      "sourceId": "PAT1",
+      "targetId": "CTX4",
+      "relationshipType": "FEEDBACK_WITH",
+      "meaning": "Procrastination / Urgency feedback",
+      "evidenceIds": [
+        "EVID_URGENCY_FEEDBACK_LOOP",
+        "EVID_PROCRASTINATION_PATTERN",
+        "EVID_REWARD_DELAY"
+      ],
+      "supportClassification": "synthesis",
+      "limitation": "Educational reciprocal loop; not universal or ADHD-specific."
+    },
+    {
+      "id": "EDGE_FUN1_CTX2_FEEDBACK_WITH",
+      "sourceId": "FUN1",
+      "targetId": "CTX2",
+      "relationshipType": "FEEDBACK_WITH",
+      "meaning": "Work difficulty / Stress feedback",
+      "evidenceIds": [
+        "EVID_FUNCTION_STRESS_FEEDBACK_LOOP",
+        "EVID_STRESS_CONTEXT",
+        "EVID_FUNCTIONAL_DOMAINS"
+      ],
+      "supportClassification": "synthesis",
+      "limitation": "Transdiagnostic educational feedback relation; not deterministic."
+    },
+    {
+      "id": "EDGE_FUN2_CTX2_FEEDBACK_WITH",
+      "sourceId": "FUN2",
+      "targetId": "CTX2",
+      "relationshipType": "FEEDBACK_WITH",
+      "meaning": "Learning difficulty / Stress feedback",
+      "evidenceIds": [
+        "EVID_FUNCTION_STRESS_FEEDBACK_LOOP",
+        "EVID_STRESS_CONTEXT",
+        "EVID_FUNCTIONAL_DOMAINS"
+      ],
+      "supportClassification": "synthesis",
+      "limitation": "Transdiagnostic educational feedback relation; not deterministic."
+    },
+    {
+      "id": "EDGE_FUN3_CTX2_FEEDBACK_WITH",
+      "sourceId": "FUN3",
+      "targetId": "CTX2",
+      "relationshipType": "FEEDBACK_WITH",
+      "meaning": "Relationship difficulty / Stress feedback",
+      "evidenceIds": [
+        "EVID_FUNCTION_STRESS_FEEDBACK_LOOP",
+        "EVID_STRESS_CONTEXT",
+        "EVID_FUNCTIONAL_DOMAINS"
+      ],
+      "supportClassification": "synthesis",
+      "limitation": "Transdiagnostic educational feedback relation; not deterministic."
+    },
+    {
+      "id": "EDGE_FUN4_CTX2_FEEDBACK_WITH",
+      "sourceId": "FUN4",
+      "targetId": "CTX2",
+      "relationshipType": "FEEDBACK_WITH",
+      "meaning": "Daily-life difficulty / Stress feedback",
+      "evidenceIds": [
+        "EVID_FUNCTION_STRESS_FEEDBACK_LOOP",
+        "EVID_STRESS_CONTEXT",
+        "EVID_FUNCTIONAL_DOMAINS"
+      ],
+      "supportClassification": "synthesis",
+      "limitation": "Transdiagnostic educational feedback relation; not deterministic."
+    }
+  ]
+}

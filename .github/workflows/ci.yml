@@ -30,6 +30,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Validate production knowledge contract
+        run: pnpm knowledge:validate
+
       - name: Typecheck
         run: pnpm typecheck
 

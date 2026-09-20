@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://adhd-explorer.local/schemas/localization.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["locale", "records"],
+  "properties": {
+    "locale": { "enum": ["en", "fa"] },
+    "records": { "type": "array", "items": { "$ref": "#/$defs/LocalizationRecord" } }
+  },
+  "$defs": {
+    "LocalizationRecord": {
+      "type": "object", "additionalProperties": false, "required": ["targetId", "fields"],
+      "properties": {
+        "targetId": { "type": "string", "pattern": "^[A-Z][A-Z0-9_]+$" },
+        "fields": { "type": "object", "minProperties": 1, "additionalProperties": { "anyOf": [{ "type": "string", "minLength": 1 }, { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } }] } }
+      }
+    }
+  }
+}

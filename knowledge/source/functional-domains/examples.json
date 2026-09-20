@@ -1,0 +1,228 @@
+{
+  "functionalExamples": [
+    {
+      "id": "FEX_BEH1_FUN1",
+      "behaviourId": "BEH1",
+      "domainId": "FUN1",
+      "edgeId": null,
+      "relationshipStatus": "illustrative-only; not a canonical causal edge",
+      "contentId": "FEX_BEH1_FUN1"
+    },
+    {
+      "id": "FEX_BEH1_FUN2",
+      "behaviourId": "BEH1",
+      "domainId": "FUN2",
+      "edgeId": null,
+      "relationshipStatus": "illustrative-only; not a canonical causal edge",
+      "contentId": "FEX_BEH1_FUN2"
+    },
+    {
+      "id": "FEX_BEH1_FUN3",
+      "behaviourId": "BEH1",
+      "domainId": "FUN3",
+      "edgeId": null,
+      "relationshipStatus": "illustrative-only; not a canonical causal edge",
+      "contentId": "FEX_BEH1_FUN3"
+    },
+    {
+      "id": "FEX_BEH1_FUN4",
+      "behaviourId": "BEH1",
+      "domainId": "FUN4",
+      "edgeId": null,
+      "relationshipStatus": "illustrative-only; not a canonical causal edge",
+      "contentId": "FEX_BEH1_FUN4"
+    },
+    {
+      "id": "FEX_BEH2_FUN1",
+      "behaviourId": "BEH2",
+      "domainId": "FUN1",
+      "edgeId": null,
+      "relationshipStatus": "illustrative-only; not a canonical causal edge",
+      "contentId": "FEX_BEH2_FUN1"
+    },
+    {
+      "id": "FEX_BEH2_FUN2",
+      "behaviourId": "BEH2",
+      "domainId": "FUN2",
+      "edgeId": null,
+      "relationshipStatus": "illustrative-only; not a canonical causal edge",
+      "contentId": "FEX_BEH2_FUN2"
+    },
+    {
+      "id": "FEX_BEH2_FUN3",
+      "behaviourId": "BEH2",
+      "domainId": "FUN3",
+      "edgeId": null,
+      "relationshipStatus": "illustrative-only; not a canonical causal edge",
+      "contentId": "FEX_BEH2_FUN3"
+    },
+    {
+      "id": "FEX_BEH2_FUN4",
+      "behaviourId": "BEH2",
+      "domainId": "FUN4",
+      "edgeId": null,
+      "relationshipStatus": "illustrative-only; not a canonical causal edge",
+      "contentId": "FEX_BEH2_FUN4"
+    },
+    {
+      "id": "FEX_BEH3_FUN1",
+      "behaviourId": "BEH3",
+      "domainId": "FUN1",
+      "edgeId": null,
+      "relationshipStatus": "illustrative-only; not a canonical causal edge",
+      "contentId": "FEX_BEH3_FUN1"
+    },
+    {
+      "id": "FEX_BEH3_FUN2",
+      "behaviourId": "BEH3",
+      "domainId": "FUN2",
+      "edgeId": null,
+      "relationshipStatus": "illustrative-only; not a canonical causal edge",
+      "contentId": "FEX_BEH3_FUN2"
+    },
+    {
+      "id": "FEX_BEH3_FUN3",
+      "behaviourId": "BEH3",
+      "domainId": "FUN3",
+      "edgeId": null,
+      "relationshipStatus": "illustrative-only; not a canonical causal edge",
+      "contentId": "FEX_BEH3_FUN3"
+    },
+    {
+      "id": "FEX_BEH3_FUN4",
+      "behaviourId": "BEH3",
+      "domainId": "FUN4",
+      "edgeId": null,
+      "relationshipStatus": "illustrative-only; not a canonical causal edge",
+      "contentId": "FEX_BEH3_FUN4"
+    },
+    {
+      "id": "FEX_BEH4_FUN1",
+      "behaviourId": "BEH4",
+      "domainId": "FUN1",
+      "edgeId": "EDGE_BEH4_FUN1_CONTRIBUTES_TO",
+      "relationshipStatus": "canonical-edge-supported",
+      "contentId": "FEX_BEH4_FUN1"
+    },
+    {
+      "id": "FEX_BEH4_FUN2",
+      "behaviourId": "BEH4",
+      "domainId": "FUN2",
+      "edgeId": null,
+      "relationshipStatus": "illustrative-only; not a canonical causal edge",
+      "contentId": "FEX_BEH4_FUN2"
+    },
+    {
+      "id": "FEX_BEH4_FUN3",
+      "behaviourId": "BEH4",
+      "domainId": "FUN3",
+      "edgeId": null,
+      "relationshipStatus": "illustrative-only; not a canonical causal edge",
+      "contentId": "FEX_BEH4_FUN3"
+    },
+    {
+      "id": "FEX_BEH4_FUN4",
+      "behaviourId": "BEH4",
+      "domainId": "FUN4",
+      "edgeId": "EDGE_BEH4_FUN4_CONTRIBUTES_TO",
+      "relationshipStatus": "canonical-edge-supported",
+      "contentId": "FEX_BEH4_FUN4"
+    },
+    {
+      "id": "FEX_BEH5_FUN1",
+      "behaviourId": "BEH5",
+      "domainId": "FUN1",
+      "edgeId": "EDGE_BEH5_FUN1_CONTRIBUTES_TO",
+      "relationshipStatus": "canonical-edge-supported",
+      "contentId": "FEX_BEH5_FUN1"
+    },
+    {
+      "id": "FEX_BEH5_FUN2",
+      "behaviourId": "BEH5",
+      "domainId": "FUN2",
+      "edgeId": "EDGE_BEH5_FUN2_CONTRIBUTES_TO",
+      "relationshipStatus": "canonical-edge-supported",
+      "contentId": "FEX_BEH5_FUN2"
+    },
+    {
+      "id": "FEX_BEH5_FUN3",
+      "behaviourId": "BEH5",
+      "domainId": "FUN3",
+      "edgeId": null,
+      "relationshipStatus": "illustrative-only; not a canonical causal edge",
+      "contentId": "FEX_BEH5_FUN3"
+    },
+    {
+      "id": "FEX_BEH5_FUN4",
+      "behaviourId": "BEH5",
+      "domainId": "FUN4",
+      "edgeId": null,
+      "relationshipStatus": "illustrative-only; not a canonical causal edge",
+      "contentId": "FEX_BEH5_FUN4"
+    },
+    {
+      "id": "FEX_BEH6_FUN1",
+      "behaviourId": "BEH6",
+      "domainId": "FUN1",
+      "edgeId": "EDGE_BEH6_FUN1_CONTRIBUTES_TO",
+      "relationshipStatus": "canonical-edge-supported",
+      "contentId": "FEX_BEH6_FUN1"
+    },
+    {
+      "id": "FEX_BEH6_FUN2",
+      "behaviourId": "BEH6",
+      "domainId": "FUN2",
+      "edgeId": "EDGE_BEH6_FUN2_CONTRIBUTES_TO",
+      "relationshipStatus": "canonical-edge-supported",
+      "contentId": "FEX_BEH6_FUN2"
+    },
+    {
+      "id": "FEX_BEH6_FUN3",
+      "behaviourId": "BEH6",
+      "domainId": "FUN3",
+      "edgeId": null,
+      "relationshipStatus": "illustrative-only; not a canonical causal edge",
+      "contentId": "FEX_BEH6_FUN3"
+    },
+    {
+      "id": "FEX_BEH6_FUN4",
+      "behaviourId": "BEH6",
+      "domainId": "FUN4",
+      "edgeId": "EDGE_BEH6_FUN4_CONTRIBUTES_TO",
+      "relationshipStatus": "canonical-edge-supported",
+      "contentId": "FEX_BEH6_FUN4"
+    },
+    {
+      "id": "FEX_BEH7_FUN1",
+      "behaviourId": "BEH7",
+      "domainId": "FUN1",
+      "edgeId": null,
+      "relationshipStatus": "illustrative-only; not a canonical causal edge",
+      "contentId": "FEX_BEH7_FUN1"
+    },
+    {
+      "id": "FEX_BEH7_FUN2",
+      "behaviourId": "BEH7",
+      "domainId": "FUN2",
+      "edgeId": null,
+      "relationshipStatus": "illustrative-only; not a canonical causal edge",
+      "contentId": "FEX_BEH7_FUN2"
+    },
+    {
+      "id": "FEX_BEH7_FUN3",
+      "behaviourId": "BEH7",
+      "domainId": "FUN3",
+      "edgeId": "EDGE_BEH7_FUN3_CONTRIBUTES_TO",
+      "relationshipStatus": "canonical-edge-supported",
+      "contentId": "FEX_BEH7_FUN3"
+    },
+    {
+      "id": "FEX_BEH7_FUN4",
+      "behaviourId": "BEH7",
+      "domainId": "FUN4",
+      "edgeId": null,
+      "relationshipStatus": "illustrative-only; not a canonical causal edge",
+      "contentId": "FEX_BEH7_FUN4"
+    }
+  ]
+}

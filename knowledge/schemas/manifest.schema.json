@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://adhd-explorer.local/schemas/manifest.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "ontologyVersion", "visualGrammarVersion", "behaviourFrameworkVersion", "contentModelVersion", "evidenceReviewVersion", "knowledgeReleaseId", "languages", "publicationStatus", "releaseExpectations"],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "ontologyVersion": { "type": "string", "minLength": 1 },
+    "visualGrammarVersion": { "type": "string", "minLength": 1 },
+    "behaviourFrameworkVersion": { "type": "string", "minLength": 1 },
+    "contentModelVersion": { "type": "string", "minLength": 1 },
+    "evidenceReviewVersion": { "type": "string", "minLength": 1 },
+    "knowledgeReleaseId": { "type": "string", "pattern": "^ADHD-KNOWLEDGE-" },
+    "languages": { "type": "array", "const": ["en", "fa"] },
+    "publicationStatus": { "const": "reviewed-production" },
+    "releaseExpectations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["nodes", "edges", "pathways", "mappings", "functionalExamples", "alternatives", "feedbackLoops", "presentations", "sources", "evidence"],
+      "properties": {
+        "nodes": { "type": "integer", "minimum": 1 }, "edges": { "type": "integer", "minimum": 1 },
+        "pathways": { "type": "integer", "minimum": 1 }, "mappings": { "type": "integer", "minimum": 1 },
+        "functionalExamples": { "type": "integer", "minimum": 1 }, "alternatives": { "type": "integer", "minimum": 1 },
+        "feedbackLoops": { "type": "integer", "minimum": 1 }, "presentations": { "type": "integer", "minimum": 1 },
+        "sources": { "type": "integer", "minimum": 1 }, "evidence": { "type": "integer", "minimum": 1 }
+      }
+    }
+  }
+}

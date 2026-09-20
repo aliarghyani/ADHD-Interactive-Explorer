@@ -1,0 +1,60 @@
+{
+  "presentations": [
+    {
+      "id": "PRESENTATION_INATTENTIVE",
+      "clinicalAnchorIds": [
+        "CA1"
+      ],
+      "status": "current-formal",
+      "sourceIds": [
+        "SRC_NIMH_ADHD_2024",
+        "SRC_CDC_ADHD_SYMPTOMS_2026",
+        "SRC_NICE_NG87_2018"
+      ],
+      "safetyId": "SAFETY_PRESENTATION_CAUTION",
+      "contentId": "PRESENTATION_INATTENTIVE"
+    },
+    {
+      "id": "PRESENTATION_HYPERACTIVE_IMPULSIVE",
+      "clinicalAnchorIds": [
+        "CA2"
+      ],
+      "status": "current-formal",
+      "sourceIds": [
+        "SRC_NIMH_ADHD_2024",
+        "SRC_CDC_ADHD_SYMPTOMS_2026",
+        "SRC_NICE_NG87_2018"
+      ],
+      "safetyId": "SAFETY_PRESENTATION_CAUTION",
+      "contentId": "PRESENTATION_HYPERACTIVE_IMPULSIVE"
+    },
+    {
+      "id": "PRESENTATION_COMBINED",
+      "clinicalAnchorIds": [
+        "CA1",
+        "CA2"
+      ],
+      "status": "current-formal",
+      "sourceIds": [
+        "SRC_NIMH_ADHD_2024",
+        "SRC_CDC_ADHD_SYMPTOMS_2026",
+        "SRC_NICE_NG87_2018"
+      ],
+      "safetyId": "SAFETY_PRESENTATION_CAUTION",
+      "contentId": "PRESENTATION_COMBINED"
+    },
+    {
+      "id": "HISTORICAL_ADD_NOTE",
+      "clinicalAnchorIds": [
+        "CA1"
+      ],
+      "status": "historical-only",
+      "sourceIds": [
+        "SRC_NIMH_ADHD_2024",
+        "SRC_CDC_ADHD_SYMPTOMS_2026"
+      ],
+      "safetyId": "SAFETY_PRESENTATION_CAUTION",
+      "contentId": "HISTORICAL_ADD_NOTE"
+    }
+  ]
+}

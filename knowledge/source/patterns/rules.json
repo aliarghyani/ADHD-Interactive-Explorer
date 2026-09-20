@@ -1,0 +1,31 @@
+{
+  "rules": [
+    {
+      "id": "RULE_PAT1_PROCRASTINATION",
+      "patternId": "PAT1",
+      "sourceBehaviourIds": [
+        "BEH1"
+      ],
+      "repetitionRequirement": "Repeated Starting delay; intended action; maladaptive or meaningful negative consequences.",
+      "evidenceIds": [
+        "EVID_PROCRASTINATION_PATTERN"
+      ],
+      "contentId": "RULE_PAT1_PROCRASTINATION"
+    },
+    {
+      "id": "RULE_PAT2_PERFORMANCE_VARIABILITY",
+      "patternId": "PAT2",
+      "sourceBehaviourIds": [
+        "BEH2",
+        "BEH4",
+        "BEH6"
+      ],
+      "repetitionRequirement": "Meaningful repeated variation across occasions, contexts, or time.",
+      "evidenceIds": [
+        "EVID_PERFORMANCE_VARIABILITY_EXPERIMENTAL",
+        "EVID_PERFORMANCE_VARIABILITY_EVERYDAY"
+      ],
+      "contentId": "RULE_PAT2_PERFORMANCE_VARIABILITY"
+    }
+  ]
+}

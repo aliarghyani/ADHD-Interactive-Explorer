@@ -1,0 +1,422 @@
+{
+  "pathways": [
+    {
+      "id": "PATH_BEH1_COMPLEXITY_GOAL",
+      "behaviourId": "BEH1",
+      "orderedNodeIds": [
+        "CTX6",
+        "REG3",
+        "BEH1"
+      ],
+      "edgeIds": [
+        "EDGE_CTX6_REG3_MODULATES",
+        "EDGE_REG3_BEH1_CONTRIBUTES_TO"
+      ],
+      "evidenceIds": [
+        "EVID_TASK_COMPLEXITY",
+        "EVID_GOAL_MANAGEMENT"
+      ],
+      "mvpStatus": "`mvp`",
+      "contentId": "PATH_BEH1_COMPLEXITY_GOAL"
+    },
+    {
+      "id": "PATH_BEH1_DELAYED_REWARD",
+      "behaviourId": "BEH1",
+      "orderedNodeIds": [
+        "CTX5",
+        "REG5",
+        "BEH1"
+      ],
+      "edgeIds": [
+        "EDGE_CTX5_REG5_MODULATES",
+        "EDGE_REG5_BEH1_CONTRIBUTES_TO"
+      ],
+      "evidenceIds": [
+        "EVID_SALIENCE_REWARD_CONTEXT",
+        "EVID_REWARD_DELAY"
+      ],
+      "mvpStatus": "`mvp`",
+      "contentId": "PATH_BEH1_DELAYED_REWARD"
+    },
+    {
+      "id": "PATH_BEH1_URGENCY",
+      "behaviourId": "BEH1",
+      "orderedNodeIds": [
+        "CTX4",
+        "REG5",
+        "BEH1"
+      ],
+      "edgeIds": [
+        "EDGE_CTX4_REG5_MODULATES",
+        "EDGE_REG5_BEH1_CONTRIBUTES_TO"
+      ],
+      "evidenceIds": [
+        "EVID_SALIENCE_REWARD_CONTEXT",
+        "EVID_REWARD_DELAY"
+      ],
+      "mvpStatus": "`mvp`",
+      "contentId": "PATH_BEH1_URGENCY"
+    },
+    {
+      "id": "PATH_BEH1_STRESS",
+      "behaviourId": "BEH1",
+      "orderedNodeIds": [
+        "CTX2",
+        "REG6",
+        "BEH1"
+      ],
+      "edgeIds": [
+        "EDGE_CTX2_REG6_MODULATES",
+        "EDGE_REG6_BEH1_CONTRIBUTES_TO"
+      ],
+      "evidenceIds": [
+        "EVID_STRESS_CONTEXT",
+        "EVID_EMOTIONAL_REGULATION"
+      ],
+      "mvpStatus": "`mvp`",
+      "contentId": "PATH_BEH1_STRESS"
+    },
+    {
+      "id": "PATH_BEH2_INTERRUPTION",
+      "behaviourId": "BEH2",
+      "orderedNodeIds": [
+        "CTX8",
+        "REG1",
+        "BEH2"
+      ],
+      "edgeIds": [
+        "EDGE_CTX8_REG1_MODULATES",
+        "EDGE_REG1_BEH2_CONTRIBUTES_TO"
+      ],
+      "evidenceIds": [
+        "EVID_INTERRUPTION_CONTEXT",
+        "EVID_ATTENTION_REGULATION"
+      ],
+      "mvpStatus": "`mvp`",
+      "contentId": "PATH_BEH2_INTERRUPTION"
+    },
+    {
+      "id": "PATH_BEH2_SLEEP",
+      "behaviourId": "BEH2",
+      "orderedNodeIds": [
+        "CTX1",
+        "REG1",
+        "BEH2"
+      ],
+      "edgeIds": [
+        "EDGE_CTX1_REG1_MODULATES",
+        "EDGE_REG1_BEH2_CONTRIBUTES_TO"
+      ],
+      "evidenceIds": [
+        "EVID_SLEEP_CONTEXT",
+        "EVID_ATTENTION_REGULATION"
+      ],
+      "mvpStatus": "`mvp`",
+      "contentId": "PATH_BEH2_SLEEP"
+    },
+    {
+      "id": "PATH_BEH2_TASK_SALIENCE",
+      "behaviourId": "BEH2",
+      "orderedNodeIds": [
+        "CTX3",
+        "REG5",
+        "BEH2"
+      ],
+      "edgeIds": [
+        "EDGE_CTX3_REG5_MODULATES",
+        "EDGE_REG5_BEH2_CONTRIBUTES_TO"
+      ],
+      "evidenceIds": [
+        "EVID_SALIENCE_REWARD_CONTEXT",
+        "EVID_REWARD_DELAY"
+      ],
+      "mvpStatus": "`mvp`",
+      "contentId": "PATH_BEH2_TASK_SALIENCE"
+    },
+    {
+      "id": "PATH_BEH2_REWARD_IMMEDIACY",
+      "behaviourId": "BEH2",
+      "orderedNodeIds": [
+        "CTX5",
+        "REG5",
+        "BEH2"
+      ],
+      "edgeIds": [
+        "EDGE_CTX5_REG5_MODULATES",
+        "EDGE_REG5_BEH2_CONTRIBUTES_TO"
+      ],
+      "evidenceIds": [
+        "EVID_SALIENCE_REWARD_CONTEXT",
+        "EVID_REWARD_DELAY"
+      ],
+      "mvpStatus": "`mvp`",
+      "contentId": "PATH_BEH2_REWARD_IMMEDIACY"
+    },
+    {
+      "id": "PATH_BEH3_INTERRUPTION_REORIENTATION",
+      "behaviourId": "BEH3",
+      "orderedNodeIds": [
+        "CTX8",
+        "REG7",
+        "BEH3"
+      ],
+      "edgeIds": [
+        "EDGE_CTX8_REG7_MODULATES",
+        "EDGE_REG7_BEH3_CONTRIBUTES_TO"
+      ],
+      "evidenceIds": [
+        "EVID_INTERRUPTION_CONTEXT",
+        "EVID_TASK_SWITCHING"
+      ],
+      "mvpStatus": "`mvp`",
+      "contentId": "PATH_BEH3_INTERRUPTION_REORIENTATION"
+    },
+    {
+      "id": "PATH_BEH3_REPEATED_INTERRUPTION",
+      "behaviourId": "BEH3",
+      "orderedNodeIds": [
+        "CTX8",
+        "REG7",
+        "BEH3"
+      ],
+      "edgeIds": [
+        "EDGE_CTX8_REG7_MODULATES",
+        "EDGE_REG7_BEH3_CONTRIBUTES_TO"
+      ],
+      "evidenceIds": [
+        "EVID_INTERRUPTION_CONTEXT",
+        "EVID_TASK_SWITCHING"
+      ],
+      "mvpStatus": "`mvp`",
+      "contentId": "PATH_BEH3_REPEATED_INTERRUPTION"
+    },
+    {
+      "id": "PATH_BEH4_COMPLEXITY",
+      "behaviourId": "BEH4",
+      "orderedNodeIds": [
+        "CTX6",
+        "REG2",
+        "BEH4"
+      ],
+      "edgeIds": [
+        "EDGE_CTX6_REG2_MODULATES",
+        "EDGE_REG2_BEH4_CONTRIBUTES_TO"
+      ],
+      "evidenceIds": [
+        "EVID_TASK_COMPLEXITY",
+        "EVID_WORKING_MEMORY"
+      ],
+      "mvpStatus": "`mvp`",
+      "contentId": "PATH_BEH4_COMPLEXITY"
+    },
+    {
+      "id": "PATH_BEH4_STRESS",
+      "behaviourId": "BEH4",
+      "orderedNodeIds": [
+        "CTX2",
+        "REG2",
+        "BEH4"
+      ],
+      "edgeIds": [
+        "EDGE_CTX2_REG2_MODULATES",
+        "EDGE_REG2_BEH4_CONTRIBUTES_TO"
+      ],
+      "evidenceIds": [
+        "EVID_STRESS_CONTEXT",
+        "EVID_WORKING_MEMORY"
+      ],
+      "mvpStatus": "`mvp`",
+      "contentId": "PATH_BEH4_STRESS"
+    },
+    {
+      "id": "PATH_BEH4_STRUCTURE",
+      "behaviourId": "BEH4",
+      "orderedNodeIds": [
+        "CTX7",
+        "REG2",
+        "BEH4"
+      ],
+      "edgeIds": [
+        "EDGE_CTX7_REG2_MODULATES",
+        "EDGE_REG2_BEH4_CONTRIBUTES_TO"
+      ],
+      "evidenceIds": [
+        "EVID_EXTERNAL_STRUCTURE",
+        "EVID_WORKING_MEMORY"
+      ],
+      "mvpStatus": "`mvp`",
+      "contentId": "PATH_BEH4_STRUCTURE"
+    },
+    {
+      "id": "PATH_BEH5_COMPLEXITY_GOAL",
+      "behaviourId": "BEH5",
+      "orderedNodeIds": [
+        "CTX6",
+        "REG3",
+        "BEH5"
+      ],
+      "edgeIds": [
+        "EDGE_CTX6_REG3_MODULATES",
+        "EDGE_REG3_BEH5_CONTRIBUTES_TO"
+      ],
+      "evidenceIds": [
+        "EVID_TASK_COMPLEXITY",
+        "EVID_GOAL_MANAGEMENT"
+      ],
+      "mvpStatus": "`mvp`",
+      "contentId": "PATH_BEH5_COMPLEXITY_GOAL"
+    },
+    {
+      "id": "PATH_BEH5_COMPLEXITY_WM",
+      "behaviourId": "BEH5",
+      "orderedNodeIds": [
+        "CTX6",
+        "REG2",
+        "BEH5"
+      ],
+      "edgeIds": [
+        "EDGE_CTX6_REG2_MODULATES",
+        "EDGE_REG2_BEH5_CONTRIBUTES_TO"
+      ],
+      "evidenceIds": [
+        "EVID_TASK_COMPLEXITY",
+        "EVID_WORKING_MEMORY"
+      ],
+      "mvpStatus": "`mvp`",
+      "contentId": "PATH_BEH5_COMPLEXITY_WM"
+    },
+    {
+      "id": "PATH_BEH5_STRESS",
+      "behaviourId": "BEH5",
+      "orderedNodeIds": [
+        "CTX2",
+        "REG2",
+        "BEH5"
+      ],
+      "edgeIds": [
+        "EDGE_CTX2_REG2_MODULATES",
+        "EDGE_REG2_BEH5_CONTRIBUTES_TO"
+      ],
+      "evidenceIds": [
+        "EVID_STRESS_CONTEXT",
+        "EVID_WORKING_MEMORY"
+      ],
+      "mvpStatus": "`mvp`",
+      "contentId": "PATH_BEH5_STRESS"
+    },
+    {
+      "id": "PATH_BEH5_STRUCTURE_WM",
+      "behaviourId": "BEH5",
+      "orderedNodeIds": [
+        "CTX7",
+        "REG2",
+        "BEH5"
+      ],
+      "edgeIds": [
+        "EDGE_CTX7_REG2_MODULATES",
+        "EDGE_REG2_BEH5_CONTRIBUTES_TO"
+      ],
+      "evidenceIds": [
+        "EVID_EXTERNAL_STRUCTURE",
+        "EVID_WORKING_MEMORY"
+      ],
+      "mvpStatus": "`mvp`",
+      "contentId": "PATH_BEH5_STRUCTURE_WM"
+    },
+    {
+      "id": "PATH_BEH5_STRUCTURE_GOAL",
+      "behaviourId": "BEH5",
+      "orderedNodeIds": [
+        "CTX7",
+        "REG3",
+        "BEH5"
+      ],
+      "edgeIds": [
+        "EDGE_CTX7_REG3_MODULATES",
+        "EDGE_REG3_BEH5_CONTRIBUTES_TO"
+      ],
+      "evidenceIds": [
+        "EVID_EXTERNAL_STRUCTURE",
+        "EVID_GOAL_MANAGEMENT"
+      ],
+      "mvpStatus": "`mvp`",
+      "contentId": "PATH_BEH5_STRUCTURE_GOAL"
+    },
+    {
+      "id": "PATH_BEH6_COMPLEXITY",
+      "behaviourId": "BEH6",
+      "orderedNodeIds": [
+        "CTX6",
+        "REG3",
+        "BEH6"
+      ],
+      "edgeIds": [
+        "EDGE_CTX6_REG3_MODULATES",
+        "EDGE_REG3_BEH6_CONTRIBUTES_TO"
+      ],
+      "evidenceIds": [
+        "EVID_TASK_COMPLEXITY",
+        "EVID_GOAL_MANAGEMENT"
+      ],
+      "mvpStatus": "`mvp`",
+      "contentId": "PATH_BEH6_COMPLEXITY"
+    },
+    {
+      "id": "PATH_BEH6_STRUCTURE",
+      "behaviourId": "BEH6",
+      "orderedNodeIds": [
+        "CTX7",
+        "REG3",
+        "BEH6"
+      ],
+      "edgeIds": [
+        "EDGE_CTX7_REG3_MODULATES",
+        "EDGE_REG3_BEH6_CONTRIBUTES_TO"
+      ],
+      "evidenceIds": [
+        "EVID_EXTERNAL_STRUCTURE",
+        "EVID_GOAL_MANAGEMENT"
+      ],
+      "mvpStatus": "`mvp`",
+      "contentId": "PATH_BEH6_STRUCTURE"
+    },
+    {
+      "id": "PATH_BEH7_SLEEP",
+      "behaviourId": "BEH7",
+      "orderedNodeIds": [
+        "CTX1",
+        "REG4",
+        "BEH7"
+      ],
+      "edgeIds": [
+        "EDGE_CTX1_REG4_MODULATES",
+        "EDGE_REG4_BEH7_CONTRIBUTES_TO"
+      ],
+      "evidenceIds": [
+        "EVID_SLEEP_CONTEXT",
+        "EVID_RESPONSE_INHIBITION"
+      ],
+      "mvpStatus": "`mvp`",
+      "contentId": "PATH_BEH7_SLEEP"
+    },
+    {
+      "id": "PATH_BEH7_EMOTIONAL_LOAD",
+      "behaviourId": "BEH7",
+      "orderedNodeIds": [
+        "CTX2",
+        "REG6",
+        "BEH7"
+      ],
+      "edgeIds": [
+        "EDGE_CTX2_REG6_MODULATES",
+        "EDGE_REG6_BEH7_CONTRIBUTES_TO"
+      ],
+      "evidenceIds": [
+        "EVID_STRESS_CONTEXT",
+        "EVID_EMOTIONAL_REGULATION"
+      ],
+      "mvpStatus": "`mvp`",
+      "contentId": "PATH_BEH7_EMOTIONAL_LOAD"
+    }
+  ]
+}

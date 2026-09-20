@@ -1,0 +1,491 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://adhd-explorer.local/schemas/entities.schema.json",
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9_]+$"
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ids": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/id"
+      },
+      "uniqueItems": false
+    },
+    "ConceptNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "category",
+        "canonicalName",
+        "definition",
+        "evidenceStatus",
+        "evidenceIds"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "category": {
+          "enum": [
+            "clinical-anchor",
+            "context",
+          "regulation",
+            "behaviour",
+            "pattern",
+            "functional-domain"
+          ]
+        },
+        "canonicalName": {
+          "$ref": "#/$defs/text"
+        },
+        "definition": {
+          "$ref": "#/$defs/text"
+        },
+        "evidenceStatus": {
+          "$ref": "#/$defs/text"
+        },
+        "evidenceIds": {
+          "$ref": "#/$defs/ids"
+        }
+      }
+    },
+    "RelationshipEdge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "sourceId",
+        "targetId",
+        "relationshipType",
+        "meaning",
+        "evidenceIds",
+        "supportClassification",
+        "limitation"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "sourceId": {
+          "$ref": "#/$defs/id"
+        },
+        "targetId": {
+          "$ref": "#/$defs/id"
+        },
+        "relationshipType": {
+          "enum": [
+            "MODULATES",
+            "CONTRIBUTES_TO",
+            "FEEDBACK_WITH"
+          ]
+        },
+        "meaning": {
+          "$ref": "#/$defs/text"
+        },
+        "evidenceIds": {
+          "$ref": "#/$defs/ids",
+          "minItems": 1
+        },
+        "supportClassification": {
+          "$ref": "#/$defs/text"
+        },
+        "limitation": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "BehaviourEntry": {
+      "$ref": "#/$defs/contentRecord"
+    },
+    "EducationalPathway": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/contentRecord"
+        },
+        {
+          "type": "object",
+          "required": [
+            "behaviourId",
+            "orderedNodeIds",
+            "edgeIds",
+            "evidenceIds",
+            "mvpStatus"
+          ],
+          "properties": {
+            "behaviourId": {
+              "$ref": "#/$defs/id"
+            },
+            "orderedNodeIds": {
+              "$ref": "#/$defs/ids",
+              "minItems": 2
+            },
+            "edgeIds": {
+              "$ref": "#/$defs/ids",
+              "minItems": 1
+            },
+            "evidenceIds": {
+              "$ref": "#/$defs/ids",
+              "minItems": 1
+            },
+            "mvpStatus": {
+              "$ref": "#/$defs/text"
+            }
+          }
+        }
+      ]
+    },
+    "ContextMapping": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/contentRecord"
+        },
+        {
+          "type": "object",
+          "required": [
+            "contextId",
+            "behaviourId",
+            "regulationId",
+            "qualitativeRole",
+            "evidenceIds"
+          ],
+          "properties": {
+            "contextId": {
+              "$ref": "#/$defs/id"
+            },
+            "behaviourId": {
+              "$ref": "#/$defs/id"
+            },
+            "regulationId": {
+              "$ref": "#/$defs/id"
+            },
+            "qualitativeRole": {
+              "$ref": "#/$defs/text"
+            },
+            "evidenceIds": {
+              "$ref": "#/$defs/ids",
+              "minItems": 1
+            }
+          }
+        }
+      ]
+    },
+    "PatternRule": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/contentRecord"
+        },
+        {
+          "type": "object",
+          "required": [
+            "patternId",
+            "sourceBehaviourIds",
+            "repetitionRequirement",
+            "evidenceIds"
+          ],
+          "properties": {
+            "patternId": {
+              "$ref": "#/$defs/id"
+            },
+            "sourceBehaviourIds": {
+              "$ref": "#/$defs/ids",
+              "minItems": 1
+            },
+            "repetitionRequirement": {
+              "$ref": "#/$defs/text"
+            },
+            "evidenceIds": {
+              "$ref": "#/$defs/ids",
+              "minItems": 1
+            }
+          }
+        }
+      ]
+    },
+    "FunctionalExample": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/contentRecord"
+        },
+        {
+          "type": "object",
+          "required": [
+            "behaviourId",
+            "domainId",
+            "edgeId",
+            "relationshipStatus"
+          ],
+          "properties": {
+            "behaviourId": {
+              "$ref": "#/$defs/id"
+            },
+            "domainId": {
+              "$ref": "#/$defs/id"
+            },
+            "edgeId": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/id"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "relationshipStatus": {
+              "$ref": "#/$defs/text"
+            }
+          }
+        }
+      ]
+    },
+    "AlternativeExplanation": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/contentRecord"
+        },
+        {
+          "type": "object",
+          "required": [
+            "relevantBehaviourIds",
+            "evidenceIds",
+            "caution"
+          ],
+          "properties": {
+            "relevantBehaviourIds": {
+              "$ref": "#/$defs/ids",
+              "minItems": 1
+            },
+            "evidenceIds": {
+              "$ref": "#/$defs/ids",
+              "minItems": 1
+            },
+            "caution": {
+              "$ref": "#/$defs/text"
+            }
+          }
+        }
+      ]
+    },
+    "FeedbackLoop": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/contentRecord"
+        },
+        {
+          "type": "object",
+          "required": [
+            "nodeIds",
+            "edgeIds",
+            "evidenceIds",
+            "interruptionPoints"
+          ],
+          "properties": {
+            "nodeIds": {
+              "$ref": "#/$defs/ids",
+              "minItems": 2
+            },
+            "edgeIds": {
+              "$ref": "#/$defs/ids",
+              "minItems": 1
+            },
+            "evidenceIds": {
+              "$ref": "#/$defs/ids",
+              "minItems": 1
+            },
+            "interruptionPoints": {
+              "$ref": "#/$defs/text"
+            }
+          }
+        }
+      ]
+    },
+    "PresentationEducation": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/contentRecord"
+        },
+        {
+          "type": "object",
+          "required": [
+            "clinicalAnchorIds",
+            "status",
+            "sourceIds",
+            "safetyId"
+          ],
+          "properties": {
+            "clinicalAnchorIds": {
+              "$ref": "#/$defs/ids",
+              "minItems": 1
+            },
+            "status": {
+              "$ref": "#/$defs/text"
+            },
+            "sourceIds": {
+              "$ref": "#/$defs/ids",
+              "minItems": 1
+            },
+            "safetyId": {
+              "$ref": "#/$defs/id"
+            }
+          }
+        }
+      ]
+    },
+    "EvidenceMetadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "level",
+        "epistemicStatus",
+        "constructStatus",
+        "languageStrategy",
+        "summary",
+        "limitations",
+        "sourceIds",
+        "lastReviewed",
+        "reviewVersion"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "level": {
+          "enum": [
+          "Clinical",
+          "Strong",
+          "Moderate",
+          "Limited"
+          ]
+        },
+        "epistemicStatus": {
+          "$ref": "#/$defs/text"
+        },
+        "constructStatus": {
+          "$ref": "#/$defs/text"
+        },
+        "languageStrategy": {
+          "$ref": "#/$defs/text"
+        },
+        "summary": {
+          "$ref": "#/$defs/text"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/text"
+          },
+          "minItems": 1
+        },
+        "sourceIds": {
+          "$ref": "#/$defs/ids",
+          "minItems": 1
+        },
+        "lastReviewed": {
+          "type": "string",
+          "format": "date"
+        },
+        "reviewVersion": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "SourceReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "sourceType",
+        "title",
+        "authorsOrOrganization",
+        "year",
+        "publicationType",
+        "journalOrSeries",
+        "citationText",
+        "relevanceNote",
+        "url"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "sourceType": {
+          "$ref": "#/$defs/text"
+        },
+        "title": {
+          "$ref": "#/$defs/text"
+        },
+        "authorsOrOrganization": {
+          "$ref": "#/$defs/text"
+        },
+        "year": {
+          "type": "integer",
+          "minimum": 1900
+        },
+        "publicationType": {
+          "$ref": "#/$defs/text"
+        },
+        "journalOrSeries": {
+          "$ref": "#/$defs/text"
+        },
+        "citationText": {
+          "$ref": "#/$defs/text"
+        },
+        "relevanceNote": {
+          "$ref": "#/$defs/text"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "doi": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "SafetyCopy": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/contentRecord"
+        },
+        {
+          "type": "object",
+          "required": [
+            "context",
+            "displayRequirement"
+          ],
+          "properties": {
+            "context": {
+              "$ref": "#/$defs/text"
+            },
+            "displayRequirement": {
+              "$ref": "#/$defs/text"
+            }
+          }
+        }
+      ]
+    },
+    "contentRecord": {
+      "type": "object",
+      "required": [
+        "id",
+        "contentId"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "contentId": {
+          "$ref": "#/$defs/id"
+        }
+      }
+    }
+  }
+}

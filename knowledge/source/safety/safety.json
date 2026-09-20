@@ -1,0 +1,52 @@
+{
+  "safety": [
+    {
+      "id": "SAFETY_GLOBAL_EDUCATIONAL_DISCLAIMER",
+      "context": "`global-educational-disclaimer`",
+      "displayRequirement": "`mandatory`",
+      "contentId": "SAFETY_GLOBAL_EDUCATIONAL_DISCLAIMER"
+    },
+    {
+      "id": "SAFETY_GRAPH_DISCLAIMER",
+      "context": "`graph-disclaimer`",
+      "displayRequirement": "`mandatory`",
+      "contentId": "SAFETY_GRAPH_DISCLAIMER"
+    },
+    {
+      "id": "SAFETY_BEHAVIOUR_EXPLORER",
+      "context": "`behaviour-explorer`",
+      "displayRequirement": "`mandatory`",
+      "contentId": "SAFETY_BEHAVIOUR_EXPLORER"
+    },
+    {
+      "id": "SAFETY_ALTERNATIVE_EXPLANATION",
+      "context": "`alternative-explanation-reminder`",
+      "displayRequirement": "`mandatory`",
+      "contentId": "SAFETY_ALTERNATIVE_EXPLANATION"
+    },
+    {
+      "id": "SAFETY_RECURRING_PATTERN",
+      "context": "`recurring-pattern-caution`",
+      "displayRequirement": "`mandatory`",
+      "contentId": "SAFETY_RECURRING_PATTERN"
+    },
+    {
+      "id": "SAFETY_FUNCTIONAL_IMPACT",
+      "context": "`functional-impact-caution`",
+      "displayRequirement": "`mandatory`",
+      "contentId": "SAFETY_FUNCTIONAL_IMPACT"
+    },
+    {
+      "id": "SAFETY_PRESENTATION_CAUTION",
+      "context": "`presentation-caution`",
+      "displayRequirement": "`mandatory`",
+      "contentId": "SAFETY_PRESENTATION_CAUTION"
+    },
+    {
+      "id": "SAFETY_GROUP_LEVEL_EVIDENCE",
+      "context": "`group-level-evidence-caution`",
+      "displayRequirement": "`mandatory`",
+      "contentId": "SAFETY_GROUP_LEVEL_EVIDENCE"
+    }
+  ]
+}

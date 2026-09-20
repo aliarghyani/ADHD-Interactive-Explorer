@@ -1,0 +1,210 @@
+{
+  "alternatives": [
+    {
+      "id": "ALT_SLEEP_PHYSICAL_STATE",
+      "relevantBehaviourIds": [
+        "BEH1",
+        "BEH2",
+        "BEH3",
+        "BEH4",
+        "BEH5",
+        "BEH6",
+        "BEH7"
+      ],
+      "evidenceIds": [
+        "EVID_ALTERNATIVE_EXPLANATIONS"
+      ],
+      "caution": "Display as “Other possible contributors.” Never use this record to infer a diagnosis, eliminate a condition, rank explanations, or state what is most likely for the user.",
+      "contentId": "ALT_SLEEP_PHYSICAL_STATE"
+    },
+    {
+      "id": "ALT_ACUTE_STRESS",
+      "relevantBehaviourIds": [
+        "BEH1",
+        "BEH2",
+        "BEH3",
+        "BEH4",
+        "BEH5",
+        "BEH6",
+        "BEH7"
+      ],
+      "evidenceIds": [
+        "EVID_ALTERNATIVE_EXPLANATIONS"
+      ],
+      "caution": "Display as “Other possible contributors.” Never use this record to infer a diagnosis, eliminate a condition, rank explanations, or state what is most likely for the user.",
+      "contentId": "ALT_ACUTE_STRESS"
+    },
+    {
+      "id": "ALT_ANXIETY_EMOTIONAL_DISTRESS",
+      "relevantBehaviourIds": [
+        "BEH1",
+        "BEH2",
+        "BEH4",
+        "BEH5",
+        "BEH6",
+        "BEH7"
+      ],
+      "evidenceIds": [
+        "EVID_ALTERNATIVE_EXPLANATIONS"
+      ],
+      "caution": "Display as “Other possible contributors.” Never use this record to infer a diagnosis, eliminate a condition, rank explanations, or state what is most likely for the user.",
+      "contentId": "ALT_ANXIETY_EMOTIONAL_DISTRESS"
+    },
+    {
+      "id": "ALT_LOW_MOOD",
+      "relevantBehaviourIds": [
+        "BEH1",
+        "BEH2",
+        "BEH4",
+        "BEH5",
+        "BEH6"
+      ],
+      "evidenceIds": [
+        "EVID_ALTERNATIVE_EXPLANATIONS"
+      ],
+      "caution": "Display as “Other possible contributors.” Never use this record to infer a diagnosis, eliminate a condition, rank explanations, or state what is most likely for the user.",
+      "contentId": "ALT_LOW_MOOD"
+    },
+    {
+      "id": "ALT_BURNOUT",
+      "relevantBehaviourIds": [
+        "BEH1",
+        "BEH2",
+        "BEH4",
+        "BEH5",
+        "BEH6"
+      ],
+      "evidenceIds": [
+        "EVID_ALTERNATIVE_EXPLANATIONS"
+      ],
+      "caution": "Display as “Other possible contributors.” Never use this record to infer a diagnosis, eliminate a condition, rank explanations, or state what is most likely for the user.",
+      "contentId": "ALT_BURNOUT"
+    },
+    {
+      "id": "ALT_GRIEF",
+      "relevantBehaviourIds": [
+        "BEH1",
+        "BEH2",
+        "BEH4",
+        "BEH5",
+        "BEH6",
+        "BEH7"
+      ],
+      "evidenceIds": [
+        "EVID_ALTERNATIVE_EXPLANATIONS"
+      ],
+      "caution": "Display as “Other possible contributors.” Never use this record to infer a diagnosis, eliminate a condition, rank explanations, or state what is most likely for the user.",
+      "contentId": "ALT_GRIEF"
+    },
+    {
+      "id": "ALT_TASK_DESIGN",
+      "relevantBehaviourIds": [
+        "BEH1",
+        "BEH2",
+        "BEH3",
+        "BEH4",
+        "BEH5",
+        "BEH6"
+      ],
+      "evidenceIds": [
+        "EVID_ALTERNATIVE_EXPLANATIONS"
+      ],
+      "caution": "Display as “Other possible contributors.” Never use this record to infer a diagnosis, eliminate a condition, rank explanations, or state what is most likely for the user.",
+      "contentId": "ALT_TASK_DESIGN"
+    },
+    {
+      "id": "ALT_WORKLOAD",
+      "relevantBehaviourIds": [
+        "BEH1",
+        "BEH2",
+        "BEH3",
+        "BEH4",
+        "BEH5",
+        "BEH6"
+      ],
+      "evidenceIds": [
+        "EVID_ALTERNATIVE_EXPLANATIONS"
+      ],
+      "caution": "Display as “Other possible contributors.” Never use this record to infer a diagnosis, eliminate a condition, rank explanations, or state what is most likely for the user.",
+      "contentId": "ALT_WORKLOAD"
+    },
+    {
+      "id": "ALT_ENVIRONMENT",
+      "relevantBehaviourIds": [
+        "BEH1",
+        "BEH2",
+        "BEH3",
+        "BEH4",
+        "BEH5",
+        "BEH6"
+      ],
+      "evidenceIds": [
+        "EVID_ALTERNATIVE_EXPLANATIONS"
+      ],
+      "caution": "Display as “Other possible contributors.” Never use this record to infer a diagnosis, eliminate a condition, rank explanations, or state what is most likely for the user.",
+      "contentId": "ALT_ENVIRONMENT"
+    },
+    {
+      "id": "ALT_SKILL_GAP",
+      "relevantBehaviourIds": [
+        "BEH1",
+        "BEH3",
+        "BEH4",
+        "BEH5",
+        "BEH6"
+      ],
+      "evidenceIds": [
+        "EVID_ALTERNATIVE_EXPLANATIONS"
+      ],
+      "caution": "Display as “Other possible contributors.” Never use this record to infer a diagnosis, eliminate a condition, rank explanations, or state what is most likely for the user.",
+      "contentId": "ALT_SKILL_GAP"
+    },
+    {
+      "id": "ALT_ORDINARY_MOTIVATION",
+      "relevantBehaviourIds": [
+        "BEH1",
+        "BEH2",
+        "BEH6"
+      ],
+      "evidenceIds": [
+        "EVID_ALTERNATIVE_EXPLANATIONS"
+      ],
+      "caution": "Display as “Other possible contributors.” Never use this record to infer a diagnosis, eliminate a condition, rank explanations, or state what is most likely for the user.",
+      "contentId": "ALT_ORDINARY_MOTIVATION"
+    },
+    {
+      "id": "ALT_PHYSICAL_ILLNESS",
+      "relevantBehaviourIds": [
+        "BEH1",
+        "BEH2",
+        "BEH3",
+        "BEH4",
+        "BEH5",
+        "BEH6",
+        "BEH7"
+      ],
+      "evidenceIds": [
+        "EVID_ALTERNATIVE_EXPLANATIONS"
+      ],
+      "caution": "Display as “Other possible contributors.” Never use this record to infer a diagnosis, eliminate a condition, rank explanations, or state what is most likely for the user.",
+      "contentId": "ALT_PHYSICAL_ILLNESS"
+    },
+    {
+      "id": "ALT_MEDICATION_SUBSTANCE",
+      "relevantBehaviourIds": [
+        "BEH1",
+        "BEH2",
+        "BEH3",
+        "BEH4",
+        "BEH5",
+        "BEH6",
+        "BEH7"
+      ],
+      "evidenceIds": [
+        "EVID_ALTERNATIVE_EXPLANATIONS"
+      ],
+      "caution": "Display as “Other possible contributors.” Never use this record to infer a diagnosis, eliminate a condition, rank explanations, or state what is most likely for the user.",
+      "contentId": "ALT_MEDICATION_SUBSTANCE"
+    }
+  ]
+}

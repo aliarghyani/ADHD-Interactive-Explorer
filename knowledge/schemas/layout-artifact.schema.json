@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://adhd-explorer.local/schemas/layout-artifact.schema.json",
+  "title": "LayoutArtifact boundary contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["knowledgeReleaseId", "layoutVersion", "nodes"],
+  "properties": {
+    "knowledgeReleaseId": { "type": "string", "minLength": 1 },
+    "layoutVersion": { "type": "string", "minLength": 1 },
+    "nodes": { "type": "array", "items": { "type": "object", "additionalProperties": false, "required": ["id", "x", "y"], "properties": { "id": { "type": "string", "minLength": 1 }, "x": { "type": "number" }, "y": { "type": "number" } } } }
+  }
+}

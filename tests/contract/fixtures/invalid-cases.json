@@ -1,0 +1,18 @@
+[
+  { "name": "29-node canonical registry", "mutation": "remove-node", "expectedCode": "NODE_COUNT" },
+  { "name": "31-node canonical registry", "mutation": "add-node", "expectedCode": "NODE_COUNT" },
+  { "name": "duplicate canonical node ID", "mutation": "duplicate-node", "expectedCode": "DUPLICATE_NODE_ID" },
+  { "name": "duplicate edge ID", "mutation": "duplicate-edge", "expectedCode": "DUPLICATE_EDGE_ID" },
+  { "name": "unknown edge source", "mutation": "unknown-edge-source", "expectedCode": "UNKNOWN_EDGE_SOURCE" },
+  { "name": "unknown edge target", "mutation": "unknown-edge-target", "expectedCode": "UNKNOWN_EDGE_TARGET" },
+  { "name": "unsupported relationship type", "mutation": "unsupported-relationship", "expectedCode": "UNSUPPORTED_RELATIONSHIP" },
+  { "name": "Clinical Anchor mechanistic edge", "mutation": "clinical-anchor-edge", "expectedCode": "CLINICAL_ANCHOR_MECHANISTIC_EDGE" },
+  { "name": "prohibited assessment field", "mutation": "prohibited-field", "expectedCode": "PROHIBITED_FIELD" },
+  { "name": "missing mandatory safety content", "mutation": "missing-safety", "expectedCode": "MISSING_MANDATORY_SAFETY" },
+  { "name": "missing English localization", "mutation": "missing-en", "expectedCode": "MISSING_EN_LOCALIZATION" },
+  { "name": "missing Persian localization", "mutation": "missing-fa", "expectedCode": "MISSING_FA_LOCALIZATION" },
+  { "name": "unresolved evidence reference", "mutation": "unknown-evidence", "expectedCode": "UNRESOLVED_EVIDENCE_REFERENCE" },
+  { "name": "unresolved source reference", "mutation": "unknown-source", "expectedCode": "UNRESOLVED_SOURCE_REFERENCE" },
+  { "name": "invalid schema compatibility", "mutation": "invalid-schema-version", "expectedCode": "INCOMPATIBLE_SCHEMA_VERSION" },
+  { "name": "presentation depends on Behaviour state", "mutation": "presentation-behaviour-state", "expectedCode": "PRESENTATION_BEHAVIOUR_STATE" }
+]

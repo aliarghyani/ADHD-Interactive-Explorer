@@ -1,0 +1,292 @@
+{
+  "mappings": [
+    {
+      "id": "CM_CTX6_BEH1_REG3",
+      "contextId": "CTX6",
+      "behaviourId": "BEH1",
+      "regulationId": "REG3",
+      "qualitativeRole": "`increases-demand`",
+      "evidenceIds": [
+        "EVID_TASK_COMPLEXITY",
+        "EVID_GOAL_MANAGEMENT"
+      ],
+      "contentId": "CM_CTX6_BEH1_REG3"
+    },
+    {
+      "id": "CM_CTX5_BEH1_REG5",
+      "contextId": "CTX5",
+      "behaviourId": "BEH1",
+      "regulationId": "REG5",
+      "qualitativeRole": "`variable`",
+      "evidenceIds": [
+        "EVID_SALIENCE_REWARD_CONTEXT",
+        "EVID_REWARD_DELAY"
+      ],
+      "contentId": "CM_CTX5_BEH1_REG5"
+    },
+    {
+      "id": "CM_CTX4_BEH1_REG5",
+      "contextId": "CTX4",
+      "behaviourId": "BEH1",
+      "regulationId": "REG5",
+      "qualitativeRole": "`variable`",
+      "evidenceIds": [
+        "EVID_SALIENCE_REWARD_CONTEXT",
+        "EVID_REWARD_DELAY"
+      ],
+      "contentId": "CM_CTX4_BEH1_REG5"
+    },
+    {
+      "id": "CM_CTX2_BEH1_REG6",
+      "contextId": "CTX2",
+      "behaviourId": "BEH1",
+      "regulationId": "REG6",
+      "qualitativeRole": "`increases-demand`",
+      "evidenceIds": [
+        "EVID_STRESS_CONTEXT",
+        "EVID_EMOTIONAL_REGULATION"
+      ],
+      "contentId": "CM_CTX2_BEH1_REG6"
+    },
+    {
+      "id": "CM_CTX7_BEH1_REG3",
+      "contextId": "CTX7",
+      "behaviourId": "BEH1",
+      "regulationId": "REG3",
+      "qualitativeRole": "`buffering`",
+      "evidenceIds": [
+        "EVID_EXTERNAL_STRUCTURE",
+        "EVID_GOAL_MANAGEMENT"
+      ],
+      "contentId": "CM_CTX7_BEH1_REG3"
+    },
+    {
+      "id": "CM_CTX3_BEH1_REG5",
+      "contextId": "CTX3",
+      "behaviourId": "BEH1",
+      "regulationId": "REG5",
+      "qualitativeRole": "`variable`",
+      "evidenceIds": [
+        "EVID_SALIENCE_REWARD_CONTEXT",
+        "EVID_REWARD_DELAY"
+      ],
+      "contentId": "CM_CTX3_BEH1_REG5"
+    },
+    {
+      "id": "CM_CTX8_BEH2_REG1",
+      "contextId": "CTX8",
+      "behaviourId": "BEH2",
+      "regulationId": "REG1",
+      "qualitativeRole": "`interfering`",
+      "evidenceIds": [
+        "EVID_INTERRUPTION_CONTEXT",
+        "EVID_ATTENTION_REGULATION"
+      ],
+      "contentId": "CM_CTX8_BEH2_REG1"
+    },
+    {
+      "id": "CM_CTX1_BEH2_REG1",
+      "contextId": "CTX1",
+      "behaviourId": "BEH2",
+      "regulationId": "REG1",
+      "qualitativeRole": "`variable`",
+      "evidenceIds": [
+        "EVID_SLEEP_CONTEXT",
+        "EVID_ATTENTION_REGULATION"
+      ],
+      "contentId": "CM_CTX1_BEH2_REG1"
+    },
+    {
+      "id": "CM_CTX3_BEH2_REG5",
+      "contextId": "CTX3",
+      "behaviourId": "BEH2",
+      "regulationId": "REG5",
+      "qualitativeRole": "`variable`",
+      "evidenceIds": [
+        "EVID_SALIENCE_REWARD_CONTEXT",
+        "EVID_REWARD_DELAY"
+      ],
+      "contentId": "CM_CTX3_BEH2_REG5"
+    },
+    {
+      "id": "CM_CTX5_BEH2_REG5",
+      "contextId": "CTX5",
+      "behaviourId": "BEH2",
+      "regulationId": "REG5",
+      "qualitativeRole": "`variable`",
+      "evidenceIds": [
+        "EVID_SALIENCE_REWARD_CONTEXT",
+        "EVID_REWARD_DELAY"
+      ],
+      "contentId": "CM_CTX5_BEH2_REG5"
+    },
+    {
+      "id": "CM_CTX2_BEH2_REG1",
+      "contextId": "CTX2",
+      "behaviourId": "BEH2",
+      "regulationId": "REG1",
+      "qualitativeRole": "`increases-demand`",
+      "evidenceIds": [
+        "EVID_STRESS_CONTEXT",
+        "EVID_ATTENTION_REGULATION"
+      ],
+      "contentId": "CM_CTX2_BEH2_REG1"
+    },
+    {
+      "id": "CM_CTX8_BEH3_REG7",
+      "contextId": "CTX8",
+      "behaviourId": "BEH3",
+      "regulationId": "REG7",
+      "qualitativeRole": "`increases-demand`",
+      "evidenceIds": [
+        "EVID_INTERRUPTION_CONTEXT",
+        "EVID_TASK_SWITCHING"
+      ],
+      "contentId": "CM_CTX8_BEH3_REG7"
+    },
+    {
+      "id": "CM_CTX6_BEH4_REG2",
+      "contextId": "CTX6",
+      "behaviourId": "BEH4",
+      "regulationId": "REG2",
+      "qualitativeRole": "`increases-demand`",
+      "evidenceIds": [
+        "EVID_TASK_COMPLEXITY",
+        "EVID_WORKING_MEMORY"
+      ],
+      "contentId": "CM_CTX6_BEH4_REG2"
+    },
+    {
+      "id": "CM_CTX2_BEH4_REG2",
+      "contextId": "CTX2",
+      "behaviourId": "BEH4",
+      "regulationId": "REG2",
+      "qualitativeRole": "`increases-demand`",
+      "evidenceIds": [
+        "EVID_STRESS_CONTEXT",
+        "EVID_WORKING_MEMORY"
+      ],
+      "contentId": "CM_CTX2_BEH4_REG2"
+    },
+    {
+      "id": "CM_CTX7_BEH4_REG2",
+      "contextId": "CTX7",
+      "behaviourId": "BEH4",
+      "regulationId": "REG2",
+      "qualitativeRole": "`buffering`",
+      "evidenceIds": [
+        "EVID_EXTERNAL_STRUCTURE",
+        "EVID_WORKING_MEMORY"
+      ],
+      "contentId": "CM_CTX7_BEH4_REG2"
+    },
+    {
+      "id": "CM_CTX6_BEH5_REG3",
+      "contextId": "CTX6",
+      "behaviourId": "BEH5",
+      "regulationId": "REG3",
+      "qualitativeRole": "`increases-demand`",
+      "evidenceIds": [
+        "EVID_TASK_COMPLEXITY",
+        "EVID_GOAL_MANAGEMENT"
+      ],
+      "contentId": "CM_CTX6_BEH5_REG3"
+    },
+    {
+      "id": "CM_CTX6_BEH5_REG2",
+      "contextId": "CTX6",
+      "behaviourId": "BEH5",
+      "regulationId": "REG2",
+      "qualitativeRole": "`increases-demand`",
+      "evidenceIds": [
+        "EVID_TASK_COMPLEXITY",
+        "EVID_WORKING_MEMORY"
+      ],
+      "contentId": "CM_CTX6_BEH5_REG2"
+    },
+    {
+      "id": "CM_CTX2_BEH5_REG2",
+      "contextId": "CTX2",
+      "behaviourId": "BEH5",
+      "regulationId": "REG2",
+      "qualitativeRole": "`increases-demand`",
+      "evidenceIds": [
+        "EVID_STRESS_CONTEXT",
+        "EVID_WORKING_MEMORY"
+      ],
+      "contentId": "CM_CTX2_BEH5_REG2"
+    },
+    {
+      "id": "CM_CTX7_BEH5_REG2",
+      "contextId": "CTX7",
+      "behaviourId": "BEH5",
+      "regulationId": "REG2",
+      "qualitativeRole": "`buffering`",
+      "evidenceIds": [
+        "EVID_EXTERNAL_STRUCTURE",
+        "EVID_WORKING_MEMORY"
+      ],
+      "contentId": "CM_CTX7_BEH5_REG2"
+    },
+    {
+      "id": "CM_CTX7_BEH5_REG3",
+      "contextId": "CTX7",
+      "behaviourId": "BEH5",
+      "regulationId": "REG3",
+      "qualitativeRole": "`buffering`",
+      "evidenceIds": [
+        "EVID_EXTERNAL_STRUCTURE",
+        "EVID_GOAL_MANAGEMENT"
+      ],
+      "contentId": "CM_CTX7_BEH5_REG3"
+    },
+    {
+      "id": "CM_CTX6_BEH6_REG3",
+      "contextId": "CTX6",
+      "behaviourId": "BEH6",
+      "regulationId": "REG3",
+      "qualitativeRole": "`increases-demand`",
+      "evidenceIds": [
+        "EVID_TASK_COMPLEXITY",
+        "EVID_GOAL_MANAGEMENT"
+      ],
+      "contentId": "CM_CTX6_BEH6_REG3"
+    },
+    {
+      "id": "CM_CTX7_BEH6_REG3",
+      "contextId": "CTX7",
+      "behaviourId": "BEH6",
+      "regulationId": "REG3",
+      "qualitativeRole": "`buffering`",
+      "evidenceIds": [
+        "EVID_EXTERNAL_STRUCTURE",
+        "EVID_GOAL_MANAGEMENT"
+      ],
+      "contentId": "CM_CTX7_BEH6_REG3"
+    },
+    {
+      "id": "CM_CTX1_BEH7_REG4",
+      "contextId": "CTX1",
+      "behaviourId": "BEH7",
+      "regulationId": "REG4",
+      "qualitativeRole": "`variable`",
+      "evidenceIds": [
+        "EVID_SLEEP_CONTEXT",
+        "EVID_RESPONSE_INHIBITION"
+      ],
+      "contentId": "CM_CTX1_BEH7_REG4"
+    },
+    {
+      "id": "CM_CTX2_BEH7_REG6",
+      "contextId": "CTX2",
+      "behaviourId": "BEH7",
+      "regulationId": "REG6",
+      "qualitativeRole": "`increases-demand`",
+      "evidenceIds": [
+        "EVID_STRESS_CONTEXT",
+        "EVID_EMOTIONAL_REGULATION"
+      ],
+      "contentId": "CM_CTX2_BEH7_REG6"
+    }
+  ]
+}

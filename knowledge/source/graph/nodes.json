@@ -1,0 +1,291 @@
+{
+  "nodes": [
+    {
+      "id": "CA1",
+      "category": "clinical-anchor",
+      "canonicalName": "Inattention",
+      "definition": "Formal ADHD symptom domain involving persistent inattentive symptoms.",
+      "evidenceStatus": "Clinical / formal",
+      "evidenceIds": [
+        "EVID_CLINICAL_ANCHORS"
+      ]
+    },
+    {
+      "id": "CA2",
+      "category": "clinical-anchor",
+      "canonicalName": "Hyperactivity–Impulsivity",
+      "definition": "Formal ADHD symptom domain involving hyperactive and/or impulsive symptoms.",
+      "evidenceStatus": "Clinical / formal",
+      "evidenceIds": [
+        "EVID_CLINICAL_ANCHORS"
+      ]
+    },
+    {
+      "id": "CTX1",
+      "category": "context",
+      "canonicalName": "Sleep / Energy",
+      "definition": "Current sleep, fatigue, and available energy.",
+      "evidenceStatus": "Strong non-specific",
+      "evidenceIds": [
+        "EVID_SLEEP_CONTEXT"
+      ]
+    },
+    {
+      "id": "CTX2",
+      "category": "context",
+      "canonicalName": "Stress / Emotional Load",
+      "definition": "Psychological or emotional demand competing with regulatory resources.",
+      "evidenceStatus": "Moderate",
+      "evidenceIds": [
+        "EVID_STRESS_CONTEXT"
+      ]
+    },
+    {
+      "id": "CTX3",
+      "category": "context",
+      "canonicalName": "Task Salience / Interest",
+      "definition": "Degree to which a task captures interest, relevance, or meaning.",
+      "evidenceStatus": "Moderate",
+      "evidenceIds": [
+        "EVID_SALIENCE_REWARD_CONTEXT"
+      ]
+    },
+    {
+      "id": "CTX4",
+      "category": "context",
+      "canonicalName": "Urgency / Time Pressure",
+      "definition": "Immediacy of deadline or consequence.",
+      "evidenceStatus": "Moderate",
+      "evidenceIds": [
+        "EVID_SALIENCE_REWARD_CONTEXT"
+      ]
+    },
+    {
+      "id": "CTX5",
+      "category": "context",
+      "canonicalName": "Reward Salience / Immediacy",
+      "definition": "Prominence and temporal proximity of expected outcomes.",
+      "evidenceStatus": "Moderate",
+      "evidenceIds": [
+        "EVID_SALIENCE_REWARD_CONTEXT"
+      ]
+    },
+    {
+      "id": "CTX6",
+      "category": "context",
+      "canonicalName": "Task Demand / Complexity",
+      "definition": "Cognitive and organizational demand imposed by a task.",
+      "evidenceStatus": "Strong non-specific",
+      "evidenceIds": [
+        "EVID_TASK_COMPLEXITY"
+      ]
+    },
+    {
+      "id": "CTX7",
+      "category": "context",
+      "canonicalName": "External Structure",
+      "definition": "Organization supplied through routines, reminders, deadlines, or guidance.",
+      "evidenceStatus": "Moderate",
+      "evidenceIds": [
+        "EVID_EXTERNAL_STRUCTURE"
+      ]
+    },
+    {
+      "id": "CTX8",
+      "category": "context",
+      "canonicalName": "Distraction / Interruptions",
+      "definition": "Competing stimuli or events disrupting ongoing activity.",
+      "evidenceStatus": "Strong non-specific",
+      "evidenceIds": [
+        "EVID_INTERRUPTION_CONTEXT"
+      ]
+    },
+    {
+      "id": "REG1",
+      "category": "regulation",
+      "canonicalName": "Attention Regulation",
+      "definition": "Allocation, maintenance, and redirection of task-relevant attention.",
+      "evidenceStatus": "Strong associated",
+      "evidenceIds": [
+        "EVID_ATTENTION_REGULATION"
+      ]
+    },
+    {
+      "id": "REG2",
+      "category": "regulation",
+      "canonicalName": "Working Memory",
+      "definition": "Temporary maintenance and manipulation of information required for action.",
+      "evidenceStatus": "Strong associated",
+      "evidenceIds": [
+        "EVID_WORKING_MEMORY"
+      ]
+    },
+    {
+      "id": "REG3",
+      "category": "regulation",
+      "canonicalName": "Goal Management",
+      "definition": "Planning, sequencing, and prioritizing actions toward a goal.",
+      "evidenceStatus": "Strong–Moderate associated",
+      "evidenceIds": [
+        "EVID_GOAL_MANAGEMENT"
+      ]
+    },
+    {
+      "id": "REG4",
+      "category": "regulation",
+      "canonicalName": "Response Inhibition",
+      "definition": "Suppressing or stopping a prepotent response.",
+      "evidenceStatus": "Strong associated",
+      "evidenceIds": [
+        "EVID_RESPONSE_INHIBITION"
+      ]
+    },
+    {
+      "id": "REG5",
+      "category": "regulation",
+      "canonicalName": "Reward / Delay Processing",
+      "definition": "How reward value and delay affect engagement and choice.",
+      "evidenceStatus": "Strong–Moderate associated",
+      "evidenceIds": [
+        "EVID_REWARD_DELAY"
+      ]
+    },
+    {
+      "id": "REG6",
+      "category": "regulation",
+      "canonicalName": "Emotional Regulation",
+      "definition": "Modulation of emotional intensity, duration, and expression.",
+      "evidenceStatus": "Strong association",
+      "evidenceIds": [
+        "EVID_EMOTIONAL_REGULATION"
+      ]
+    },
+    {
+      "id": "REG7",
+      "category": "regulation",
+      "canonicalName": "Task Switching",
+      "definition": "Transition between task sets, goals, or rules.",
+      "evidenceStatus": "Moderate associated",
+      "evidenceIds": [
+        "EVID_TASK_SWITCHING"
+      ]
+    },
+    {
+      "id": "BEH1",
+      "category": "behaviour",
+      "canonicalName": "Starting",
+      "definition": "Beginning an intended action.",
+      "evidenceStatus": "Descriptive",
+      "evidenceIds": []
+    },
+    {
+      "id": "BEH2",
+      "category": "behaviour",
+      "canonicalName": "Sustaining",
+      "definition": "Maintaining goal-directed activity over time.",
+      "evidenceStatus": "Descriptive / strongly relevant",
+      "evidenceIds": []
+    },
+    {
+      "id": "BEH3",
+      "category": "behaviour",
+      "canonicalName": "Switching Tasks",
+      "definition": "Moving from one active task or goal to another.",
+      "evidenceStatus": "Descriptive",
+      "evidenceIds": []
+    },
+    {
+      "id": "BEH4",
+      "category": "behaviour",
+      "canonicalName": "Keeping Track",
+      "definition": "Maintaining awareness of relevant steps, intentions, and commitments.",
+      "evidenceStatus": "Descriptive",
+      "evidenceIds": []
+    },
+    {
+      "id": "BEH5",
+      "category": "behaviour",
+      "canonicalName": "Organizing / Sequencing",
+      "definition": "Ordering actions, materials, or information into a workable sequence.",
+      "evidenceStatus": "Descriptive",
+      "evidenceIds": []
+    },
+    {
+      "id": "BEH6",
+      "category": "behaviour",
+      "canonicalName": "Completing / Following Through",
+      "definition": "Carrying an intended action through to its endpoint.",
+      "evidenceStatus": "Descriptive",
+      "evidenceIds": []
+    },
+    {
+      "id": "BEH7",
+      "category": "behaviour",
+      "canonicalName": "Pausing / Waiting Before Acting",
+      "definition": "Delaying or withholding an immediate response when required.",
+      "evidenceStatus": "Descriptive",
+      "evidenceIds": []
+    },
+    {
+      "id": "PAT1",
+      "category": "pattern",
+      "canonicalName": "Procrastination",
+      "definition": "Repeated maladaptive delay of intended action.",
+      "evidenceStatus": "Moderate associated",
+      "evidenceIds": [
+        "EVID_PROCRASTINATION_PATTERN"
+      ]
+    },
+    {
+      "id": "PAT2",
+      "category": "pattern",
+      "canonicalName": "Performance Variability",
+      "definition": "Variation in performance or engagement across time or context.",
+      "evidenceStatus": "Strong experimental / Moderate broad real-world",
+      "evidenceIds": [
+        "EVID_PERFORMANCE_VARIABILITY_EXPERIMENTAL",
+        "EVID_PERFORMANCE_VARIABILITY_EVERYDAY"
+      ]
+    },
+    {
+      "id": "FUN1",
+      "category": "functional-domain",
+      "canonicalName": "Work",
+      "definition": "Occupational functioning.",
+      "evidenceStatus": "Functional domain",
+      "evidenceIds": [
+        "EVID_FUNCTIONAL_DOMAINS"
+      ]
+    },
+    {
+      "id": "FUN2",
+      "category": "functional-domain",
+      "canonicalName": "Learning",
+      "definition": "Educational and learning functioning.",
+      "evidenceStatus": "Functional domain",
+      "evidenceIds": [
+        "EVID_FUNCTIONAL_DOMAINS"
+      ]
+    },
+    {
+      "id": "FUN3",
+      "category": "functional-domain",
+      "canonicalName": "Relationships",
+      "definition": "Interpersonal functioning.",
+      "evidenceStatus": "Functional domain",
+      "evidenceIds": [
+        "EVID_FUNCTIONAL_DOMAINS"
+      ]
+    },
+    {
+      "id": "FUN4",
+      "category": "functional-domain",
+      "canonicalName": "Daily Living / Self-Management",
+      "definition": "Everyday routines and personal management.",
+      "evidenceStatus": "Functional domain",
+      "evidenceIds": [
+        "EVID_FUNCTIONAL_DOMAINS"
+      ]
+    }
+  ]
+}
