@@ -11,6 +11,7 @@
     "lint": "eslint .",
     "test": "nuxt prepare && vitest run",
     "test:contract": "nuxt prepare && vitest run tests/contract/knowledge-validation.spec.ts",
+    "test:domain": "nuxt prepare && vitest run tests/unit/domain",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "layout:generate": "node scripts/generate-spike-layout.mjs",
