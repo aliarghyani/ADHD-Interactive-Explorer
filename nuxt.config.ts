@@ -1,7 +1,17 @@
+import { readFileSync } from 'node:fs'
+
+const canonicalNodes = JSON.parse(
+  readFileSync(new URL('./knowledge/source/graph/nodes.json', import.meta.url), 'utf8'),
+) as { nodes: Array<{ id: string }> }
+const systemMapRoutes = ['en', 'fa'].flatMap((locale) => [
+  `/${locale}/map`,
+  ...canonicalNodes.nodes.map((node) => `/${locale}/map/${node.id}`),
+])
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   modules: ['@nuxt/eslint', '@nuxtjs/i18n'],
-  css: ['~/assets/main.css'],
+  css: ['~/assets/main.css', '~/assets/system-map.css'],
   devtools: { enabled: false },
   app: {
     head: {
@@ -28,6 +38,7 @@ export default defineNuxtConfig({
         '/en/spike/map/NOT-A-NODE',
         '/fa/spike/map',
         '/fa/spike/map/BEH1',
+        ...systemMapRoutes,
       ],
     },
   },

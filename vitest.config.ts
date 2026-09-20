@@ -11,5 +11,9 @@ export default defineConfig({
     environment: 'happy-dom',
     include: ['tests/**/*.spec.{ts,mjs}'],
     exclude: ['tests/e2e/**'],
+    // The repository's contract fixtures are intentionally large. A single
+    // worker avoids duplicate knowledge bundles exhausting constrained CI/dev hosts.
+    minWorkers: 1,
+    maxWorkers: 1,
   },
 })

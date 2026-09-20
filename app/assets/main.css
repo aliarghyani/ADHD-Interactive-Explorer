@@ -15,6 +15,15 @@ body,
   min-height: 100%;
 }
 
+bdi[dir="ltr"] {
+  unicode-bidi: isolate;
+  direction: ltr;
+}
+
+bdi[dir="auto"] {
+  unicode-bidi: isolate;
+}
+
 body {
   margin: 0;
   background: #f5f6f8;

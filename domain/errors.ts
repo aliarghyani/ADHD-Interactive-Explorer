@@ -13,7 +13,7 @@ export type DomainErrorCode =
   | 'UNSUPPORTED_LOCALE'
 
 export class DomainLookupError extends Error {
-  readonly name = 'DomainLookupError'
+  override readonly name = 'DomainLookupError'
 
   constructor(
     readonly code: DomainErrorCode,

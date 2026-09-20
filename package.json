@@ -18,6 +18,8 @@
     "layout:validate": "node validation/layout/validate.mjs",
     "layout:spike": "node scripts/generate-spike-layout.mjs",
     "test:layout": "nuxt prepare && vitest run tests/contract/layout",
+    "test:wp05": "nuxt prepare && vitest run tests/unit/localization tests/unit/safety tests/integration/localization tests/rtl",
+    "test:wp06": "nuxt prepare && vitest run tests/component/system-map tests/integration/system-map",
     "knowledge:ingest": "node scripts/knowledge/ingest-production-pack.mjs",
     "knowledge:validate": "node scripts/knowledge/validate.mjs",
     "postinstall": "nuxt prepare"
