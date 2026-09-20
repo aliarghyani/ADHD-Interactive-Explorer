@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="3422" height="1764" viewBox="0 0 3422 1764" role="img" aria-labelledby="title desc">
+<title id="title">LAYOUT REVIEW TOOL - NOT PRODUCTION UI</title>
+<desc id="desc">Static authoring review of the full canonical graph geometry.</desc>
+<rect width="100%" height="100%" fill="#fafafa"/>
+<g fill="none" stroke-width="3">
+<polyline points="1129,1096 1129,1196 2004,1196 2004,1208" stroke="#64748b"><title>EDGE_BEH1_PAT1_CONTRIBUTES_TO</title></polyline>
+<polyline points="1521,1096 1521,1186 2316,1186 2316,1208" stroke="#64748b"><title>EDGE_BEH2_PAT2_CONTRIBUTES_TO</title></polyline>
+<polyline points="1833,1096 1833,1106 1754,1106 1754,1440" stroke="#64748b"><title>EDGE_BEH4_FUN1_CONTRIBUTES_TO</title></polyline>
+<polyline points="1993,1096 1993,1166 2566,1166 2566,1348 2279,1348 2279,1440" stroke="#64748b"><title>EDGE_BEH4_FUN4_CONTRIBUTES_TO</title></polyline>
+<polyline points="1913,1096 1913,1176 2396,1176 2396,1208" stroke="#64748b"><title>EDGE_BEH4_PAT2_CONTRIBUTES_TO</title></polyline>
+<polyline points="2252,1096 2252,1116 1810,1116 1810,1440" stroke="#64748b"><title>EDGE_BEH5_FUN1_CONTRIBUTES_TO</title></polyline>
+<polyline points="2358,1096 2358,1156 2725,1156 2725,1440" stroke="#64748b"><title>EDGE_BEH5_FUN2_CONTRIBUTES_TO</title></polyline>
+<polyline points="2601,1096 2601,1126 1833,1126 1833,1338 1867,1338 1867,1440" stroke="#64748b"><title>EDGE_BEH6_FUN1_CONTRIBUTES_TO</title></polyline>
+<polyline points="2793,1096 2793,1440" stroke="#64748b"><title>EDGE_BEH6_FUN2_CONTRIBUTES_TO</title></polyline>
+<polyline points="2729,1096 2729,1146 2577,1146 2577,1368 2364,1368 2364,1440" stroke="#64748b"><title>EDGE_BEH6_FUN4_CONTRIBUTES_TO</title></polyline>
+<polyline points="2665,1096 2665,1136 2476,1136 2476,1208" stroke="#64748b"><title>EDGE_BEH6_PAT2_CONTRIBUTES_TO</title></polyline>
+<polyline points="737,1096 737,1440" stroke="#64748b"><title>EDGE_BEH7_FUN3_CONTRIBUTES_TO</title></polyline>
+<polyline points="614,632 614,672 1670,672 1670,744" stroke="#64748b"><title>EDGE_CTX1_REG1_MODULATES</title></polyline>
+<polyline points="514,632 514,744" stroke="#64748b"><title>EDGE_CTX1_REG4_MODULATES</title></polyline>
+<polyline points="2052,632 2052,662 1790,662 1790,744" stroke="#64748b"><title>EDGE_CTX2_REG1_MODULATES</title></polyline>
+<polyline points="2127,632 2127,744" stroke="#64748b"><title>EDGE_CTX2_REG2_MODULATES</title></polyline>
+<polyline points="1977,632 1977,652 936,652 936,744" stroke="#64748b"><title>EDGE_CTX2_REG6_MODULATES</title></polyline>
+<polyline points="1730,632 1730,744" stroke="#64748b"><title>EDGE_CTX3_REG1_MODULATES</title></polyline>
+<polyline points="1630,632 1630,662 1383,662 1383,744" stroke="#64748b"><title>EDGE_CTX3_REG5_MODULATES</title></polyline>
+<polyline points="936,632 936,642 1233,642 1233,744" stroke="#64748b"><title>EDGE_CTX4_REG5_MODULATES</title></polyline>
+<polyline points="1308,632 1308,744" stroke="#64748b"><title>EDGE_CTX5_REG5_MODULATES</title></polyline>
+<polyline points="2374,632 2374,642 2202,642 2202,744" stroke="#64748b"><title>EDGE_CTX6_REG2_MODULATES</title></polyline>
+<polyline points="2474,632 2474,692 2524,692 2524,744" stroke="#64748b"><title>EDGE_CTX6_REG3_MODULATES</title></polyline>
+<polyline points="3118,632 3118,682 2277,682 2277,744" stroke="#64748b"><title>EDGE_CTX7_REG2_MODULATES</title></polyline>
+<polyline points="3218,632 3218,692 2624,692 2624,744" stroke="#64748b"><title>EDGE_CTX7_REG3_MODULATES</title></polyline>
+<polyline points="2746,632 2746,672 1850,672 1850,744" stroke="#64748b"><title>EDGE_CTX8_REG1_MODULATES</title></polyline>
+<polyline points="2846,632 2846,702 3089,702 3089,744" stroke="#64748b"><title>EDGE_CTX8_REG7_MODULATES</title></polyline>
+<polyline points="1867,1560 1867,1620 72,1620 72,484 2052,484 2052,512" stroke="#c2415d" stroke-dasharray="12 8"><title>EDGE_FUN1_CTX2_FEEDBACK_WITH</title></polyline>
+<polyline points="2691,1560 2691,1638 116,1638 116,470 2052,470 2052,512" stroke="#c2415d" stroke-dasharray="12 8"><title>EDGE_FUN2_CTX2_FEEDBACK_WITH</title></polyline>
+<polyline points="737,1560 737,1656 160,1656 160,456 2052,456 2052,512" stroke="#c2415d" stroke-dasharray="12 8"><title>EDGE_FUN3_CTX2_FEEDBACK_WITH</title></polyline>
+<polyline points="2279,1560 2279,1674 204,1674 204,442 2052,442 2052,512" stroke="#c2415d" stroke-dasharray="12 8"><title>EDGE_FUN4_CTX2_FEEDBACK_WITH</title></polyline>
+<polyline points="1844,1268 248,1268 248,428 936,428 936,512" stroke="#c2415d" stroke-dasharray="12 8"><title>EDGE_PAT1_CTX4_FEEDBACK_WITH</title></polyline>
+<polyline points="1924,1328 1924,1440" stroke="#64748b"><title>EDGE_PAT1_FUN1_CONTRIBUTES_TO</title></polyline>
+<polyline points="2084,1328 2084,1358 2589,1358 2589,1440" stroke="#64748b"><title>EDGE_PAT1_FUN2_CONTRIBUTES_TO</title></polyline>
+<polyline points="2004,1328 2004,1368 2194,1368 2194,1440" stroke="#64748b"><title>EDGE_PAT1_FUN4_CONTRIBUTES_TO</title></polyline>
+<polyline points="2343,1328 2343,1338 1980,1338 1980,1440" stroke="#64748b"><title>EDGE_PAT2_FUN1_CONTRIBUTES_TO</title></polyline>
+<polyline points="2449,1328 2449,1338 2657,1338 2657,1440" stroke="#64748b"><title>EDGE_PAT2_FUN2_CONTRIBUTES_TO</title></polyline>
+<polyline points="1760,864 1760,894 1574,894 1574,976" stroke="#64748b"><title>EDGE_REG1_BEH2_CONTRIBUTES_TO</title></polyline>
+<polyline points="2152,864 2152,894 1913,894 1913,976" stroke="#64748b"><title>EDGE_REG2_BEH4_CONTRIBUTES_TO</title></polyline>
+<polyline points="2252,864 2252,976" stroke="#64748b"><title>EDGE_REG2_BEH5_CONTRIBUTES_TO</title></polyline>
+<polyline points="2499,864 2499,884 1209,884 1209,976" stroke="#64748b"><title>EDGE_REG3_BEH1_CONTRIBUTES_TO</title></polyline>
+<polyline points="2574,864 2574,894 2358,894 2358,976" stroke="#64748b"><title>EDGE_REG3_BEH5_CONTRIBUTES_TO</title></polyline>
+<polyline points="2649,864 2649,874 2697,874 2697,976" stroke="#64748b"><title>EDGE_REG3_BEH6_CONTRIBUTES_TO</title></polyline>
+<polyline points="514,864 514,874 684,874 684,976" stroke="#64748b"><title>EDGE_REG4_BEH7_CONTRIBUTES_TO</title></polyline>
+<polyline points="1258,864 1258,874 1129,874 1129,976" stroke="#64748b"><title>EDGE_REG5_BEH1_CONTRIBUTES_TO</title></polyline>
+<polyline points="1358,864 1358,894 1468,894 1468,976" stroke="#64748b"><title>EDGE_REG5_BEH2_CONTRIBUTES_TO</title></polyline>
+<polyline points="986,864 986,874 1049,874 1049,976" stroke="#64748b"><title>EDGE_REG6_BEH1_CONTRIBUTES_TO</title></polyline>
+<polyline points="886,864 886,874 790,874 790,976" stroke="#64748b"><title>EDGE_REG6_BEH7_CONTRIBUTES_TO</title></polyline>
+<polyline points="3089,864 3089,976" stroke="#64748b"><title>EDGE_REG7_BEH3_CONTRIBUTES_TO</title></polyline>
+</g>
+<g font-family="system-ui, sans-serif" text-anchor="middle">
+<rect x="969" y="976" width="320" height="120" rx="14" fill="#fff0b8" stroke="#334155" stroke-width="2"/>
+<text x="1129" y="1030" font-size="19" font-weight="700">BEH1</text>
+<text x="1129" y="1058" font-size="16">Starting</text>
+<rect x="1361" y="976" width="320" height="120" rx="14" fill="#fff0b8" stroke="#334155" stroke-width="2"/>
+<text x="1521" y="1030" font-size="19" font-weight="700">BEH2</text>
+<text x="1521" y="1058" font-size="16">Sustaining</text>
+<rect x="2929" y="976" width="320" height="120" rx="14" fill="#fff0b8" stroke="#334155" stroke-width="2"/>
+<text x="3089" y="1030" font-size="19" font-weight="700">BEH3</text>
+<text x="3089" y="1058" font-size="16">Switching Tasks</text>
+<rect x="1753" y="976" width="320" height="120" rx="14" fill="#fff0b8" stroke="#334155" stroke-width="2"/>
+<text x="1913" y="1030" font-size="19" font-weight="700">BEH4</text>
+<text x="1913" y="1058" font-size="16">Keeping Track</text>
+<rect x="2145" y="976" width="320" height="120" rx="14" fill="#fff0b8" stroke="#334155" stroke-width="2"/>
+<text x="2305" y="1030" font-size="19" font-weight="700">BEH5</text>
+<text x="2305" y="1058" font-size="16">Organizing / Sequencing</text>
+<rect x="2537" y="976" width="320" height="120" rx="14" fill="#fff0b8" stroke="#334155" stroke-width="2"/>
+<text x="2697" y="1030" font-size="19" font-weight="700">BEH6</text>
+<text x="2697" y="1058" font-size="16">Completing / Following Through</text>
+<rect x="577" y="976" width="320" height="120" rx="14" fill="#fff0b8" stroke="#334155" stroke-width="2"/>
+<text x="737" y="1030" font-size="19" font-weight="700">BEH7</text>
+<text x="737" y="1058" font-size="16">Pausing / Waiting Before Acting</text>
+<rect x="1691" y="96" width="300" height="104" rx="14" fill="#f5d0a9" stroke="#334155" stroke-width="2"/>
+<text x="1841" y="142" font-size="19" font-weight="700">CA1</text>
+<text x="1841" y="170" font-size="16">Inattention</text>
+<rect x="1691" y="220" width="300" height="104" rx="14" fill="#f5d0a9" stroke="#334155" stroke-width="2"/>
+<text x="1841" y="266" font-size="19" font-weight="700">CA2</text>
+<text x="1841" y="294" font-size="16">Hyperactivity–Impulsivity</text>
+<rect x="414" y="512" width="300" height="120" rx="14" fill="#cfe8ff" stroke="#334155" stroke-width="2"/>
+<text x="564" y="566" font-size="19" font-weight="700">CTX1</text>
+<text x="564" y="594" font-size="16">Sleep / Energy</text>
+<rect x="1902" y="512" width="300" height="120" rx="14" fill="#cfe8ff" stroke="#334155" stroke-width="2"/>
+<text x="2052" y="566" font-size="19" font-weight="700">CTX2</text>
+<text x="2052" y="594" font-size="16">Stress / Emotional Load</text>
+<rect x="1530" y="512" width="300" height="120" rx="14" fill="#cfe8ff" stroke="#334155" stroke-width="2"/>
+<text x="1680" y="566" font-size="19" font-weight="700">CTX3</text>
+<text x="1680" y="594" font-size="16">Task Salience / Interest</text>
+<rect x="786" y="512" width="300" height="120" rx="14" fill="#cfe8ff" stroke="#334155" stroke-width="2"/>
+<text x="936" y="566" font-size="19" font-weight="700">CTX4</text>
+<text x="936" y="594" font-size="16">Urgency / Time Pressure</text>
+<rect x="1158" y="512" width="300" height="120" rx="14" fill="#cfe8ff" stroke="#334155" stroke-width="2"/>
+<text x="1308" y="566" font-size="19" font-weight="700">CTX5</text>
+<text x="1308" y="594" font-size="16">Reward Salience / Immediacy</text>
+<rect x="2274" y="512" width="300" height="120" rx="14" fill="#cfe8ff" stroke="#334155" stroke-width="2"/>
+<text x="2424" y="566" font-size="19" font-weight="700">CTX6</text>
+<text x="2424" y="594" font-size="16">Task Demand / Complexity</text>
+<rect x="3018" y="512" width="300" height="120" rx="14" fill="#cfe8ff" stroke="#334155" stroke-width="2"/>
+<text x="3168" y="566" font-size="19" font-weight="700">CTX7</text>
+<text x="3168" y="594" font-size="16">External Structure</text>
+<rect x="2646" y="512" width="300" height="120" rx="14" fill="#cfe8ff" stroke="#334155" stroke-width="2"/>
+<text x="2796" y="566" font-size="19" font-weight="700">CTX8</text>
+<text x="2796" y="594" font-size="16">Distraction / Interruptions</text>
+<rect x="1697" y="1440" width="340" height="120" rx="14" fill="#ffd9df" stroke="#334155" stroke-width="2"/>
+<text x="1867" y="1494" font-size="19" font-weight="700">FUN1</text>
+<text x="1867" y="1522" font-size="16">Work</text>
+<rect x="2521" y="1440" width="340" height="120" rx="14" fill="#ffd9df" stroke="#334155" stroke-width="2"/>
+<text x="2691" y="1494" font-size="19" font-weight="700">FUN2</text>
+<text x="2691" y="1522" font-size="16">Learning</text>
+<rect x="567" y="1440" width="340" height="120" rx="14" fill="#ffd9df" stroke="#334155" stroke-width="2"/>
+<text x="737" y="1494" font-size="19" font-weight="700">FUN3</text>
+<text x="737" y="1522" font-size="16">Relationships</text>
+<rect x="2109" y="1440" width="340" height="120" rx="14" fill="#ffd9df" stroke="#334155" stroke-width="2"/>
+<text x="2279" y="1494" font-size="19" font-weight="700">FUN4</text>
+<text x="2279" y="1522" font-size="16">Daily Living / Self-Management</text>
+<rect x="1844" y="1208" width="320" height="120" rx="14" fill="#eadcff" stroke="#334155" stroke-width="2"/>
+<text x="2004" y="1262" font-size="19" font-weight="700">PAT1</text>
+<text x="2004" y="1290" font-size="16">Procrastination</text>
+<rect x="2236" y="1208" width="320" height="120" rx="14" fill="#eadcff" stroke="#334155" stroke-width="2"/>
+<text x="2396" y="1262" font-size="19" font-weight="700">PAT2</text>
+<text x="2396" y="1290" font-size="16">Performance Variability</text>
+<rect x="1610" y="744" width="300" height="120" rx="14" fill="#d9f2e6" stroke="#334155" stroke-width="2"/>
+<text x="1760" y="798" font-size="19" font-weight="700">REG1</text>
+<text x="1760" y="826" font-size="16">Attention Regulation</text>
+<rect x="2052" y="744" width="300" height="120" rx="14" fill="#d9f2e6" stroke="#334155" stroke-width="2"/>
+<text x="2202" y="798" font-size="19" font-weight="700">REG2</text>
+<text x="2202" y="826" font-size="16">Working Memory</text>
+<rect x="2424" y="744" width="300" height="120" rx="14" fill="#d9f2e6" stroke="#334155" stroke-width="2"/>
+<text x="2574" y="798" font-size="19" font-weight="700">REG3</text>
+<text x="2574" y="826" font-size="16">Goal Management</text>
+<rect x="364" y="744" width="300" height="120" rx="14" fill="#d9f2e6" stroke="#334155" stroke-width="2"/>
+<text x="514" y="798" font-size="19" font-weight="700">REG4</text>
+<text x="514" y="826" font-size="16">Response Inhibition</text>
+<rect x="1158" y="744" width="300" height="120" rx="14" fill="#d9f2e6" stroke="#334155" stroke-width="2"/>
+<text x="1308" y="798" font-size="19" font-weight="700">REG5</text>
+<text x="1308" y="826" font-size="16">Reward / Delay Processing</text>
+<rect x="786" y="744" width="300" height="120" rx="14" fill="#d9f2e6" stroke="#334155" stroke-width="2"/>
+<text x="936" y="798" font-size="19" font-weight="700">REG6</text>
+<text x="936" y="826" font-size="16">Emotional Regulation</text>
+<rect x="2939" y="744" width="300" height="120" rx="14" fill="#d9f2e6" stroke="#334155" stroke-width="2"/>
+<text x="3089" y="798" font-size="19" font-weight="700">REG7</text>
+<text x="3089" y="826" font-size="16">Task Switching</text>
+</g>
+<text x="24" y="32" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#9f1239">LAYOUT REVIEW TOOL - NOT PRODUCTION UI</text>
+</svg>

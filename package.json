@@ -14,7 +14,10 @@
     "test:domain": "nuxt prepare && vitest run tests/unit/domain",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
-    "layout:generate": "node scripts/generate-spike-layout.mjs",
+    "layout:generate": "node scripts/layout/generate.mjs",
+    "layout:validate": "node validation/layout/validate.mjs",
+    "layout:spike": "node scripts/generate-spike-layout.mjs",
+    "test:layout": "nuxt prepare && vitest run tests/contract/layout",
     "knowledge:ingest": "node scripts/knowledge/ingest-production-pack.mjs",
     "knowledge:validate": "node scripts/knowledge/validate.mjs",
     "postinstall": "nuxt prepare"

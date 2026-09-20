@@ -1,0 +1,1236 @@
+{
+  "layoutVersion": "layout-v1.0.0",
+  "generatorVersion": "adhd-layout-generator-v1.0.0",
+  "knowledgeReleaseId": "ADHD-KNOWLEDGE-2026-09-20-R1",
+  "elkVersion": "0.12.0",
+  "configurationVersion": "elk-layered-v1",
+  "overrideSetVersion": "layout-overrides-v1",
+  "graphBounds": {
+    "x": 0,
+    "y": 0,
+    "width": 3422,
+    "height": 1764
+  },
+  "nodeGeometry": [
+    {
+      "id": "BEH1",
+      "x": 969,
+      "y": 976,
+      "width": 320,
+      "height": 120
+    },
+    {
+      "id": "BEH2",
+      "x": 1361,
+      "y": 976,
+      "width": 320,
+      "height": 120
+    },
+    {
+      "id": "BEH3",
+      "x": 2929,
+      "y": 976,
+      "width": 320,
+      "height": 120
+    },
+    {
+      "id": "BEH4",
+      "x": 1753,
+      "y": 976,
+      "width": 320,
+      "height": 120
+    },
+    {
+      "id": "BEH5",
+      "x": 2145,
+      "y": 976,
+      "width": 320,
+      "height": 120
+    },
+    {
+      "id": "BEH6",
+      "x": 2537,
+      "y": 976,
+      "width": 320,
+      "height": 120
+    },
+    {
+      "id": "BEH7",
+      "x": 577,
+      "y": 976,
+      "width": 320,
+      "height": 120
+    },
+    {
+      "id": "CA1",
+      "x": 1691,
+      "y": 96,
+      "width": 300,
+      "height": 104
+    },
+    {
+      "id": "CA2",
+      "x": 1691,
+      "y": 220,
+      "width": 300,
+      "height": 104
+    },
+    {
+      "id": "CTX1",
+      "x": 414,
+      "y": 512,
+      "width": 300,
+      "height": 120
+    },
+    {
+      "id": "CTX2",
+      "x": 1902,
+      "y": 512,
+      "width": 300,
+      "height": 120
+    },
+    {
+      "id": "CTX3",
+      "x": 1530,
+      "y": 512,
+      "width": 300,
+      "height": 120
+    },
+    {
+      "id": "CTX4",
+      "x": 786,
+      "y": 512,
+      "width": 300,
+      "height": 120
+    },
+    {
+      "id": "CTX5",
+      "x": 1158,
+      "y": 512,
+      "width": 300,
+      "height": 120
+    },
+    {
+      "id": "CTX6",
+      "x": 2274,
+      "y": 512,
+      "width": 300,
+      "height": 120
+    },
+    {
+      "id": "CTX7",
+      "x": 3018,
+      "y": 512,
+      "width": 300,
+      "height": 120
+    },
+    {
+      "id": "CTX8",
+      "x": 2646,
+      "y": 512,
+      "width": 300,
+      "height": 120
+    },
+    {
+      "id": "FUN1",
+      "x": 1697,
+      "y": 1440,
+      "width": 340,
+      "height": 120
+    },
+    {
+      "id": "FUN2",
+      "x": 2521,
+      "y": 1440,
+      "width": 340,
+      "height": 120
+    },
+    {
+      "id": "FUN3",
+      "x": 567,
+      "y": 1440,
+      "width": 340,
+      "height": 120
+    },
+    {
+      "id": "FUN4",
+      "x": 2109,
+      "y": 1440,
+      "width": 340,
+      "height": 120
+    },
+    {
+      "id": "PAT1",
+      "x": 1844,
+      "y": 1208,
+      "width": 320,
+      "height": 120
+    },
+    {
+      "id": "PAT2",
+      "x": 2236,
+      "y": 1208,
+      "width": 320,
+      "height": 120
+    },
+    {
+      "id": "REG1",
+      "x": 1610,
+      "y": 744,
+      "width": 300,
+      "height": 120
+    },
+    {
+      "id": "REG2",
+      "x": 2052,
+      "y": 744,
+      "width": 300,
+      "height": 120
+    },
+    {
+      "id": "REG3",
+      "x": 2424,
+      "y": 744,
+      "width": 300,
+      "height": 120
+    },
+    {
+      "id": "REG4",
+      "x": 364,
+      "y": 744,
+      "width": 300,
+      "height": 120
+    },
+    {
+      "id": "REG5",
+      "x": 1158,
+      "y": 744,
+      "width": 300,
+      "height": 120
+    },
+    {
+      "id": "REG6",
+      "x": 786,
+      "y": 744,
+      "width": 300,
+      "height": 120
+    },
+    {
+      "id": "REG7",
+      "x": 2939,
+      "y": 744,
+      "width": 300,
+      "height": 120
+    }
+  ],
+  "edgeGeometry": [
+    {
+      "id": "EDGE_BEH1_PAT1_CONTRIBUTES_TO",
+      "start": {
+        "x": 1129,
+        "y": 1096
+      },
+      "bendPoints": [
+        {
+          "x": 1129,
+          "y": 1196
+        },
+        {
+          "x": 2004,
+          "y": 1196
+        }
+      ],
+      "end": {
+        "x": 2004,
+        "y": 1208
+      }
+    },
+    {
+      "id": "EDGE_BEH2_PAT2_CONTRIBUTES_TO",
+      "start": {
+        "x": 1521,
+        "y": 1096
+      },
+      "bendPoints": [
+        {
+          "x": 1521,
+          "y": 1186
+        },
+        {
+          "x": 2316,
+          "y": 1186
+        }
+      ],
+      "end": {
+        "x": 2316,
+        "y": 1208
+      }
+    },
+    {
+      "id": "EDGE_BEH4_FUN1_CONTRIBUTES_TO",
+      "start": {
+        "x": 1833,
+        "y": 1096
+      },
+      "bendPoints": [
+        {
+          "x": 1833,
+          "y": 1106
+        },
+        {
+          "x": 1754,
+          "y": 1106
+        }
+      ],
+      "end": {
+        "x": 1754,
+        "y": 1440
+      }
+    },
+    {
+      "id": "EDGE_BEH4_FUN4_CONTRIBUTES_TO",
+      "start": {
+        "x": 1993,
+        "y": 1096
+      },
+      "bendPoints": [
+        {
+          "x": 1993,
+          "y": 1166
+        },
+        {
+          "x": 2566,
+          "y": 1166
+        },
+        {
+          "x": 2566,
+          "y": 1348
+        },
+        {
+          "x": 2279,
+          "y": 1348
+        }
+      ],
+      "end": {
+        "x": 2279,
+        "y": 1440
+      }
+    },
+    {
+      "id": "EDGE_BEH4_PAT2_CONTRIBUTES_TO",
+      "start": {
+        "x": 1913,
+        "y": 1096
+      },
+      "bendPoints": [
+        {
+          "x": 1913,
+          "y": 1176
+        },
+        {
+          "x": 2396,
+          "y": 1176
+        }
+      ],
+      "end": {
+        "x": 2396,
+        "y": 1208
+      }
+    },
+    {
+      "id": "EDGE_BEH5_FUN1_CONTRIBUTES_TO",
+      "start": {
+        "x": 2252,
+        "y": 1096
+      },
+      "bendPoints": [
+        {
+          "x": 2252,
+          "y": 1116
+        },
+        {
+          "x": 1810,
+          "y": 1116
+        }
+      ],
+      "end": {
+        "x": 1810,
+        "y": 1440
+      }
+    },
+    {
+      "id": "EDGE_BEH5_FUN2_CONTRIBUTES_TO",
+      "start": {
+        "x": 2358,
+        "y": 1096
+      },
+      "bendPoints": [
+        {
+          "x": 2358,
+          "y": 1156
+        },
+        {
+          "x": 2725,
+          "y": 1156
+        }
+      ],
+      "end": {
+        "x": 2725,
+        "y": 1440
+      }
+    },
+    {
+      "id": "EDGE_BEH6_FUN1_CONTRIBUTES_TO",
+      "start": {
+        "x": 2601,
+        "y": 1096
+      },
+      "bendPoints": [
+        {
+          "x": 2601,
+          "y": 1126
+        },
+        {
+          "x": 1833,
+          "y": 1126
+        },
+        {
+          "x": 1833,
+          "y": 1338
+        },
+        {
+          "x": 1867,
+          "y": 1338
+        }
+      ],
+      "end": {
+        "x": 1867,
+        "y": 1440
+      }
+    },
+    {
+      "id": "EDGE_BEH6_FUN2_CONTRIBUTES_TO",
+      "start": {
+        "x": 2793,
+        "y": 1096
+      },
+      "bendPoints": [],
+      "end": {
+        "x": 2793,
+        "y": 1440
+      }
+    },
+    {
+      "id": "EDGE_BEH6_FUN4_CONTRIBUTES_TO",
+      "start": {
+        "x": 2729,
+        "y": 1096
+      },
+      "bendPoints": [
+        {
+          "x": 2729,
+          "y": 1146
+        },
+        {
+          "x": 2577,
+          "y": 1146
+        },
+        {
+          "x": 2577,
+          "y": 1368
+        },
+        {
+          "x": 2364,
+          "y": 1368
+        }
+      ],
+      "end": {
+        "x": 2364,
+        "y": 1440
+      }
+    },
+    {
+      "id": "EDGE_BEH6_PAT2_CONTRIBUTES_TO",
+      "start": {
+        "x": 2665,
+        "y": 1096
+      },
+      "bendPoints": [
+        {
+          "x": 2665,
+          "y": 1136
+        },
+        {
+          "x": 2476,
+          "y": 1136
+        }
+      ],
+      "end": {
+        "x": 2476,
+        "y": 1208
+      }
+    },
+    {
+      "id": "EDGE_BEH7_FUN3_CONTRIBUTES_TO",
+      "start": {
+        "x": 737,
+        "y": 1096
+      },
+      "bendPoints": [],
+      "end": {
+        "x": 737,
+        "y": 1440
+      }
+    },
+    {
+      "id": "EDGE_CTX1_REG1_MODULATES",
+      "start": {
+        "x": 614,
+        "y": 632
+      },
+      "bendPoints": [
+        {
+          "x": 614,
+          "y": 672
+        },
+        {
+          "x": 1670,
+          "y": 672
+        }
+      ],
+      "end": {
+        "x": 1670,
+        "y": 744
+      }
+    },
+    {
+      "id": "EDGE_CTX1_REG4_MODULATES",
+      "start": {
+        "x": 514,
+        "y": 632
+      },
+      "bendPoints": [],
+      "end": {
+        "x": 514,
+        "y": 744
+      }
+    },
+    {
+      "id": "EDGE_CTX2_REG1_MODULATES",
+      "start": {
+        "x": 2052,
+        "y": 632
+      },
+      "bendPoints": [
+        {
+          "x": 2052,
+          "y": 662
+        },
+        {
+          "x": 1790,
+          "y": 662
+        }
+      ],
+      "end": {
+        "x": 1790,
+        "y": 744
+      }
+    },
+    {
+      "id": "EDGE_CTX2_REG2_MODULATES",
+      "start": {
+        "x": 2127,
+        "y": 632
+      },
+      "bendPoints": [],
+      "end": {
+        "x": 2127,
+        "y": 744
+      }
+    },
+    {
+      "id": "EDGE_CTX2_REG6_MODULATES",
+      "start": {
+        "x": 1977,
+        "y": 632
+      },
+      "bendPoints": [
+        {
+          "x": 1977,
+          "y": 652
+        },
+        {
+          "x": 936,
+          "y": 652
+        }
+      ],
+      "end": {
+        "x": 936,
+        "y": 744
+      }
+    },
+    {
+      "id": "EDGE_CTX3_REG1_MODULATES",
+      "start": {
+        "x": 1730,
+        "y": 632
+      },
+      "bendPoints": [],
+      "end": {
+        "x": 1730,
+        "y": 744
+      }
+    },
+    {
+      "id": "EDGE_CTX3_REG5_MODULATES",
+      "start": {
+        "x": 1630,
+        "y": 632
+      },
+      "bendPoints": [
+        {
+          "x": 1630,
+          "y": 662
+        },
+        {
+          "x": 1383,
+          "y": 662
+        }
+      ],
+      "end": {
+        "x": 1383,
+        "y": 744
+      }
+    },
+    {
+      "id": "EDGE_CTX4_REG5_MODULATES",
+      "start": {
+        "x": 936,
+        "y": 632
+      },
+      "bendPoints": [
+        {
+          "x": 936,
+          "y": 642
+        },
+        {
+          "x": 1233,
+          "y": 642
+        }
+      ],
+      "end": {
+        "x": 1233,
+        "y": 744
+      }
+    },
+    {
+      "id": "EDGE_CTX5_REG5_MODULATES",
+      "start": {
+        "x": 1308,
+        "y": 632
+      },
+      "bendPoints": [],
+      "end": {
+        "x": 1308,
+        "y": 744
+      }
+    },
+    {
+      "id": "EDGE_CTX6_REG2_MODULATES",
+      "start": {
+        "x": 2374,
+        "y": 632
+      },
+      "bendPoints": [
+        {
+          "x": 2374,
+          "y": 642
+        },
+        {
+          "x": 2202,
+          "y": 642
+        }
+      ],
+      "end": {
+        "x": 2202,
+        "y": 744
+      }
+    },
+    {
+      "id": "EDGE_CTX6_REG3_MODULATES",
+      "start": {
+        "x": 2474,
+        "y": 632
+      },
+      "bendPoints": [
+        {
+          "x": 2474,
+          "y": 692
+        },
+        {
+          "x": 2524,
+          "y": 692
+        }
+      ],
+      "end": {
+        "x": 2524,
+        "y": 744
+      }
+    },
+    {
+      "id": "EDGE_CTX7_REG2_MODULATES",
+      "start": {
+        "x": 3118,
+        "y": 632
+      },
+      "bendPoints": [
+        {
+          "x": 3118,
+          "y": 682
+        },
+        {
+          "x": 2277,
+          "y": 682
+        }
+      ],
+      "end": {
+        "x": 2277,
+        "y": 744
+      }
+    },
+    {
+      "id": "EDGE_CTX7_REG3_MODULATES",
+      "start": {
+        "x": 3218,
+        "y": 632
+      },
+      "bendPoints": [
+        {
+          "x": 3218,
+          "y": 692
+        },
+        {
+          "x": 2624,
+          "y": 692
+        }
+      ],
+      "end": {
+        "x": 2624,
+        "y": 744
+      }
+    },
+    {
+      "id": "EDGE_CTX8_REG1_MODULATES",
+      "start": {
+        "x": 2746,
+        "y": 632
+      },
+      "bendPoints": [
+        {
+          "x": 2746,
+          "y": 672
+        },
+        {
+          "x": 1850,
+          "y": 672
+        }
+      ],
+      "end": {
+        "x": 1850,
+        "y": 744
+      }
+    },
+    {
+      "id": "EDGE_CTX8_REG7_MODULATES",
+      "start": {
+        "x": 2846,
+        "y": 632
+      },
+      "bendPoints": [
+        {
+          "x": 2846,
+          "y": 702
+        },
+        {
+          "x": 3089,
+          "y": 702
+        }
+      ],
+      "end": {
+        "x": 3089,
+        "y": 744
+      }
+    },
+    {
+      "id": "EDGE_FUN1_CTX2_FEEDBACK_WITH",
+      "start": {
+        "x": 1867,
+        "y": 1560
+      },
+      "bendPoints": [
+        {
+          "x": 1867,
+          "y": 1620
+        },
+        {
+          "x": 72,
+          "y": 1620
+        },
+        {
+          "x": 72,
+          "y": 484
+        },
+        {
+          "x": 2052,
+          "y": 484
+        }
+      ],
+      "end": {
+        "x": 2052,
+        "y": 512
+      }
+    },
+    {
+      "id": "EDGE_FUN2_CTX2_FEEDBACK_WITH",
+      "start": {
+        "x": 2691,
+        "y": 1560
+      },
+      "bendPoints": [
+        {
+          "x": 2691,
+          "y": 1638
+        },
+        {
+          "x": 116,
+          "y": 1638
+        },
+        {
+          "x": 116,
+          "y": 470
+        },
+        {
+          "x": 2052,
+          "y": 470
+        }
+      ],
+      "end": {
+        "x": 2052,
+        "y": 512
+      }
+    },
+    {
+      "id": "EDGE_FUN3_CTX2_FEEDBACK_WITH",
+      "start": {
+        "x": 737,
+        "y": 1560
+      },
+      "bendPoints": [
+        {
+          "x": 737,
+          "y": 1656
+        },
+        {
+          "x": 160,
+          "y": 1656
+        },
+        {
+          "x": 160,
+          "y": 456
+        },
+        {
+          "x": 2052,
+          "y": 456
+        }
+      ],
+      "end": {
+        "x": 2052,
+        "y": 512
+      }
+    },
+    {
+      "id": "EDGE_FUN4_CTX2_FEEDBACK_WITH",
+      "start": {
+        "x": 2279,
+        "y": 1560
+      },
+      "bendPoints": [
+        {
+          "x": 2279,
+          "y": 1674
+        },
+        {
+          "x": 204,
+          "y": 1674
+        },
+        {
+          "x": 204,
+          "y": 442
+        },
+        {
+          "x": 2052,
+          "y": 442
+        }
+      ],
+      "end": {
+        "x": 2052,
+        "y": 512
+      }
+    },
+    {
+      "id": "EDGE_PAT1_CTX4_FEEDBACK_WITH",
+      "start": {
+        "x": 1844,
+        "y": 1268
+      },
+      "bendPoints": [
+        {
+          "x": 248,
+          "y": 1268
+        },
+        {
+          "x": 248,
+          "y": 428
+        },
+        {
+          "x": 936,
+          "y": 428
+        }
+      ],
+      "end": {
+        "x": 936,
+        "y": 512
+      }
+    },
+    {
+      "id": "EDGE_PAT1_FUN1_CONTRIBUTES_TO",
+      "start": {
+        "x": 1924,
+        "y": 1328
+      },
+      "bendPoints": [],
+      "end": {
+        "x": 1924,
+        "y": 1440
+      }
+    },
+    {
+      "id": "EDGE_PAT1_FUN2_CONTRIBUTES_TO",
+      "start": {
+        "x": 2084,
+        "y": 1328
+      },
+      "bendPoints": [
+        {
+          "x": 2084,
+          "y": 1358
+        },
+        {
+          "x": 2589,
+          "y": 1358
+        }
+      ],
+      "end": {
+        "x": 2589,
+        "y": 1440
+      }
+    },
+    {
+      "id": "EDGE_PAT1_FUN4_CONTRIBUTES_TO",
+      "start": {
+        "x": 2004,
+        "y": 1328
+      },
+      "bendPoints": [
+        {
+          "x": 2004,
+          "y": 1368
+        },
+        {
+          "x": 2194,
+          "y": 1368
+        }
+      ],
+      "end": {
+        "x": 2194,
+        "y": 1440
+      }
+    },
+    {
+      "id": "EDGE_PAT2_FUN1_CONTRIBUTES_TO",
+      "start": {
+        "x": 2343,
+        "y": 1328
+      },
+      "bendPoints": [
+        {
+          "x": 2343,
+          "y": 1338
+        },
+        {
+          "x": 1980,
+          "y": 1338
+        }
+      ],
+      "end": {
+        "x": 1980,
+        "y": 1440
+      }
+    },
+    {
+      "id": "EDGE_PAT2_FUN2_CONTRIBUTES_TO",
+      "start": {
+        "x": 2449,
+        "y": 1328
+      },
+      "bendPoints": [
+        {
+          "x": 2449,
+          "y": 1338
+        },
+        {
+          "x": 2657,
+          "y": 1338
+        }
+      ],
+      "end": {
+        "x": 2657,
+        "y": 1440
+      }
+    },
+    {
+      "id": "EDGE_REG1_BEH2_CONTRIBUTES_TO",
+      "start": {
+        "x": 1760,
+        "y": 864
+      },
+      "bendPoints": [
+        {
+          "x": 1760,
+          "y": 894
+        },
+        {
+          "x": 1574,
+          "y": 894
+        }
+      ],
+      "end": {
+        "x": 1574,
+        "y": 976
+      }
+    },
+    {
+      "id": "EDGE_REG2_BEH4_CONTRIBUTES_TO",
+      "start": {
+        "x": 2152,
+        "y": 864
+      },
+      "bendPoints": [
+        {
+          "x": 2152,
+          "y": 894
+        },
+        {
+          "x": 1913,
+          "y": 894
+        }
+      ],
+      "end": {
+        "x": 1913,
+        "y": 976
+      }
+    },
+    {
+      "id": "EDGE_REG2_BEH5_CONTRIBUTES_TO",
+      "start": {
+        "x": 2252,
+        "y": 864
+      },
+      "bendPoints": [],
+      "end": {
+        "x": 2252,
+        "y": 976
+      }
+    },
+    {
+      "id": "EDGE_REG3_BEH1_CONTRIBUTES_TO",
+      "start": {
+        "x": 2499,
+        "y": 864
+      },
+      "bendPoints": [
+        {
+          "x": 2499,
+          "y": 884
+        },
+        {
+          "x": 1209,
+          "y": 884
+        }
+      ],
+      "end": {
+        "x": 1209,
+        "y": 976
+      }
+    },
+    {
+      "id": "EDGE_REG3_BEH5_CONTRIBUTES_TO",
+      "start": {
+        "x": 2574,
+        "y": 864
+      },
+      "bendPoints": [
+        {
+          "x": 2574,
+          "y": 894
+        },
+        {
+          "x": 2358,
+          "y": 894
+        }
+      ],
+      "end": {
+        "x": 2358,
+        "y": 976
+      }
+    },
+    {
+      "id": "EDGE_REG3_BEH6_CONTRIBUTES_TO",
+      "start": {
+        "x": 2649,
+        "y": 864
+      },
+      "bendPoints": [
+        {
+          "x": 2649,
+          "y": 874
+        },
+        {
+          "x": 2697,
+          "y": 874
+        }
+      ],
+      "end": {
+        "x": 2697,
+        "y": 976
+      }
+    },
+    {
+      "id": "EDGE_REG4_BEH7_CONTRIBUTES_TO",
+      "start": {
+        "x": 514,
+        "y": 864
+      },
+      "bendPoints": [
+        {
+          "x": 514,
+          "y": 874
+        },
+        {
+          "x": 684,
+          "y": 874
+        }
+      ],
+      "end": {
+        "x": 684,
+        "y": 976
+      }
+    },
+    {
+      "id": "EDGE_REG5_BEH1_CONTRIBUTES_TO",
+      "start": {
+        "x": 1258,
+        "y": 864
+      },
+      "bendPoints": [
+        {
+          "x": 1258,
+          "y": 874
+        },
+        {
+          "x": 1129,
+          "y": 874
+        }
+      ],
+      "end": {
+        "x": 1129,
+        "y": 976
+      }
+    },
+    {
+      "id": "EDGE_REG5_BEH2_CONTRIBUTES_TO",
+      "start": {
+        "x": 1358,
+        "y": 864
+      },
+      "bendPoints": [
+        {
+          "x": 1358,
+          "y": 894
+        },
+        {
+          "x": 1468,
+          "y": 894
+        }
+      ],
+      "end": {
+        "x": 1468,
+        "y": 976
+      }
+    },
+    {
+      "id": "EDGE_REG6_BEH1_CONTRIBUTES_TO",
+      "start": {
+        "x": 986,
+        "y": 864
+      },
+      "bendPoints": [
+        {
+          "x": 986,
+          "y": 874
+        },
+        {
+          "x": 1049,
+          "y": 874
+        }
+      ],
+      "end": {
+        "x": 1049,
+        "y": 976
+      }
+    },
+    {
+      "id": "EDGE_REG6_BEH7_CONTRIBUTES_TO",
+      "start": {
+        "x": 886,
+        "y": 864
+      },
+      "bendPoints": [
+        {
+          "x": 886,
+          "y": 874
+        },
+        {
+          "x": 790,
+          "y": 874
+        }
+      ],
+      "end": {
+        "x": 790,
+        "y": 976
+      }
+    },
+    {
+      "id": "EDGE_REG7_BEH3_CONTRIBUTES_TO",
+      "start": {
+        "x": 3089,
+        "y": 864
+      },
+      "bendPoints": [],
+      "end": {
+        "x": 3089,
+        "y": 976
+      }
+    }
+  ]
+}

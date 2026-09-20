@@ -1,13 +1,75 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://adhd-explorer.local/schemas/layout-artifact.schema.json",
-  "title": "LayoutArtifact boundary contract",
+  "title": "Production LayoutArtifact",
   "type": "object",
   "additionalProperties": false,
-  "required": ["knowledgeReleaseId", "layoutVersion", "nodes"],
+  "required": [
+    "layoutVersion",
+    "generatorVersion",
+    "knowledgeReleaseId",
+    "elkVersion",
+    "configurationVersion",
+    "overrideSetVersion",
+    "graphBounds",
+    "nodeGeometry",
+    "edgeGeometry"
+  ],
   "properties": {
-    "knowledgeReleaseId": { "type": "string", "minLength": 1 },
     "layoutVersion": { "type": "string", "minLength": 1 },
-    "nodes": { "type": "array", "items": { "type": "object", "additionalProperties": false, "required": ["id", "x", "y"], "properties": { "id": { "type": "string", "minLength": 1 }, "x": { "type": "number" }, "y": { "type": "number" } } } }
+    "generatorVersion": { "type": "string", "minLength": 1 },
+    "knowledgeReleaseId": { "type": "string", "minLength": 1 },
+    "elkVersion": { "const": "0.12.0" },
+    "configurationVersion": { "type": "string", "minLength": 1 },
+    "overrideSetVersion": { "type": "string", "minLength": 1 },
+    "graphBounds": { "$ref": "#/$defs/rectangle" },
+    "nodeGeometry": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "x", "y", "width", "height"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "x": { "type": "number" },
+          "y": { "type": "number" },
+          "width": { "type": "number", "exclusiveMinimum": 0 },
+          "height": { "type": "number", "exclusiveMinimum": 0 }
+        }
+      }
+    },
+    "edgeGeometry": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "start", "bendPoints", "end"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "start": { "$ref": "#/$defs/point" },
+          "bendPoints": { "type": "array", "items": { "$ref": "#/$defs/point" } },
+          "end": { "$ref": "#/$defs/point" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "point": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x", "y"],
+      "properties": { "x": { "type": "number" }, "y": { "type": "number" } }
+    },
+    "rectangle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x", "y", "width", "height"],
+      "properties": {
+        "x": { "type": "number" },
+        "y": { "type": "number" },
+        "width": { "type": "number", "exclusiveMinimum": 0 },
+        "height": { "type": "number", "exclusiveMinimum": 0 }
+      }
+    }
   }
 }
