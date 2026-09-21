@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import AppPageHeader from './ui/AppPageHeader.vue'
+import AppPanel from './ui/AppPanel.vue'
+
 defineProps<{
   locale: 'en' | 'fa'
   direction: 'ltr' | 'rtl'
@@ -12,17 +15,23 @@ defineProps<{
 
 <template>
   <main class="foundation-shell" :dir="direction" :data-locale="locale">
-    <section class="foundation-panel" aria-labelledby="foundation-title">
-      <p class="foundation-kicker">{{ kicker }}</p>
-      <h1 id="foundation-title">{{ title }}</h1>
-      <p class="foundation-summary">{{ summary }}</p>
-      <NuxtLink
-        class="locale-link"
-        :to="switchHref"
-        :hreflang="locale === 'en' ? 'fa' : 'en'"
+    <AppPanel as="section" class="foundation-panel" labelledby="foundation-title">
+      <AppPageHeader
+        heading-id="foundation-title"
+        :kicker="kicker"
+        :title="title"
+        :summary="summary"
       >
-        {{ switchLabel }}
-      </NuxtLink>
-    </section>
+        <div class="foundation-actions">
+          <NuxtLink
+            class="locale-link"
+            :to="switchHref"
+            :hreflang="locale === 'en' ? 'fa' : 'en'"
+          >
+            {{ switchLabel }}
+          </NuxtLink>
+        </div>
+      </AppPageHeader>
+    </AppPanel>
   </main>
 </template>

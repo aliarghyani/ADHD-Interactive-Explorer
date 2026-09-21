@@ -1,8 +1,41 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
 :root {
   color-scheme: light;
-  font-family:
-    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+  --app-bg: #f4f6f3;
+  --app-surface-primary: #ffffff;
+  --app-surface-secondary: #f8faf8;
+  --app-surface-quiet: #eef3f0;
+  --app-border: #cfd8d3;
+  --app-border-strong: #9eada6;
+  --app-text: #17251f;
+  --app-text-secondary: #41544b;
+  --app-text-muted: #60736a;
+  --app-accent: #0f766e;
+  --app-accent-strong: #115e59;
+  --app-accent-soft: #dcefeb;
+  --app-focus: #b45309;
+  --app-safety-bg: #fff8e8;
+  --app-safety-border: #c9831b;
+  --app-radius-sm: 0.55rem;
+  --app-radius-md: 0.85rem;
+  --app-radius-lg: 1.15rem;
+  --app-shadow-sm: 0 1px 2px rgb(20 39 31 / 5%);
+  --app-shadow-md: 0 1rem 2.5rem rgb(20 39 31 / 8%);
+  --app-space-1: 0.25rem;
+  --app-space-2: 0.5rem;
+  --app-space-3: 0.75rem;
+  --app-space-4: 1rem;
+  --app-space-5: 1.5rem;
+  --app-space-6: 2rem;
+  --app-space-7: 3rem;
+  --app-motion-fast: 120ms;
+  --app-motion-standard: 180ms;
+  --app-font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --app-font-fa: Tahoma, "Segoe UI", Arial, sans-serif;
+  --app-font-mono: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+  font-family: var(--app-font-sans);
 }
 
 * {
@@ -15,71 +48,182 @@ body,
   min-height: 100%;
 }
 
+html[dir="rtl"] {
+  font-family: var(--app-font-fa);
+}
+
+body {
+  margin: 0;
+  background: var(--app-bg);
+  color: var(--app-text);
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+a,
+input {
+  font: inherit;
+}
+
+a {
+  color: var(--app-accent-strong);
+  text-underline-offset: 0.22em;
+}
+
+:where(a, button, input, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--app-focus);
+  outline-offset: 3px;
+}
+
 bdi[dir="ltr"] {
   unicode-bidi: isolate;
   direction: ltr;
+  font-family: var(--app-font-mono);
 }
 
 bdi[dir="auto"] {
   unicode-bidi: isolate;
 }
 
-body {
+.app-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--app-space-6);
+}
+
+.app-page-header__copy {
+  max-width: 62rem;
+}
+
+.app-page-header__kicker {
+  margin: 0 0 var(--app-space-2);
+  color: var(--app-accent-strong);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+[dir="rtl"] .app-page-header__kicker {
+  letter-spacing: 0;
+}
+
+.app-page-header__title {
+  max-width: 58rem;
   margin: 0;
-  background: #f5f6f8;
-  color: #172033;
+  font-size: clamp(2.1rem, 4vw, 4.25rem);
+  font-weight: 760;
+  letter-spacing: -0.035em;
+  line-height: 1.04;
 }
 
-button,
-a {
-  font: inherit;
+[dir="rtl"] .app-page-header__title {
+  letter-spacing: 0;
+  line-height: 1.25;
 }
 
-a {
-  color: #37308d;
-  text-underline-offset: 0.2em;
+.app-page-header__summary {
+  max-width: 58rem;
+  margin: var(--app-space-4) 0 0;
+  color: var(--app-text-secondary);
+  font-size: clamp(1rem, 1.25vw, 1.14rem);
+  line-height: 1.75;
+}
+
+.app-page-header__actions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: var(--app-space-2);
+}
+
+.app-panel {
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-lg);
+  background: var(--app-surface-primary);
+  box-shadow: var(--app-shadow-sm);
+}
+
+.app-panel[data-surface="secondary"] {
+  background: var(--app-surface-secondary);
+}
+
+.app-panel[data-surface="quiet"] {
+  background: var(--app-surface-quiet);
+  box-shadow: none;
+}
+
+.app-panel__content {
+  padding: var(--app-space-5);
+}
+
+.app-panel__content--flush {
+  padding: 0;
+}
+
+.app-safety-notice {
+  border: 1px solid color-mix(in srgb, var(--app-safety-border) 62%, white);
+  border-inline-start: 0.3rem solid var(--app-safety-border);
+  border-radius: var(--app-radius-md);
+  background: var(--app-safety-bg);
+  box-shadow: none;
+}
+
+.app-safety-notice [data-slot="description"] {
+  color: #5f461c;
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+.app-evidence-badge {
+  border-color: var(--app-border-strong);
+  color: var(--app-text-secondary);
+  font-weight: 750;
+  letter-spacing: 0.01em;
+}
+
+.app-canonical-id {
+  font-family: var(--app-font-mono);
+  font-size: 0.78em;
+  font-variant-numeric: tabular-nums;
+}
+
+.app-supporting-text {
+  color: var(--app-text-secondary);
+  font-size: 0.94rem;
+  line-height: 1.65;
+}
+
+.app-metadata {
+  color: var(--app-text-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
 }
 
 .foundation-shell {
   display: grid;
   min-height: 100vh;
   place-items: center;
-  padding: 2rem;
+  padding: var(--app-space-6);
 }
 
 .foundation-panel {
-  width: min(42rem, 100%);
+  width: min(46rem, 100%);
+  box-shadow: var(--app-shadow-md);
+}
+
+.foundation-panel .app-panel__content {
   padding: clamp(2rem, 6vw, 4rem);
-  border: 1px solid #d9dce3;
-  border-radius: 1rem;
-  background: #fff;
-  box-shadow: 0 1.5rem 4rem rgb(23 32 51 / 8%);
 }
 
-.foundation-kicker {
-  margin: 0 0 0.75rem;
-  color: #615a45;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+.foundation-panel .app-page-header {
+  display: block;
 }
 
-[dir="rtl"] .foundation-kicker {
-  letter-spacing: 0;
-}
-
-.foundation-panel h1 {
-  margin: 0;
-  font-size: clamp(2rem, 7vw, 3.5rem);
-  line-height: 1.05;
-}
-
-.foundation-summary {
-  margin: 1.25rem 0 2rem;
-  color: #4e586b;
-  font-size: 1.1rem;
-  line-height: 1.65;
+.foundation-actions {
+  margin-top: var(--app-space-6);
 }
 
 .locale-link {
@@ -87,13 +231,36 @@ a {
   min-height: 2.75rem;
   align-items: center;
   padding: 0.65rem 1rem;
-  border: 1px solid currentcolor;
+  border: 1px solid var(--app-accent);
   border-radius: 999px;
-  font-weight: 700;
+  color: var(--app-accent-strong);
+  font-weight: 750;
   text-decoration: none;
+  transition: background-color var(--app-motion-fast) ease, color var(--app-motion-fast) ease;
 }
 
-.locale-link:focus-visible {
-  outline: 3px solid #d7652b;
-  outline-offset: 4px;
+.locale-link:hover {
+  background: var(--app-accent-soft);
+}
+
+@media (max-width: 47.99rem) {
+  .app-page-header {
+    display: grid;
+    gap: var(--app-space-4);
+  }
+
+  .app-page-header__title {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    animation-duration: 0s !important;
+    animation-iteration-count: 1 !important;
+  }
 }

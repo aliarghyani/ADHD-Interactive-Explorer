@@ -21,11 +21,13 @@
     "test:wp05": "nuxt prepare && vitest run tests/unit/localization tests/unit/safety tests/integration/localization tests/rtl",
     "test:wp06": "nuxt prepare && vitest run tests/component/system-map tests/integration/system-map",
     "test:wp07": "nuxt prepare && vitest run tests/accessibility tests/component/system-map tests/integration/system-map",
+    "test:wp075": "nuxt prepare && vitest run tests/component/ui-foundation",
     "knowledge:ingest": "node scripts/knowledge/ingest-production-pack.mjs",
     "knowledge:validate": "node scripts/knowledge/validate.mjs",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/ui": "4.11.1",
     "nuxt": "4.5.2",
     "vue": "3.5.43"
   },

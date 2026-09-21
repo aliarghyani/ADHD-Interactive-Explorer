@@ -9,6 +9,7 @@ export default defineConfig({
   },
   test: {
     environment: 'happy-dom',
+    setupFiles: ['./tests/setup.ts'],
     include: ['tests/**/*.spec.{ts,mjs}'],
     exclude: ['tests/e2e/**'],
     // The repository's contract fixtures are intentionally large. A single

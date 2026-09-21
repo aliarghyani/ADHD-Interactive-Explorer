@@ -75,13 +75,13 @@ const layerBands = computed(() => Object.entries(categoryVisualTokens)
   }))
 
 onMounted(() => {
+  fitToGraph()
   resizeObserver = new ResizeObserver((entries) => {
     const width = entries[0]?.contentRect.width
     if (width && Math.abs(width - lastMeasuredWidth) >= 1) fitToGraph(false, width)
   })
   if (viewport.value) resizeObserver.observe(viewport.value)
   requestAnimationFrame(() => {
-    fitToGraph()
     emit('ready')
   })
 })
@@ -163,9 +163,19 @@ defineExpose({ focusedNodeId, focusNode })
         <h2 id="system-visual-graph-heading">{{ copy.mapHeading }}</h2>
       </div>
       <div class="system-viewport-controls">
-        <button type="button" :aria-label="copy.zoomOut" @click="zoomBy(0.82)">−</button>
-        <button type="button" :aria-label="copy.zoomIn" @click="zoomBy(1.22)">+</button>
-        <button type="button" class="system-reset-button" @click="resetView">{{ copy.resetView }}</button>
+        <UTooltip :text="copy.zoomOut">
+          <UButton type="button" color="neutral" variant="outline" square :aria-label="copy.zoomOut" @click="zoomBy(0.82)">
+            <span aria-hidden="true">−</span>
+          </UButton>
+        </UTooltip>
+        <UTooltip :text="copy.zoomIn">
+          <UButton type="button" color="neutral" variant="outline" square :aria-label="copy.zoomIn" @click="zoomBy(1.22)">
+            <span aria-hidden="true">+</span>
+          </UButton>
+        </UTooltip>
+        <UButton type="button" class="system-reset-button" color="primary" variant="soft" @click="resetView">
+          {{ copy.resetView }}
+        </UButton>
       </div>
     </header>
 

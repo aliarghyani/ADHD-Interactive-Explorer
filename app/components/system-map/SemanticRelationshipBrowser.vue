@@ -4,6 +4,8 @@ import type { CanonicalNodeId, Locale } from '../../../domain'
 import type { SystemMapCopy } from '../../../features/system-map/copy'
 import type { SemanticRelationshipItem, SemanticRelationshipModel } from '../../../features/system-map/semantic-browser'
 import { categoryVisualTokens, relationshipVisualTokens, semanticText } from '../../../visualization/system-map/semantic-tokens'
+import AppPanel from '../ui/AppPanel.vue'
+import EvidenceBadge from '../ui/EvidenceBadge.vue'
 
 const props = defineProps<{
   model: SemanticRelationshipModel | null
@@ -44,7 +46,12 @@ defineExpose({ focusHeading })
 </script>
 
 <template>
-  <aside class="system-semantic-browser system-detail-panel" aria-labelledby="system-semantic-heading" aria-describedby="system-semantic-description">
+  <AppPanel
+    as="aside"
+    class="system-semantic-browser system-detail-panel"
+    labelledby="system-semantic-heading"
+    aria-describedby="system-semantic-description"
+  >
     <header class="system-detail-heading">
       <div>
         <p class="system-map-eyebrow">{{ copy.relationshipBrowser }}</p>
@@ -52,7 +59,18 @@ defineExpose({ focusHeading })
           {{ model?.label ?? copy.selectedConcept }}
         </h2>
       </div>
-      <button v-if="model" type="button" class="system-icon-button" :aria-label="copy.close" @click="emit('close')">×</button>
+      <UButton
+        v-if="model"
+        type="button"
+        class="system-icon-button"
+        color="neutral"
+        variant="ghost"
+        square
+        :aria-label="copy.close"
+        @click="emit('close')"
+      >
+        <span aria-hidden="true">×</span>
+      </UButton>
     </header>
     <p id="system-semantic-description" class="system-detail-empty">{{ copy.semanticDescription }}</p>
     <p class="system-clinical-separation">{{ copy.clinicalSeparation }}</p>
@@ -64,14 +82,20 @@ defineExpose({ focusHeading })
         <h3>{{ copy.selectedConcept }}</h3>
         <strong class="system-selected-concept-label">{{ model.label }}</strong>
         <div class="system-detail-badges">
-          <span>{{ semanticText(categoryVisualTokens[model.category].secondaryLabel, locale) }}</span>
-          <bdi dir="ltr">{{ model.id }}</bdi>
-          <span>{{ model.evidenceLabel }}</span>
+          <UBadge color="neutral" variant="subtle">
+            {{ semanticText(categoryVisualTokens[model.category].secondaryLabel, locale) }}
+          </UBadge>
+          <UBadge color="neutral" variant="outline">
+            <bdi dir="ltr" class="app-canonical-id">{{ model.id }}</bdi>
+          </UBadge>
+          <EvidenceBadge :label="model.evidenceLabel" />
         </div>
         <p v-if="model.canonicalName !== model.label" lang="en" dir="ltr" class="system-canonical-name">
           {{ model.canonicalName }}
         </p>
-        <button type="button" class="system-show-in-graph" @click="emit('showInGraph')">{{ copy.showInGraph }}</button>
+        <UButton type="button" class="system-show-in-graph" color="primary" variant="soft" @click="emit('showInGraph')">
+          {{ copy.showInGraph }}
+        </UButton>
       </section>
 
       <div class="system-semantic-groups">
@@ -106,5 +130,5 @@ defineExpose({ focusHeading })
         <p><strong>{{ model.evidenceCount }}</strong> {{ copy.evidenceRecords }}</p>
       </section>
     </template>
-  </aside>
+  </AppPanel>
 </template>

@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import type { Locale } from '../../../domain'
 import { categoryVisualTokens, relationshipVisualTokens, semanticText } from '../../../visualization/system-map/semantic-tokens'
+import AppPanel from '../ui/AppPanel.vue'
 
 defineProps<{ locale: Locale; heading: string }>()
 </script>
 
 <template>
-  <section class="system-map-legend" aria-labelledby="system-map-legend-heading">
+  <AppPanel class="system-map-legend" tone="secondary" labelledby="system-map-legend-heading">
     <h2 id="system-map-legend-heading">{{ heading }}</h2>
     <div class="system-legend-categories">
       <div v-for="(token, category) in categoryVisualTokens" :key="category" class="system-legend-item">
@@ -26,5 +27,5 @@ defineProps<{ locale: Locale; heading: string }>()
         </span>
       </div>
     </div>
-  </section>
+  </AppPanel>
 </template>

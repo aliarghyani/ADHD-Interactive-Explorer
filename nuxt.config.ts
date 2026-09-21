@@ -10,7 +10,11 @@ const systemMapRoutes = ['en', 'fa'].flatMap((locale) => [
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
-  modules: ['@nuxt/eslint', '@nuxtjs/i18n'],
+  modules: ['@nuxt/eslint', '@nuxt/ui', '@nuxtjs/i18n'],
+  ui: {
+    fonts: false,
+    colorMode: false,
+  },
   css: ['~/assets/main.css', '~/assets/system-map.css'],
   devtools: { enabled: false },
   app: {

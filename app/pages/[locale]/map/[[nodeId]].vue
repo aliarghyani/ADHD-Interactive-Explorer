@@ -10,6 +10,9 @@ import { productionLayout } from '../../../../visualization/system-map/layout'
 import GraphLegend from '../../../components/system-map/GraphLegend.vue'
 import LayerFilter from '../../../components/system-map/LayerFilter.vue'
 import SemanticRelationshipBrowser from '../../../components/system-map/SemanticRelationshipBrowser.vue'
+import AppPageHeader from '../../../components/ui/AppPageHeader.vue'
+import AppPanel from '../../../components/ui/AppPanel.vue'
+import SafetyNotice from '../../../components/ui/SafetyNotice.vue'
 
 const VisualGraph = defineAsyncComponent(
   () => import('../../../components/system-map/VisualGraph.client.vue'),
@@ -101,83 +104,108 @@ useHead(() => ({
 
 <template>
   <main class="system-map-page" :dir="currentLocale === 'fa' ? 'rtl' : 'ltr'">
-    <header class="system-map-hero">
-      <div>
-        <p class="system-map-eyebrow">{{ copy.kicker }}</p>
-        <h1>{{ copy.title }}</h1>
-        <p>{{ copy.introduction }}</p>
-      </div>
-      <nav class="system-locale-switcher" :aria-label="copy.languageNavigation">
-        <NuxtLink :to="experience.routeFor(selectedNodeId, 'en')" hreflang="en" :aria-current="currentLocale === 'en' ? 'page' : undefined">EN</NuxtLink>
-        <NuxtLink :to="experience.routeFor(selectedNodeId, 'fa')" hreflang="fa" :aria-current="currentLocale === 'fa' ? 'page' : undefined">FA</NuxtLink>
-      </nav>
-    </header>
+    <UContainer class="system-map-container">
+      <AppPageHeader :kicker="copy.kicker" :title="copy.title" :summary="copy.introduction">
+        <template #actions>
+          <nav class="system-locale-switcher" :aria-label="copy.languageNavigation">
+            <UButton
+              :to="experience.routeFor(selectedNodeId, 'en')"
+              hreflang="en"
+              size="sm"
+              :color="currentLocale === 'en' ? 'primary' : 'neutral'"
+              :variant="currentLocale === 'en' ? 'solid' : 'ghost'"
+              :aria-current="currentLocale === 'en' ? 'page' : undefined"
+            >
+              EN
+            </UButton>
+            <UButton
+              :to="experience.routeFor(selectedNodeId, 'fa')"
+              hreflang="fa"
+              size="sm"
+              :color="currentLocale === 'fa' ? 'primary' : 'neutral'"
+              :variant="currentLocale === 'fa' ? 'solid' : 'ghost'"
+              :aria-current="currentLocale === 'fa' ? 'page' : undefined"
+            >
+              FA
+            </UButton>
+          </nav>
+        </template>
+      </AppPageHeader>
 
-    <section class="system-safety-stack" aria-label="Educational safety information">
-      <p>{{ globalSafetyText }}</p>
-      <p>{{ graphSafetyText }}</p>
-    </section>
+      <section class="system-safety-stack" aria-label="Educational safety information">
+        <SafetyNotice :text="globalSafetyText" kind="global" />
+        <SafetyNotice :text="graphSafetyText" kind="graph" />
+      </section>
 
-    <section v-if="invalidNodeId" class="system-invalid-state" role="status">
-      <p class="system-map-eyebrow">{{ copy.invalidTitle }}</p>
-      <h2><BidiIsolation direction="ltr">{{ requestedNodeId }}</BidiIsolation></h2>
-      <p>{{ copy.invalidMessage }}</p>
-      <NuxtLink :to="experience.routeFor(null)">{{ copy.backToMap }}</NuxtLink>
-    </section>
+      <AppPanel v-if="invalidNodeId" class="system-invalid-state" role="status">
+        <p class="system-map-eyebrow">{{ copy.invalidTitle }}</p>
+        <h2><BidiIsolation direction="ltr">{{ requestedNodeId }}</BidiIsolation></h2>
+        <p>{{ copy.invalidMessage }}</p>
+        <UButton :to="experience.routeFor(null)" color="primary" variant="soft">
+          {{ copy.backToMap }}
+        </UButton>
+      </AppPanel>
 
-    <template v-else>
-      <LayerFilter
-        :locale="currentLocale"
-        :visible-layers="visibleLayers"
-        :heading="copy.layers"
-        :item-label="copy.showLayer"
-        @change="experience.setLayerVisible"
-      />
+      <template v-else>
+        <LayerFilter
+          :locale="currentLocale"
+          :visible-layers="visibleLayers"
+          :heading="copy.layers"
+          :item-label="copy.showLayer"
+          @change="experience.setLayerVisible"
+        />
 
-      <div class="system-mobile-boundary" role="note">
-        <h2>{{ copy.mobileTitle }}</h2>
-        <p>{{ copy.mobileMessage }}</p>
-      </div>
+        <AppPanel class="system-mobile-boundary" tone="secondary" role="note">
+          <h2>{{ copy.mobileTitle }}</h2>
+          <p>{{ copy.mobileMessage }}</p>
+        </AppPanel>
 
-      <div class="system-map-workspace">
-        <div class="system-renderer-boundary">
-          <NuxtErrorBoundary>
-            <ClientOnly>
-              <VisualGraph
-                ref="visualGraph"
-                :model="graph"
-                :layout="experience.layout"
-                :locale="currentLocale"
-                :copy="copy"
-                @node-selected="selectFromGraph"
-                @escape-requested="handleGraphEscape"
-                @ready="restorePendingGraphFocus"
-              />
-              <template #fallback>
-                <div class="system-graph-loading" aria-hidden="true">{{ copy.loading }}</div>
+        <div class="system-map-workspace">
+          <div class="system-renderer-boundary-shell">
+            <NuxtErrorBoundary>
+              <AppPanel class="system-renderer-boundary" :padded="false">
+                <ClientOnly>
+                  <VisualGraph
+                    ref="visualGraph"
+                    :model="graph"
+                    :layout="experience.layout"
+                    :locale="currentLocale"
+                    :copy="copy"
+                    @node-selected="selectFromGraph"
+                    @escape-requested="handleGraphEscape"
+                    @ready="restorePendingGraphFocus"
+                  />
+                  <template #fallback>
+                    <div class="system-graph-loading" aria-hidden="true">{{ copy.loading }}</div>
+                  </template>
+                </ClientOnly>
+              </AppPanel>
+              <template #error="{ clearError }">
+                <AppPanel class="system-renderer-boundary">
+                  <section class="system-renderer-error" role="status">
+                    <p>{{ copy.rendererUnavailable }}</p>
+                    <UButton type="button" color="primary" variant="soft" @click="clearError">
+                      {{ copy.resetView }}
+                    </UButton>
+                  </section>
+                </AppPanel>
               </template>
-            </ClientOnly>
-            <template #error="{ clearError }">
-              <section class="system-renderer-error" role="status">
-                <p>{{ copy.rendererUnavailable }}</p>
-                <button type="button" @click="clearError">{{ copy.resetView }}</button>
-              </section>
-            </template>
-          </NuxtErrorBoundary>
+            </NuxtErrorBoundary>
+          </div>
+
+          <SemanticRelationshipBrowser
+            ref="semanticBrowser"
+            :model="semantic"
+            :locale="currentLocale"
+            :copy="copy"
+            @node-selected="selectFromSemantic"
+            @show-in-graph="showSelectedInGraph"
+            @close="clearSelectionAndRestoreFocus"
+          />
         </div>
 
-        <SemanticRelationshipBrowser
-          ref="semanticBrowser"
-          :model="semantic"
-          :locale="currentLocale"
-          :copy="copy"
-          @node-selected="selectFromSemantic"
-          @show-in-graph="showSelectedInGraph"
-          @close="clearSelectionAndRestoreFocus"
-        />
-      </div>
-
-      <GraphLegend :locale="currentLocale" :heading="copy.legend" />
-    </template>
+        <GraphLegend :locale="currentLocale" :heading="copy.legend" />
+      </template>
+    </UContainer>
   </main>
 </template>

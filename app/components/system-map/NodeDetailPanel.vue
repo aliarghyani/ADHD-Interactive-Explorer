@@ -3,6 +3,8 @@ import type { Locale } from '../../../domain'
 import type { SelectedNodeDetail } from '../../../features/system-map/detail'
 import type { SystemMapCopy } from '../../../features/system-map/copy'
 import { categoryVisualTokens, relationshipVisualTokens, semanticText } from '../../../visualization/system-map/semantic-tokens'
+import AppPanel from '../ui/AppPanel.vue'
+import EvidenceBadge from '../ui/EvidenceBadge.vue'
 
 defineProps<{
   detail: SelectedNodeDetail | null
@@ -14,13 +16,15 @@ defineEmits<{ close: [] }>()
 </script>
 
 <template>
-  <aside class="system-detail-panel" aria-labelledby="system-detail-heading">
+  <AppPanel as="aside" class="system-detail-panel" labelledby="system-detail-heading">
     <div class="system-detail-heading">
       <div>
         <p class="system-map-eyebrow">{{ copy.details }}</p>
         <h2 id="system-detail-heading">{{ detail?.label ?? copy.selectPrompt }}</h2>
       </div>
-      <button v-if="detail" type="button" class="system-icon-button" :aria-label="copy.close" @click="$emit('close')">×</button>
+      <UButton v-if="detail" type="button" class="system-icon-button" color="neutral" variant="ghost" square :aria-label="copy.close" @click="$emit('close')">
+        <span aria-hidden="true">×</span>
+      </UButton>
     </div>
 
     <p v-if="!detail" class="system-detail-empty">{{ copy.selectPrompt }}</p>
@@ -29,9 +33,13 @@ defineEmits<{ close: [] }>()
       <section>
         <h3>{{ copy.overview }}</h3>
         <div class="system-detail-badges">
-          <span>{{ semanticText(categoryVisualTokens[detail.category].secondaryLabel, locale) }}</span>
-          <bdi dir="ltr">{{ detail.id }}</bdi>
-          <span>{{ detail.evidenceLabel }}</span>
+          <UBadge color="neutral" variant="subtle">
+            {{ semanticText(categoryVisualTokens[detail.category].secondaryLabel, locale) }}
+          </UBadge>
+          <UBadge color="neutral" variant="outline">
+            <bdi dir="ltr" class="app-canonical-id">{{ detail.id }}</bdi>
+          </UBadge>
+          <EvidenceBadge :label="detail.evidenceLabel" />
         </div>
         <p v-if="detail.canonicalName !== detail.label" lang="en" dir="ltr" class="system-canonical-name">
           {{ detail.canonicalName }}
@@ -76,5 +84,5 @@ defineEmits<{ close: [] }>()
         <p><strong>{{ detail.evidenceCount }}</strong> {{ copy.evidenceRecords }}</p>
       </section>
     </template>
-  </aside>
+  </AppPanel>
 </template>
