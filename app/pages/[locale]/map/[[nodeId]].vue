@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import type { Locale } from '../../../../domain'
+import { computed, defineAsyncComponent, nextTick, ref } from 'vue'
+import type { CanonicalNodeId, Locale } from '../../../../domain'
 import { systemMapCopy } from '../../../../features/system-map/copy'
 import { systemMapRepository } from '../../../../features/system-map/knowledge'
 import { useSystemMapExperience } from '../../../../features/system-map/system-map-experience'
@@ -9,16 +9,23 @@ import { SafetyAccess } from '../../../../safety'
 import { productionLayout } from '../../../../visualization/system-map/layout'
 import GraphLegend from '../../../components/system-map/GraphLegend.vue'
 import LayerFilter from '../../../components/system-map/LayerFilter.vue'
-import NodeDetailPanel from '../../../components/system-map/NodeDetailPanel.vue'
-import VisualGraph from '../../../components/system-map/VisualGraph.client.vue'
+import SemanticRelationshipBrowser from '../../../components/system-map/SemanticRelationshipBrowser.vue'
 
-definePageMeta({ i18n: false })
+const VisualGraph = defineAsyncComponent(
+  () => import('../../../components/system-map/VisualGraph.client.vue'),
+)
+
+definePageMeta({ i18n: false, key: 'system-map' })
 
 const route = useRoute()
 const currentLocale = computed<Locale>(() => route.params.locale === 'fa' ? 'fa' : 'en')
 const rawNodeId = computed(() => Array.isArray(route.params.nodeId) ? route.params.nodeId[0] : route.params.nodeId)
 const requestedNodeId = computed(() => typeof rawNodeId.value === 'string' ? rawNodeId.value : null)
 const copy = computed(() => systemMapCopy[currentLocale.value])
+const visualGraph = ref<{ focusNode: (nodeId?: CanonicalNodeId | null) => Promise<void> } | null>(null)
+const semanticBrowser = ref<{ focusHeading: () => void } | null>(null)
+const lastSelectionSource = ref<'graph' | 'semantic'>('graph')
+const pendingGraphFocusId = ref<CanonicalNodeId | null>(null)
 const experience = useSystemMapExperience({
   repository: systemMapRepository,
   localization: new DomainLocalization(systemMapRepository),
@@ -34,10 +41,57 @@ const {
   invalidNodeId,
   visibleLayers,
   graph,
-  detail,
+  semantic,
   graphSafetyText,
   globalSafetyText,
 } = experience
+
+async function selectFromGraph(nodeId: CanonicalNodeId): Promise<void> {
+  lastSelectionSource.value = 'graph'
+  await experience.selectNode(nodeId)
+}
+
+async function selectFromSemantic(nodeId: CanonicalNodeId): Promise<void> {
+  lastSelectionSource.value = 'semantic'
+  await experience.selectNode(nodeId)
+  await settleFocusTarget()
+  semanticBrowser.value?.focusHeading()
+}
+
+async function showSelectedInGraph(): Promise<void> {
+  if (!selectedNodeId.value) return
+  lastSelectionSource.value = 'graph'
+  await visualGraph.value?.focusNode(selectedNodeId.value)
+}
+
+async function clearSelectionAndRestoreFocus(): Promise<void> {
+  const previousNodeId = selectedNodeId.value
+  if (lastSelectionSource.value === 'graph') pendingGraphFocusId.value = previousNodeId
+  await experience.clearSelection()
+  await settleFocusTarget()
+  if (lastSelectionSource.value === 'graph' && previousNodeId) {
+    await restorePendingGraphFocus()
+  } else {
+    semanticBrowser.value?.focusHeading()
+  }
+}
+
+async function handleGraphEscape(): Promise<void> {
+  if (selectedNodeId.value) await experience.clearSelection()
+}
+
+async function settleFocusTarget(): Promise<void> {
+  await nextTick()
+  await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()))
+  await nextTick()
+}
+
+async function restorePendingGraphFocus(): Promise<void> {
+  if (!pendingGraphFocusId.value || !visualGraph.value) return
+  const nodeId = pendingGraphFocusId.value
+  pendingGraphFocusId.value = null
+  await visualGraph.value.focusNode(nodeId)
+}
 
 useHead(() => ({
   title: copy.value.metaTitle,
@@ -90,11 +144,14 @@ useHead(() => ({
           <NuxtErrorBoundary>
             <ClientOnly>
               <VisualGraph
+                ref="visualGraph"
                 :model="graph"
                 :layout="experience.layout"
                 :locale="currentLocale"
                 :copy="copy"
-                @node-selected="experience.selectNode"
+                @node-selected="selectFromGraph"
+                @escape-requested="handleGraphEscape"
+                @ready="restorePendingGraphFocus"
               />
               <template #fallback>
                 <div class="system-graph-loading" aria-hidden="true">{{ copy.loading }}</div>
@@ -109,11 +166,14 @@ useHead(() => ({
           </NuxtErrorBoundary>
         </div>
 
-        <NodeDetailPanel
-          :detail="detail"
+        <SemanticRelationshipBrowser
+          ref="semanticBrowser"
+          :model="semantic"
           :locale="currentLocale"
           :copy="copy"
-          @close="experience.clearSelection"
+          @node-selected="selectFromSemantic"
+          @show-in-graph="showSelectedInGraph"
+          @close="clearSelectionAndRestoreFocus"
         />
       </div>
 

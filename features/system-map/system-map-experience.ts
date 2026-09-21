@@ -3,13 +3,14 @@ import type { CanonicalNodeId, KnowledgeRepository, Locale } from '../../domain'
 import type { DomainLocalization } from '../../localization'
 import type { SafetyAccess } from '../../safety'
 import type { LayoutArtifact } from '../../visualization/system-map/layout'
-import { buildSelectedNodeDetail, type SelectedNodeDetail } from './detail'
+import { semanticModelToSelectedNodeDetail, type SelectedNodeDetail } from './detail'
 import {
   allFilterableLayers,
   buildGraphReadModel,
   type FilterableLayer,
   type GraphReadModel,
 } from './graph-read-model'
+import { buildSemanticRelationshipModel, type SemanticRelationshipModel } from './semantic-browser'
 
 export interface SystemMapExperienceOptions {
   readonly repository: KnowledgeRepository
@@ -27,6 +28,7 @@ export interface SystemMapExperience {
   readonly visibleLayers: Ref<ReadonlySet<FilterableLayer>>
   readonly graph: ComputedRef<GraphReadModel>
   readonly detail: ComputedRef<SelectedNodeDetail | null>
+  readonly semantic: ComputedRef<SemanticRelationshipModel | null>
   readonly graphSafetyText: ComputedRef<string>
   readonly globalSafetyText: ComputedRef<string>
   readonly layout: LayoutArtifact
@@ -58,9 +60,10 @@ export function useSystemMapExperience(options: SystemMapExperienceOptions): Sys
     selectedNodeId: selectedNodeId.value,
     visibleLayers: visibleLayers.value,
   }))
-  const detail = computed(() => selectedNodeId.value
-    ? buildSelectedNodeDetail(options.repository, options.localization, selectedNodeId.value, options.locale.value)
+  const semantic = computed(() => selectedNodeId.value
+    ? buildSemanticRelationshipModel(options.repository, options.localization, selectedNodeId.value, options.locale.value)
     : null)
+  const detail = computed(() => semantic.value ? semanticModelToSelectedNodeDetail(semantic.value) : null)
   const graphSafetyText = computed(() => {
     const content = options.safety.getRequired('graphDisclaimer', options.locale.value)
     return localizedText(content.localized.fields, content.record.id)
@@ -95,6 +98,7 @@ export function useSystemMapExperience(options: SystemMapExperienceOptions): Sys
     visibleLayers,
     graph,
     detail,
+    semantic,
     graphSafetyText,
     globalSafetyText,
     layout: options.layout,

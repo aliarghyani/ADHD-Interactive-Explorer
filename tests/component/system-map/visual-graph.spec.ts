@@ -69,4 +69,48 @@ describe('VisualGraph', () => {
     await wrapper.get('[data-node-id="BEH1"]').trigger('focus')
     expect(wrapper.emitted('nodeFocused')).toEqual([['BEH1']])
   })
+
+  it('keeps one roving graph target independent from canonical selection', async () => {
+    const model = buildGraphReadModel({
+      repository: systemMapRepository,
+      localization: new DomainLocalization(systemMapRepository),
+      locale: 'en',
+      selectedNodeId: 'BEH1',
+      visibleLayers: new Set(allFilterableLayers),
+    })
+    const wrapper = mount(VisualGraph, {
+      attachTo: document.body,
+      props: { model, layout: productionLayout, locale: 'en', copy: systemMapCopy.en },
+    })
+
+    const rovingTargets = wrapper.findAll('.system-graph-node').filter((node) => node.attributes('tabindex') === '0')
+    expect(rovingTargets).toHaveLength(1)
+    expect(rovingTargets[0]!.attributes('data-node-id')).not.toBe(model.selectedNodeId)
+
+    await (wrapper.vm as unknown as { focusNode: (id: 'BEH1') => Promise<void> }).focusNode('BEH1')
+    expect(document.activeElement?.getAttribute('data-node-id')).toBe('BEH1')
+    await wrapper.get('[data-node-id="BEH1"]').trigger('keydown', { key: 'ArrowRight' })
+    expect(document.activeElement?.getAttribute('data-node-id')).toBe('BEH2')
+
+    await wrapper.get('[data-node-id="BEH2"]').trigger('keydown', { key: 'Enter' })
+    expect(wrapper.emitted('nodeSelected')?.at(-1)).toEqual(['BEH2'])
+    wrapper.unmount()
+  })
+
+  it('exposes educational region semantics and clinical separation non-visually', () => {
+    const model = buildGraphReadModel({
+      repository: systemMapRepository,
+      localization: new DomainLocalization(systemMapRepository),
+      locale: 'en',
+      selectedNodeId: null,
+      visibleLayers: new Set(allFilterableLayers),
+    })
+    const wrapper = mount(VisualGraph, {
+      props: { model, layout: productionLayout, locale: 'en', copy: systemMapCopy.en },
+    })
+
+    expect(wrapper.get('.system-visual-graph').attributes('aria-describedby')).toContain('system-visual-graph-description')
+    expect(wrapper.get('#system-visual-graph-description').text()).toContain('educational conceptual map')
+    expect(wrapper.get('#system-visual-graph-description').text()).toContain('Formal clinical domains are separated')
+  })
 })

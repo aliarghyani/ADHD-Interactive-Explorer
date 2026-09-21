@@ -65,6 +65,29 @@ describe('SystemMapExperience integration', () => {
     expect(navigate).toHaveBeenCalledWith('/en/map/BEH1')
   })
 
+  it('projects semantic relationships from the same route-owned selection', async () => {
+    const { experience, requestedNodeId, navigate } = createExperience('en', 'BEH1')
+    expect(experience.semantic.value?.id).toBe(experience.selectedNodeId.value)
+    expect(experience.semantic.value?.upstream.length).toBeGreaterThan(0)
+
+    const relatedId = experience.semantic.value!.upstream[0]!.nodeId
+    await experience.selectNode(relatedId)
+    expect(navigate).toHaveBeenLastCalledWith(`/en/map/${relatedId}`)
+
+    requestedNodeId.value = relatedId
+    await nextTick()
+    expect(experience.selectedNodeId.value).toBe(relatedId)
+    expect(experience.graph.value.selectedNodeId).toBe(relatedId)
+    expect(experience.semantic.value?.id).toBe(relatedId)
+  })
+
+  it('keeps semantic content available after experience recomputation and remount', () => {
+    const first = createExperience('fa', 'BEH1').experience
+    const second = createExperience('fa', 'BEH1').experience
+    expect(first.semantic.value).toEqual(second.semantic.value)
+    expect(second.semantic.value?.label).toBe('شروع کردن')
+  })
+
   it('filters visibility without changing selection or canonical geometry', async () => {
     const { experience } = createExperience('en', 'BEH1')
     experience.setLayerVisible('context', false)

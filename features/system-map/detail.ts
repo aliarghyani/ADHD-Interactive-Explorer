@@ -7,6 +7,7 @@ import type {
   RelationshipType,
 } from '../../domain'
 import type { DomainLocalization } from '../../localization'
+import { buildSemanticRelationshipModel, type SemanticRelationshipModel } from './semantic-browser'
 
 export interface RelationshipSummary {
   readonly edgeId: RelationshipEdgeId
@@ -27,41 +28,37 @@ export interface SelectedNodeDetail {
   readonly outgoing: readonly RelationshipSummary[]
 }
 
-function labelFor(localization: DomainLocalization, nodeId: CanonicalNodeId, locale: Locale): string {
-  const label = localization.getNode(nodeId, locale).fields.label
-  if (typeof label !== 'string') throw new TypeError(`Node label must be text: ${nodeId}`)
-  return label
-}
-
 export function buildSelectedNodeDetail(
   repository: KnowledgeRepository,
   localization: DomainLocalization,
   nodeId: CanonicalNodeId,
   locale: Locale,
 ): SelectedNodeDetail {
-  const node = repository.getNode(nodeId)
-  const incoming = repository.getIncomingRelationships(nodeId).map((edge) => Object.freeze({
-    edgeId: edge.id,
-    nodeId: edge.sourceId,
-    label: labelFor(localization, edge.sourceId, locale),
-    relationshipType: edge.relationshipType,
-  }))
-  const outgoing = repository.getOutgoingRelationships(nodeId).map((edge) => Object.freeze({
-    edgeId: edge.id,
-    nodeId: edge.targetId,
-    label: labelFor(localization, edge.targetId, locale),
-    relationshipType: edge.relationshipType,
-  }))
+  return semanticModelToSelectedNodeDetail(
+    buildSemanticRelationshipModel(repository, localization, nodeId, locale),
+  )
+}
 
+export function semanticModelToSelectedNodeDetail(model: SemanticRelationshipModel): SelectedNodeDetail {
   return Object.freeze({
-    id: node.id,
-    label: labelFor(localization, node.id, locale),
-    canonicalName: node.canonicalName,
-    category: node.category,
-    definition: node.definition,
-    evidenceLabel: node.evidenceStatus,
-    evidenceCount: repository.getEvidenceForNode(nodeId).length,
-    incoming: Object.freeze(incoming),
-    outgoing: Object.freeze(outgoing),
+    id: model.id,
+    label: model.label,
+    canonicalName: model.canonicalName,
+    category: model.category,
+    definition: model.definition,
+    evidenceLabel: model.evidenceLabel,
+    evidenceCount: model.evidenceCount,
+    incoming: Object.freeze(model.incoming.map(({ edgeId, nodeId, label, relationshipType }) => Object.freeze({
+      edgeId,
+      nodeId,
+      label,
+      relationshipType,
+    }))),
+    outgoing: Object.freeze(model.outgoing.map(({ edgeId, nodeId, label, relationshipType }) => Object.freeze({
+      edgeId,
+      nodeId,
+      label,
+      relationshipType,
+    }))),
   })
 }
