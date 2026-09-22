@@ -143,7 +143,7 @@ export function createHomeContent(t: Translate, locale: Locale): HomeContent {
       { id: 'map', label: t('home.navigation.systemMap'), href: `${prefix}/map`, available: true },
       { id: 'behaviours', label: t('home.navigation.behaviours'), href: `${prefix}/behaviours`, available: true },
       { id: 'context', label: t('home.navigation.context'), href: `${prefix}/context`, available: true },
-      { id: 'presentations', label: t('home.navigation.presentations'), available: false },
+      { id: 'presentations', label: t('home.navigation.presentations'), href: `${prefix}/presentations`, available: true },
       { id: 'evidence', label: t('home.navigation.evidence'), available: false },
       { id: 'methodology', label: t('home.navigation.methodology'), available: false },
     ] satisfies HomeNavigationItem[]),
@@ -177,7 +177,8 @@ export function createHomeContent(t: Translate, locale: Locale): HomeContent {
         eyebrow: t('home.entries.presentations.eyebrow'),
         title: t('home.entries.presentations.title'),
         description: t('home.entries.presentations.description'),
-        available: false,
+        href: `${prefix}/presentations`,
+        available: true,
       },
     ] satisfies HomeEntryPoint[]),
     modelLayers: Object.freeze([

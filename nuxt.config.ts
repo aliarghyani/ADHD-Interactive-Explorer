@@ -21,6 +21,15 @@ const contextRoutes = ['en', 'fa'].flatMap((locale) => [
   `/${locale}/context`,
   ...contextEntries.contextIds.map((contextId) => `/${locale}/context/${contextId}`),
 ])
+const presentationEntries = JSON.parse(
+  readFileSync(new URL('./knowledge/source/presentations/presentations.json', import.meta.url), 'utf8'),
+) as { presentations: Array<{ id: string, status: string }> }
+const presentationRoutes = ['en', 'fa'].flatMap((locale) => [
+  `/${locale}/presentations`,
+  ...presentationEntries.presentations
+    .filter((entry) => entry.status === 'current-formal')
+    .map((entry) => `/${locale}/presentations/${entry.id}`),
+])
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
@@ -59,6 +68,7 @@ export default defineNuxtConfig({
         ...systemMapRoutes,
         ...behaviourRoutes,
         ...contextRoutes,
+        ...presentationRoutes,
       ],
     },
   },

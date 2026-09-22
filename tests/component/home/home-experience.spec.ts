@@ -100,7 +100,7 @@ describe('WP-07.6 Home educational experience', () => {
     expect(wrapper.text()).toContain('Relationships are many-to-many')
   })
 
-  it('offers four entry choices with three live routes and one controlled unavailable state', () => {
+  it('offers four live entry choices after Presentation activation', () => {
     const wrapper = renderHome('en')
     const entries = wrapper.findAll('.home-entry')
 
@@ -111,10 +111,9 @@ describe('WP-07.6 Home educational experience', () => {
       'Context & Feedback Explorer',
       'Presentation Education',
     ])
-    expect(wrapper.findAll('.home-entry__link').map((link) => link.attributes('href'))).toEqual(['/en/map', '/en/behaviours', '/en/context'])
-    expect(wrapper.findAll('.home-entry__live')).toHaveLength(2)
-    expect(wrapper.findAll('.home-entry__unavailable')).toHaveLength(1)
-    expect(wrapper.findAll('.home-entry__unavailable').every((state) => state.attributes('aria-disabled') === 'true')).toBe(true)
+    expect(wrapper.findAll('.home-entry__link').map((link) => link.attributes('href'))).toEqual(['/en/map', '/en/behaviours', '/en/context', '/en/presentations'])
+    expect(wrapper.findAll('.home-entry__live')).toHaveLength(3)
+    expect(wrapper.findAll('.home-entry__unavailable')).toHaveLength(0)
   })
 
   it('renders complete Persian content with isolated canonical technical terms', () => {
