@@ -26,6 +26,7 @@
     "test:wp08": "nuxt prepare && vitest run tests/component/behaviour tests/integration/behaviour",
     "test:wp09": "nuxt prepare && vitest run tests/component/context tests/integration/context",
     "test:wp10": "nuxt prepare && vitest run tests/component/presentations tests/integration/presentations",
+    "test:wp11": "nuxt prepare && vitest run tests/component/evidence tests/integration/evidence",
     "knowledge:ingest": "node scripts/knowledge/ingest-production-pack.mjs",
     "knowledge:validate": "node scripts/knowledge/validate.mjs",
     "postinstall": "nuxt prepare"

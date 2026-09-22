@@ -11,9 +11,10 @@ import { SafetyAccess } from '../../../safety'
 
 const NuxtLinkStub = defineComponent({
   inheritAttrs: false,
-  props: { to: { type: String, required: true } },
+  props: { to: { type: [String, Object], required: true } },
   setup(props, { attrs, slots }) {
-    return () => h('a', { ...attrs, href: props.to }, slots.default?.())
+    const href = typeof props.to === 'string' ? props.to : (props.to as { path: string }).path
+    return () => h('a', { ...attrs, href }, slots.default?.())
   },
 })
 
@@ -76,7 +77,7 @@ describe('WP-10 Presentation Education components', () => {
       presentationRepository.getSourcesForPresentation('PRESENTATION_INATTENTIVE').length,
     )
     expect(wrapper.get('.presentation-sources').text()).toContain('Current presentation terminology')
-    expect(wrapper.find('a[href="/en/evidence"]').exists()).toBe(false)
+    expect(wrapper.findAll('a').some((link) => link.attributes('href')?.startsWith('/en/evidence'))).toBe(true)
   })
 
   it('preserves Persian direction-sensitive identifiers and historical distinction', () => {

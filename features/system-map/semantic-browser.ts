@@ -28,6 +28,7 @@ export interface SemanticRelationshipModel {
   readonly definition: string
   readonly evidenceLabel: string
   readonly evidenceCount: number
+  readonly evidenceIds: readonly EvidenceId[]
   readonly incoming: readonly SemanticRelationshipItem[]
   readonly outgoing: readonly SemanticRelationshipItem[]
   readonly upstream: readonly SemanticRelationshipItem[]
@@ -94,6 +95,7 @@ export function buildSemanticRelationshipModel(
     definition: node.definition,
     evidenceLabel: node.evidenceStatus,
     evidenceCount: repository.getEvidenceForNode(nodeId).length,
+    evidenceIds: node.evidenceIds,
     incoming: incomingItems,
     outgoing: outgoingItems,
     upstream: Object.freeze(incomingItems.filter((item) => item.relationshipType !== 'FEEDBACK_WITH')),

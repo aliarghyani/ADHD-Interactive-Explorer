@@ -52,8 +52,8 @@ describe('WP-07.6 Home integration boundaries', () => {
     const available = content.navigation.filter((item) => item.available)
     const unavailable = content.navigation.filter((item) => !item.available)
 
-    expect(available.map((item) => item.href)).toEqual([`/${locale}`, `/${locale}/map`, `/${locale}/behaviours`, `/${locale}/context`, `/${locale}/presentations`])
-    expect(unavailable).toHaveLength(2)
+    expect(available.map((item) => item.href)).toEqual([`/${locale}`, `/${locale}/map`, `/${locale}/behaviours`, `/${locale}/context`, `/${locale}/presentations`, `/${locale}/evidence`])
+    expect(unavailable).toHaveLength(1)
     expect(unavailable.every((item) => item.href === undefined)).toBe(true)
     expect(content.entryPoints.filter((item) => item.available).map((item) => item.href)).toEqual([`/${locale}/map`, `/${locale}/behaviours`, `/${locale}/context`, `/${locale}/presentations`])
   })

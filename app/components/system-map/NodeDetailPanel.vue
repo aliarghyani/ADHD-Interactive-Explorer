@@ -13,6 +13,7 @@ defineProps<{
 }>()
 
 defineEmits<{ close: [] }>()
+
 </script>
 
 <template>
@@ -98,6 +99,16 @@ defineEmits<{ close: [] }>()
       <section class="system-evidence-entry">
         <h3>{{ copy.evidenceEntry }}</h3>
         <p><strong>{{ detail.evidenceCount }}</strong> {{ copy.evidenceRecords }}</p>
+        <ul v-if="detail.evidenceIds.length">
+          <li v-for="evidenceId in detail.evidenceIds" :key="evidenceId">
+            <NuxtLink
+              :to="`/${locale}/evidence/${evidenceId}?from=${encodeURIComponent(`/${locale}/map/${detail.id}`)}`"
+              :prefetch="false"
+            >
+              {{ copy.inspectEvidence }} <bdi dir="ltr">{{ evidenceId }}</bdi>
+            </NuxtLink>
+          </li>
+        </ul>
       </section>
     </template>
   </AppPanel>

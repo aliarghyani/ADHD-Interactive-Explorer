@@ -4,6 +4,7 @@ import type { PresentationSourcePreview } from '../../../features/presentation-e
 import AppPanel from '../ui/AppPanel.vue'
 
 defineProps<{
+  locale: 'en' | 'fa'
   sources: readonly PresentationSourcePreview[]
   copy: PresentationCopy
 }>()
@@ -29,6 +30,9 @@ defineProps<{
         <div><dt>{{ copy.citation }}</dt><dd>{{ source.citationText }}</dd></div>
       </dl>
       <a :href="source.url" target="_blank" rel="noreferrer">{{ copy.openSource }}</a>
+      <NuxtLink :to="`/${locale}/evidence?source=${encodeURIComponent(source.id)}`" :prefetch="false">
+        {{ copy.inspectEvidence }}
+      </NuxtLink>
     </article>
   </AppPanel>
 </template>

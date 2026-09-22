@@ -225,6 +225,8 @@ function setDisclosure(section: string, event: Event): void {
 
       <EvidencePreviewPanel
         v-if="openEvidence"
+        :locale="locale"
+        :return-path="`/${locale}/behaviours/${detail.id}`"
         :entry="openEvidence"
         :copy="copy"
         :safety-text="detail.safety.evidence"

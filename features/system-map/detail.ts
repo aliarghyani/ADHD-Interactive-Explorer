@@ -1,6 +1,7 @@
 import type {
   CanonicalNodeId,
   ConceptCategory,
+  EvidenceId,
   KnowledgeRepository,
   Locale,
   RelationshipEdgeId,
@@ -24,6 +25,7 @@ export interface SelectedNodeDetail {
   readonly definition: string
   readonly evidenceLabel: string
   readonly evidenceCount: number
+  readonly evidenceIds: readonly EvidenceId[]
   readonly incoming: readonly RelationshipSummary[]
   readonly outgoing: readonly RelationshipSummary[]
 }
@@ -48,6 +50,7 @@ export function semanticModelToSelectedNodeDetail(model: SemanticRelationshipMod
     definition: model.definition,
     evidenceLabel: model.evidenceLabel,
     evidenceCount: model.evidenceCount,
+    evidenceIds: model.evidenceIds,
     incoming: Object.freeze(model.incoming.map(({ edgeId, nodeId, label, relationshipType }) => Object.freeze({
       edgeId,
       nodeId,

@@ -34,6 +34,7 @@ export interface SystemMapCopy {
   readonly scientificExplanation: string
   readonly evidenceEntry: string
   readonly evidenceRecords: string
+  readonly inspectEvidence: string
   readonly incoming: string
   readonly outgoing: string
   readonly none: string
@@ -84,6 +85,7 @@ export const systemMapCopy = Object.freeze({
     scientificExplanation: 'Scientific explanation',
     evidenceEntry: 'Evidence entry point',
     evidenceRecords: 'linked evidence record(s)',
+    inspectEvidence: 'Inspect this evidence record',
     incoming: 'Incoming',
     outgoing: 'Outgoing',
     none: 'None in the canonical graph',
@@ -132,6 +134,7 @@ export const systemMapCopy = Object.freeze({
     scientificExplanation: 'توضیح علمی',
     evidenceEntry: 'ورودی شواهد',
     evidenceRecords: 'رکورد شواهد پیوندخورده',
+    inspectEvidence: 'بررسی این رکورد شواهد',
     incoming: 'ورودی',
     outgoing: 'خروجی',
     none: 'در گراف معیار موردی وجود ندارد',

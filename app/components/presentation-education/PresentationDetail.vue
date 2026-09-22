@@ -105,7 +105,7 @@ const sourcesOpen = ref(false)
         {{ sourcesOpen ? copy.hideSources : copy.showSources }}
       </UButton>
       <div v-if="sourcesOpen" id="presentation-source-preview">
-        <PresentationSourcePreview :sources="detail.sources" :copy="copy" />
+        <PresentationSourcePreview :locale="locale" :sources="detail.sources" :copy="copy" />
       </div>
     </section>
 

@@ -81,10 +81,10 @@ describe('WP-10 Presentation Education integration', () => {
     expect(config).not.toContain('`/${locale}/presentations/HISTORICAL_ADD_NOTE`')
   })
 
-  it('activates Presentation navigation while leaving Evidence unavailable', () => {
+  it('keeps Presentation live and activates the completed Evidence destination', () => {
     const home = readFileSync('features/home/home-content.ts', 'utf8')
     expect(home).toContain("href: `${prefix}/presentations`, available: true")
-    expect(home).toContain("{ id: 'evidence', label: t('home.navigation.evidence'), available: false }")
-    expect(readFileSync('app/components/AppShell.vue', 'utf8')).toContain("item.id === 'presentations'")
+    expect(home).toContain("{ id: 'evidence', label: t('home.navigation.evidence'), href: `${prefix}/evidence`, available: true }")
+    expect(readFileSync('app/components/AppShell.vue', 'utf8')).toContain("item.id === 'evidence'")
   })
 })

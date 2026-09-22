@@ -98,6 +98,8 @@ export class KnowledgeRepository {
   get edges(): readonly RelationshipEdge[] { return this.#bundle.edges.edges }
   get behaviours(): readonly BehaviourEntry[] { return this.#bundle.behaviours.behaviours }
   get presentations(): readonly PresentationEducation[] { return this.#bundle.presentations.presentations }
+  get evidence(): readonly EvidenceMetadata[] { return this.#bundle.evidence.evidence }
+  get sources(): readonly SourceReference[] { return this.#bundle.sources.sources }
 
   getNode(id: string): ConceptNode {
     return requireFrom(this.#nodesById, id, 'UNKNOWN_NODE')

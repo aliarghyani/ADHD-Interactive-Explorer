@@ -1,13 +1,13 @@
 import type {
   CanonicalNodeId,
+  CompactEvidenceMetadata,
   ContentId,
-  EvidenceMetadata,
   KnowledgeRepository,
   Locale,
   RelationshipEdgeId,
   RelationshipType,
 } from '../../domain'
-import { DomainLookupError } from '../../domain'
+import { compactEvidenceMetadata, DomainLookupError } from '../../domain'
 import type { DomainLocalization } from '../../localization'
 import type { SafetyAccess } from '../../safety'
 
@@ -39,7 +39,7 @@ export interface EvidencePreview {
   readonly edgeId?: RelationshipEdgeId
   readonly relationshipType?: RelationshipType
   readonly relationshipLimitation?: string
-  readonly evidence: readonly EvidenceMetadata[]
+  readonly evidence: readonly CompactEvidenceMetadata[]
 }
 
 export interface BehaviourPathway {
@@ -123,8 +123,8 @@ export function buildBehaviourLibrary(
   }))
 }
 
-function evidenceForIds(repository: KnowledgeRepository, ids: readonly string[]): readonly EvidenceMetadata[] {
-  return Object.freeze(ids.map((id) => repository.getEvidence(id as `EVID_${string}`)))
+function evidenceForIds(repository: KnowledgeRepository, ids: readonly string[]): readonly CompactEvidenceMetadata[] {
+  return Object.freeze(ids.map((id) => compactEvidenceMetadata(repository.getEvidence(id as `EVID_${string}`))))
 }
 
 export function buildBehaviourDetail(
@@ -172,7 +172,7 @@ export function buildBehaviourDetail(
           edgeId: edge.id,
           relationshipType: edge.relationshipType,
           relationshipLimitation: edge.limitation,
-          evidence: repository.getEvidenceForRelationship(edge.id),
+          evidence: Object.freeze(repository.getEvidenceForRelationship(edge.id).map(compactEvidenceMetadata)),
         })
       })),
     })
@@ -209,7 +209,7 @@ export function buildBehaviourDetail(
             edgeId: edge.id,
             relationshipType: edge.relationshipType,
             relationshipLimitation: edge.limitation,
-            evidence: repository.getEvidenceForRelationship(edge.id),
+            evidence: Object.freeze(repository.getEvidenceForRelationship(edge.id).map(compactEvidenceMetadata)),
           })
         : null,
     })

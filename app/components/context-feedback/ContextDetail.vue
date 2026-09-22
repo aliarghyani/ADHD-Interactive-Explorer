@@ -282,6 +282,8 @@ function reset(): void {
 
     <ContextEvidencePreviewPanel
       v-if="openEvidence"
+      :locale="locale"
+      :return-path="`/${locale}/context/${detail.id}`"
       :entry="openEvidence"
       :copy="copy"
       :safety-text="detail.safety.evidence"

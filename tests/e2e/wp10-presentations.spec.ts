@@ -63,7 +63,7 @@ test.describe('WP-10 Presentation desktop review', () => {
 
     await page.getByRole('button', { name: 'View source preview' }).click()
     await expect(page.locator('.presentation-source')).toHaveCount(3)
-    await expect(page.locator('.presentation-sources')).toContainText('The full Evidence / Sources experience is not part of this page')
+    await expect(page.locator('.presentation-sources')).toContainText('Find evidence records using this source')
     await page.screenshot({ path: reviewPath('06-en-source-preview.png'), fullPage: true })
     expect(problems).toEqual([])
   })

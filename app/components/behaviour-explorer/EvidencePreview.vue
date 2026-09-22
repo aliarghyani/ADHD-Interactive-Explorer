@@ -6,6 +6,8 @@ import EvidenceBadge from '../ui/EvidenceBadge.vue'
 import SafetyNotice from '../ui/SafetyNotice.vue'
 
 defineProps<{
+  locale: 'en' | 'fa'
+  returnPath: string
   entry: EvidencePreview
   copy: BehaviourCopy
   safetyText: string
@@ -45,7 +47,14 @@ defineEmits<{ close: [] }>()
       <ul>
         <li v-for="limitation in record.limitations" :key="limitation">{{ limitation }}</li>
       </ul>
-      <small>{{ record.sourceIds.length }} {{ copy.sourceCount }}</small>
+      <small>{{ record.sourceCount }} {{ copy.sourceCount }}</small>
+      <NuxtLink
+        class="behaviour-evidence__detail-link"
+        :to="`/${locale}/evidence/${record.id}?from=${encodeURIComponent(returnPath)}`"
+        :prefetch="false"
+      >
+        {{ locale === 'fa' ? 'مشاهدهٔ جزئیات شواهد و منابع' : 'View full evidence and sources' }}
+      </NuxtLink>
     </article>
   </AppPanel>
 </template>
@@ -106,4 +115,6 @@ defineEmits<{ close: [] }>()
 .behaviour-evidence__record ul {
   margin: 0;
 }
+
+.behaviour-evidence__detail-link { width: fit-content; font-weight: 780; }
 </style>

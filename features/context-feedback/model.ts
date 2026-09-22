@@ -1,8 +1,8 @@
-import { DomainLookupError } from '../../domain'
+import { compactEvidenceMetadata, DomainLookupError } from '../../domain'
 import type {
   CanonicalNodeId,
+  CompactEvidenceMetadata,
   ContentId,
-  EvidenceMetadata,
   KnowledgeRepository,
   Locale,
   RelationshipEdgeId,
@@ -49,7 +49,7 @@ export interface ContextEvidencePreview {
   readonly edgeId?: RelationshipEdgeId
   readonly relationshipType?: RelationshipType
   readonly relationshipLimitation?: string
-  readonly evidence: readonly EvidenceMetadata[]
+  readonly evidence: readonly CompactEvidenceMetadata[]
 }
 
 export interface ContextLibraryItem {
@@ -129,8 +129,8 @@ function concept(
   })
 }
 
-function evidenceForIds(repository: KnowledgeRepository, ids: readonly string[]): readonly EvidenceMetadata[] {
-  return Object.freeze(ids.map((id) => repository.getEvidence(id as `EVID_${string}`)))
+function evidenceForIds(repository: KnowledgeRepository, ids: readonly string[]): readonly CompactEvidenceMetadata[] {
+  return Object.freeze(ids.map((id) => compactEvidenceMetadata(repository.getEvidence(id as `EVID_${string}`))))
 }
 
 export function buildContextLibrary(
@@ -198,7 +198,7 @@ export function buildContextDetail(
         edgeId: contextEdge.id,
         relationshipType: contextEdge.relationshipType,
         relationshipLimitation: contextEdge.limitation,
-        evidence: repository.getEvidenceForRelationship(contextEdge.id),
+        evidence: Object.freeze(repository.getEvidenceForRelationship(contextEdge.id).map(compactEvidenceMetadata)),
       }),
       behaviourEvidence: Object.freeze({
         id: `edge:${behaviourEdge.id}`,
@@ -206,7 +206,7 @@ export function buildContextDetail(
         edgeId: behaviourEdge.id,
         relationshipType: behaviourEdge.relationshipType,
         relationshipLimitation: behaviourEdge.limitation,
-        evidence: repository.getEvidenceForRelationship(behaviourEdge.id),
+        evidence: Object.freeze(repository.getEvidenceForRelationship(behaviourEdge.id).map(compactEvidenceMetadata)),
       }),
     })
   })

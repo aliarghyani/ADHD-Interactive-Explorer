@@ -115,6 +115,16 @@ defineExpose({ focusHeading })
                   <strong>{{ item.evidenceIds.length }}</strong> {{ copy.relationshipEvidence }}
                 </small>
               </button>
+              <div v-if="item.evidenceIds.length" class="system-semantic-evidence-links" role="list">
+                <span v-for="evidenceId in item.evidenceIds" :key="evidenceId" role="listitem">
+                  <NuxtLink
+                    :to="`/${locale}/evidence/${evidenceId}?from=${encodeURIComponent(`/${locale}/map/${model.id}`)}`"
+                    :prefetch="false"
+                  >
+                    {{ copy.inspectEvidence }} <bdi dir="ltr">{{ evidenceId }}</bdi>
+                  </NuxtLink>
+                </span>
+              </div>
             </li>
           </ul>
         </section>
@@ -128,6 +138,16 @@ defineExpose({ focusHeading })
       <section class="system-evidence-entry">
         <h3>{{ copy.evidenceEntry }}</h3>
         <p><strong>{{ model.evidenceCount }}</strong> {{ copy.evidenceRecords }}</p>
+        <div v-if="model.evidenceIds.length" role="list">
+          <span v-for="evidenceId in model.evidenceIds" :key="evidenceId" role="listitem">
+            <NuxtLink
+              :to="`/${locale}/evidence/${evidenceId}?from=${encodeURIComponent(`/${locale}/map/${model.id}`)}`"
+              :prefetch="false"
+            >
+              {{ copy.inspectEvidence }} <bdi dir="ltr">{{ evidenceId }}</bdi>
+            </NuxtLink>
+          </span>
+        </div>
       </section>
     </template>
   </AppPanel>

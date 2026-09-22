@@ -7,11 +7,13 @@ import { buildSemanticRelationshipModel } from '../../../features/system-map/sem
 import { DomainLocalization } from '../../../localization'
 
 const localization = new DomainLocalization(systemMapRepository)
+const global = { stubs: { NuxtLink: { template: '<a><slot /></a>' } } }
 
 describe('SemanticRelationshipBrowser', () => {
   it('provides a useful non-diagnostic empty state and clinical separation', () => {
     const wrapper = mount(SemanticRelationshipBrowser, {
       props: { model: null, locale: 'en', copy: systemMapCopy.en },
+      global,
     })
 
     expect(wrapper.text()).toContain(systemMapCopy.en.selectPrompt)
@@ -23,6 +25,7 @@ describe('SemanticRelationshipBrowser', () => {
     const model = buildSemanticRelationshipModel(systemMapRepository, localization, 'BEH1', locale)
     const wrapper = mount(SemanticRelationshipBrowser, {
       props: { model, locale, copy: systemMapCopy[locale] },
+      global,
     })
 
     expect(wrapper.get('[data-testid="semantic-selected-summary"]').text()).toContain(model.label)
@@ -36,6 +39,7 @@ describe('SemanticRelationshipBrowser', () => {
     const model = buildSemanticRelationshipModel(systemMapRepository, localization, 'BEH1', 'en')
     const wrapper = mount(SemanticRelationshipBrowser, {
       props: { model, locale: 'en', copy: systemMapCopy.en },
+      global,
     })
     const related = model.upstream[0] ?? model.downstream[0] ?? model.feedback[0]
     expect(related).toBeDefined()
