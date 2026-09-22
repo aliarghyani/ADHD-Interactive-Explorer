@@ -85,6 +85,14 @@ defineEmits<{ close: [] }>()
         >
           {{ copy.exploreBehaviour }}
         </NuxtLink>
+        <NuxtLink
+          v-if="detail.category === 'context'"
+          class="system-behaviour-link"
+          :to="`/${locale}/context/${detail.id}`"
+          :prefetch="false"
+        >
+          {{ copy.exploreContext }}
+        </NuxtLink>
       </section>
 
       <section class="system-evidence-entry">

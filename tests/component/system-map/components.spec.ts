@@ -113,4 +113,21 @@ describe('System Map components', () => {
     expect(wrapper.html()).not.toContain('/en/behaviours/REG3')
     expect(wrapper.text()).not.toContain('Explore this Behaviour in plain language')
   })
+
+  it('offers Context Explorer entry only for canonical Context nodes', () => {
+    const contextDetail = buildSelectedNodeDetail(systemMapRepository, localization, 'CTX2', 'en')
+    const contextWrapper = mount(NodeDetailPanel, {
+      props: { detail: contextDetail, locale: 'en', copy: systemMapCopy.en },
+      global: { stubs: { NuxtLink: NuxtLinkStub } },
+    })
+    expect(contextWrapper.html()).toContain('/en/context/CTX2')
+    expect(contextWrapper.text()).toContain('Explore how this Context may affect functioning')
+
+    const regulationDetail = buildSelectedNodeDetail(systemMapRepository, localization, 'REG3', 'en')
+    const regulationWrapper = mount(NodeDetailPanel, {
+      props: { detail: regulationDetail, locale: 'en', copy: systemMapCopy.en },
+      global: { stubs: { NuxtLink: NuxtLinkStub } },
+    })
+    expect(regulationWrapper.html()).not.toContain('/en/context/REG3')
+  })
 })

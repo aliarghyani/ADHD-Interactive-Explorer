@@ -70,7 +70,7 @@ describe('WP-08 Behaviour Explorer components', () => {
     expect(wrapper.findAll('.behaviour-alternatives article')).toHaveLength(
       behaviourRepository.getAlternativeExplanations('BEH1').length,
     )
-    expect(wrapper.get('.behaviour-detail__map-link').attributes('href')).toBe('/en/map/BEH1')
+    expect(wrapper.findAll('.behaviour-detail__map-link').map((link) => link.attributes('href'))).toEqual(['/en/map/BEH1', '/en/context'])
     await wrapper.get('.behaviour-pathway__relationship button').trigger('click')
     expect(wrapper.get('.behaviour-evidence').text()).toContain('group-level tendencies')
     expect(wrapper.get('.behaviour-evidence').text()).toContain('Limitations')

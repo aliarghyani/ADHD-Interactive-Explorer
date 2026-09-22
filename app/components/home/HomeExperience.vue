@@ -154,7 +154,7 @@ function safetyParts(): string[] {
           <p class="home-entry__eyebrow">{{ entry.eyebrow }}</p>
           <h3>{{ entry.title }}</h3>
           <p>{{ entry.description }}</p>
-          <span v-if="entry.id === 'behaviours' && entry.available" class="home-entry__live">{{ liveLabel }}</span>
+          <span v-if="(entry.id === 'behaviours' || entry.id === 'context') && entry.available" class="home-entry__live">{{ liveLabel }}</span>
           <NuxtLink
             v-if="entry.available && entry.href"
             class="home-entry__link"

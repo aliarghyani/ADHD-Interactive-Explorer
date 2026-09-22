@@ -142,7 +142,7 @@ export function createHomeContent(t: Translate, locale: Locale): HomeContent {
       { id: 'home', label: t('home.navigation.home'), href: prefix, available: true },
       { id: 'map', label: t('home.navigation.systemMap'), href: `${prefix}/map`, available: true },
       { id: 'behaviours', label: t('home.navigation.behaviours'), href: `${prefix}/behaviours`, available: true },
-      { id: 'context', label: t('home.navigation.context'), available: false },
+      { id: 'context', label: t('home.navigation.context'), href: `${prefix}/context`, available: true },
       { id: 'presentations', label: t('home.navigation.presentations'), available: false },
       { id: 'evidence', label: t('home.navigation.evidence'), available: false },
       { id: 'methodology', label: t('home.navigation.methodology'), available: false },
@@ -169,7 +169,8 @@ export function createHomeContent(t: Translate, locale: Locale): HomeContent {
         eyebrow: t('home.entries.context.eyebrow'),
         title: t('home.entries.context.title'),
         description: t('home.entries.context.description'),
-        available: false,
+        href: `${prefix}/context`,
+        available: true,
       },
       {
         id: 'presentations',

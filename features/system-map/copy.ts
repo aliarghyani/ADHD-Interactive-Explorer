@@ -46,6 +46,7 @@ export interface SystemMapCopy {
   readonly mobileMessage: string
   readonly loading: string
   readonly exploreBehaviour: string
+  readonly exploreContext: string
 }
 
 export const systemMapCopy = Object.freeze({
@@ -95,6 +96,7 @@ export const systemMapCopy = Object.freeze({
     mobileMessage: 'This desktop graph is intentionally not compressed into a phone-sized diagram. Use a tablet or desktop for this map.',
     loading: 'Loading visual map…',
     exploreBehaviour: 'Explore this Behaviour in plain language',
+    exploreContext: 'Explore how this Context may affect functioning',
   },
   fa: {
     metaTitle: 'نقشه سامانه ADHD',
@@ -142,5 +144,6 @@ export const systemMapCopy = Object.freeze({
     mobileMessage: 'این گراف دسکتاپ عمداً به نموداری کوچک برای تلفن تبدیل نشده است. برای دیدن این نقشه از تبلت یا دسکتاپ استفاده کنید.',
     loading: 'در حال بارگیری نقشه دیداری…',
     exploreBehaviour: 'این رفتار را با زبان ساده کاوش کنید',
+    exploreContext: 'بررسی کنید این بافت چگونه ممکن است بر عملکرد اثر بگذارد',
   },
 } satisfies Readonly<Record<Locale, SystemMapCopy>>)

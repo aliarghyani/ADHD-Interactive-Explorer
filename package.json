@@ -24,6 +24,7 @@
     "test:wp075": "nuxt prepare && vitest run tests/component/ui-foundation",
     "test:wp076": "nuxt prepare && vitest run tests/component/home tests/integration/home",
     "test:wp08": "nuxt prepare && vitest run tests/component/behaviour tests/integration/behaviour",
+    "test:wp09": "nuxt prepare && vitest run tests/component/context tests/integration/context",
     "knowledge:ingest": "node scripts/knowledge/ingest-production-pack.mjs",
     "knowledge:validate": "node scripts/knowledge/validate.mjs",
     "postinstall": "nuxt prepare"

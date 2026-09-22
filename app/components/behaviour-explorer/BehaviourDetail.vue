@@ -107,6 +107,10 @@ function setDisclosure(section: string, event: Event): void {
         {{ copy.mapLink }}
         <span aria-hidden="true">{{ locale === 'fa' ? '←' : '→' }}</span>
       </NuxtLink>
+      <NuxtLink class="behaviour-detail__map-link" :to="`/${locale}/context`" :prefetch="false">
+        {{ copy.contextLink }}
+        <span aria-hidden="true">{{ locale === 'fa' ? '←' : '→' }}</span>
+      </NuxtLink>
     </AppPanel>
 
     <AppPanel v-if="invalidPathway" tone="quiet" role="status" class="behaviour-detail__query-state">

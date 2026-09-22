@@ -50,7 +50,7 @@ function isCurrent(item: HomeNavigationItem): boolean {
                 :aria-current="isCurrent(item) ? 'page' : undefined"
               >
                 {{ item.label }}
-                <span v-if="item.id === 'behaviours'" class="app-shell__status app-shell__status--live">{{ liveLabel }}</span>
+                <span v-if="item.id === 'behaviours' || item.id === 'context'" class="app-shell__status app-shell__status--live">{{ liveLabel }}</span>
               </NuxtLink>
               <span v-else class="app-shell__nav-link app-shell__nav-link--disabled" aria-disabled="true">
                 {{ item.label }}

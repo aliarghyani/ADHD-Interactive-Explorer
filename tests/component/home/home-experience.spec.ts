@@ -100,7 +100,7 @@ describe('WP-07.6 Home educational experience', () => {
     expect(wrapper.text()).toContain('Relationships are many-to-many')
   })
 
-  it('offers four entry choices with two live routes and two controlled unavailable states', () => {
+  it('offers four entry choices with three live routes and one controlled unavailable state', () => {
     const wrapper = renderHome('en')
     const entries = wrapper.findAll('.home-entry')
 
@@ -111,9 +111,9 @@ describe('WP-07.6 Home educational experience', () => {
       'Context & Feedback Explorer',
       'Presentation Education',
     ])
-    expect(wrapper.findAll('.home-entry__link').map((link) => link.attributes('href'))).toEqual(['/en/map', '/en/behaviours'])
-    expect(wrapper.get('.home-entry__live').text()).toBe('Live')
-    expect(wrapper.findAll('.home-entry__unavailable')).toHaveLength(2)
+    expect(wrapper.findAll('.home-entry__link').map((link) => link.attributes('href'))).toEqual(['/en/map', '/en/behaviours', '/en/context'])
+    expect(wrapper.findAll('.home-entry__live')).toHaveLength(2)
+    expect(wrapper.findAll('.home-entry__unavailable')).toHaveLength(1)
     expect(wrapper.findAll('.home-entry__unavailable').every((state) => state.attributes('aria-disabled') === 'true')).toBe(true)
   })
 
