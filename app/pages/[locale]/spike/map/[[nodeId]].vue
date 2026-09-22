@@ -40,10 +40,6 @@ async function select(id: string) {
         <p class="lede">{{ copy[locale].description }}</p>
         <p class="mixed-copy">{{ copy[locale].mixed }}</p>
       </div>
-      <nav class="locale-switcher" aria-label="Language">
-        <NuxtLink :to="routeFor(selectedNodeId, 'en')" hreflang="en" :aria-current="locale === 'en' ? 'page' : undefined">EN</NuxtLink>
-        <NuxtLink :to="routeFor(selectedNodeId, 'fa')" hreflang="fa" :aria-current="locale === 'fa' ? 'page' : undefined">FA</NuxtLink>
-      </nav>
     </header>
 
     <aside class="safety-note">{{ copy[locale].safety }}</aside>

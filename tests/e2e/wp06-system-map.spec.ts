@@ -38,6 +38,7 @@ test.describe('WP-06 System Map routes', () => {
     const problems = captureBrowserProblems(page)
 
     await page.goto('/en/map/BEH1')
+    await expect(page.getByTestId('system-visual-graph')).toBeVisible({ timeout: 20_000 })
     await expect(page.locator('[data-node-id="BEH1"]')).toHaveAttribute('aria-pressed', 'true')
     await expect(page.getByRole('heading', { level: 2, name: 'Starting' })).toBeVisible()
     const englishGeometry = await page.locator('[data-node-id="BEH1"]').getAttribute('style')

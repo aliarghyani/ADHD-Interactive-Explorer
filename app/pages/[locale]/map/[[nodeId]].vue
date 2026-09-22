@@ -105,32 +105,7 @@ useHead(() => ({
 <template>
   <main class="system-map-page" :dir="currentLocale === 'fa' ? 'rtl' : 'ltr'">
     <UContainer class="system-map-container">
-      <AppPageHeader :kicker="copy.kicker" :title="copy.title" :summary="copy.introduction">
-        <template #actions>
-          <nav class="system-locale-switcher" :aria-label="copy.languageNavigation">
-            <UButton
-              :to="experience.routeFor(selectedNodeId, 'en')"
-              hreflang="en"
-              size="sm"
-              :color="currentLocale === 'en' ? 'primary' : 'neutral'"
-              :variant="currentLocale === 'en' ? 'solid' : 'ghost'"
-              :aria-current="currentLocale === 'en' ? 'page' : undefined"
-            >
-              EN
-            </UButton>
-            <UButton
-              :to="experience.routeFor(selectedNodeId, 'fa')"
-              hreflang="fa"
-              size="sm"
-              :color="currentLocale === 'fa' ? 'primary' : 'neutral'"
-              :variant="currentLocale === 'fa' ? 'solid' : 'ghost'"
-              :aria-current="currentLocale === 'fa' ? 'page' : undefined"
-            >
-              FA
-            </UButton>
-          </nav>
-        </template>
-      </AppPageHeader>
+      <AppPageHeader :kicker="copy.kicker" :title="copy.title" :summary="copy.introduction" />
 
       <section class="system-safety-stack" aria-label="Educational safety information">
         <SafetyNotice :text="globalSafetyText" kind="global" />

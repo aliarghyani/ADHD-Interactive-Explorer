@@ -22,6 +22,8 @@
     "test:wp06": "nuxt prepare && vitest run tests/component/system-map tests/integration/system-map",
     "test:wp07": "nuxt prepare && vitest run tests/accessibility tests/component/system-map tests/integration/system-map",
     "test:wp075": "nuxt prepare && vitest run tests/component/ui-foundation",
+    "test:wp076": "nuxt prepare && vitest run tests/component/home tests/integration/home",
+    "test:wp08": "nuxt prepare && vitest run tests/component/behaviour tests/integration/behaviour",
     "knowledge:ingest": "node scripts/knowledge/ingest-production-pack.mjs",
     "knowledge:validate": "node scripts/knowledge/validate.mjs",
     "postinstall": "nuxt prepare"

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 withDefaults(defineProps<{
-  as?: 'aside' | 'div' | 'section'
+  as?: 'article' | 'aside' | 'div' | 'section'
   tone?: 'primary' | 'secondary' | 'quiet'
   padded?: boolean
   labelledby?: string

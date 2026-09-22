@@ -14,7 +14,7 @@ withDefaults(defineProps<{
   <header class="app-page-header">
     <div class="app-page-header__copy">
       <p class="app-page-header__kicker">{{ kicker }}</p>
-      <h1 :id="headingId" class="app-page-header__title">{{ title }}</h1>
+      <h1 :id="headingId" class="app-page-header__title"><slot name="title">{{ title }}</slot></h1>
       <p v-if="summary" class="app-page-header__summary">{{ summary }}</p>
       <slot />
     </div>

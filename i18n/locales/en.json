@@ -1,9 +1,131 @@
 {
-  "foundation": {
-    "metaTitle": "Project foundation",
-    "kicker": "Work package 01",
-    "title": "Foundation ready",
-    "summary": "The application shell and delivery pipeline are ready for the next bounded work package.",
-    "switchLocale": "فارسی"
+  "home": {
+    "metaTitle": "ADHD Interactive Explorer | Understand concepts and connections",
+    "metaDescription": "An interactive educational model for understanding ADHD terminology, context, regulation, observable behaviour, recurring patterns, functional domains, and their relationships.",
+    "shell": {
+      "productName": "Interactive Explorer",
+      "navigationLabel": "Primary navigation",
+      "comingSoon": "Coming soon",
+      "live": "Live",
+      "skipToContent": "Skip to main content",
+      "switchLocale": "فارسی"
+    },
+    "navigation": {
+      "home": "Home",
+      "systemMap": "System Map",
+      "behaviours": "Behaviours",
+      "context": "Context",
+      "presentations": "Presentations",
+      "evidence": "Evidence / Sources",
+      "methodology": "Methodology / About"
+    },
+    "hero": {
+      "kicker": "Interactive educational model",
+      "titleBefore": "Understand",
+      "titleAfter": "through an explorable network",
+      "summary": "Explore a calm, structured model of terminology, context, regulation, observable behaviour, recurring patterns, functional domains, and the scientific relationships between them.",
+      "boundaries": {
+        "diagnostic": "Not a diagnostic test",
+        "screening": "Not screening",
+        "assessment": "Not a personalized medical assessment"
+      }
+    },
+    "clinical": {
+      "kicker": "Two different questions",
+      "title": "Clinical definition is not the explanatory network",
+      "introduction": "Formal clinical terminology describes how ADHD is defined. The wider model helps explain context-sensitive processes and observable experience. These layers are related in education, but they are not interchangeable.",
+      "anchor": {
+        "label": "Clinical Anchor",
+        "description": "The formal symptom domains used to describe ADHD clinically."
+      },
+      "regulation": {
+        "label": "Regulation mechanisms",
+        "description": "Concepts that may help explain how functioning varies across demands and situations."
+      },
+      "behaviour": {
+        "label": "Observable Behaviour",
+        "description": "What someone may notice happening, without treating it as proof of a diagnosis."
+      },
+      "boundary": "The Clinical Anchor stays separate: there is no mechanistic arrow from ADHD into the explanatory system."
+    },
+    "model": {
+      "kicker": "A progressive mental model",
+      "title": "From situation to functioning — with feedback",
+      "introduction": "The layers offer a useful order for learning. They help you ask better questions before you open the full system map.",
+      "context": {
+        "label": "Context",
+        "description": "Demands, supports, environments, and situations can change how functioning is expressed."
+      },
+      "regulation": {
+        "label": "Regulation",
+        "description": "Processes involved in directing attention, effort, emotion, time, and action."
+      },
+      "behaviour": {
+        "label": "Observable Behaviour",
+        "description": "Concrete actions or difficulties that a person or others may notice."
+      },
+      "pattern": {
+        "label": "Recurring Pattern",
+        "description": "Repeated combinations across time or situations, rather than a single event."
+      },
+      "domain": {
+        "label": "Functional Domain",
+        "description": "Areas of everyday life where a recurring pattern may matter."
+      },
+      "feedback": {
+        "label": "Feedback",
+        "description": "Consequences can change later context, demands, expectations, or responses."
+      },
+      "caution": "This is a conceptual learning sequence, not a deterministic causal chain."
+    },
+    "network": {
+      "kicker": "Many paths, no score",
+      "title": "Relationships are many-to-many",
+      "introduction": "The model is a network of possible associations and influences. It does not calculate probabilities, predict outcomes, or identify one universal pathway.",
+      "behaviour": {
+        "title": "One behaviour, several pathways",
+        "description": "The same observable behaviour may connect with different regulatory and contextual explanations."
+      },
+      "regulation": {
+        "title": "One concept, several behaviours",
+        "description": "A regulation concept may be relevant to more than one kind of observable behaviour."
+      },
+      "context": {
+        "title": "Context can act across the system",
+        "description": "A situation can affect several layers and may amplify difficulty or provide support."
+      }
+    },
+    "explore": {
+      "kicker": "Choose your entry point",
+      "title": "Where would you like to explore?",
+      "introduction": "Home remains your orientation point. Start with the whole system today, or see which focused experiences are being prepared next."
+    },
+    "entries": {
+      "map": {
+        "eyebrow": "See the whole system",
+        "title": "System Map",
+        "description": "Explore the complete educational network and its scientific relationships."
+      },
+      "behaviours": {
+        "eyebrow": "Start with a behaviour",
+        "title": "Behaviour Explorer",
+        "description": "Begin with something observable and examine multiple possible pathways."
+      },
+      "context": {
+        "eyebrow": "See why situations matter",
+        "title": "Context & Feedback Explorer",
+        "description": "Explore how context can change functioning and participate in feedback."
+      },
+      "presentations": {
+        "eyebrow": "Learn formal terminology",
+        "title": "Presentation Education",
+        "description": "Learn current formal ADHD presentation language without inferring a presentation."
+      }
+    },
+    "disclosure": {
+      "summary": "How this model works",
+      "paragraphOne": "The explorer separates formal clinical terminology from a broader explanatory network. It uses progressive disclosure so you can understand the major layers before meeting all 30 canonical concepts.",
+      "paragraphTwo": "Connections represent possible associations or influences. They support education and exploration; they are not a test, personalized assessment, or claim that one path applies to everyone."
+    }
   }
 }

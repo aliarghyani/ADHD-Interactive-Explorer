@@ -15,5 +15,9 @@ withDefaults(defineProps<{
     role="note"
     :data-safety-kind="kind"
     :description="text"
-  />
+  >
+    <template v-if="$slots.default" #description>
+      <slot />
+    </template>
+  </UAlert>
 </template>

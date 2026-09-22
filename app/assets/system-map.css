@@ -37,26 +37,6 @@
 
 [dir="rtl"] .system-map-eyebrow { letter-spacing: 0; }
 
-.system-locale-switcher {
-  display: flex;
-  flex: 0 0 auto;
-  gap: 0.2rem;
-  padding: 0.25rem;
-  border: 1px solid var(--app-border);
-  border-radius: 999px;
-  background: var(--app-surface-primary);
-  box-shadow: var(--app-shadow-sm);
-  direction: ltr;
-}
-
-.system-locale-switcher a,
-.system-locale-switcher button {
-  min-width: 2.8rem;
-  border-radius: 999px;
-  text-align: center;
-  text-decoration: none;
-}
-
 .system-safety-stack {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -278,8 +258,7 @@
 .system-graph-node:focus-visible,
 .system-viewport-controls button:focus-visible,
 .system-icon-button:focus-visible,
-.system-layer-filter input:focus-visible + .system-filter-shape,
-.system-locale-switcher a:focus-visible {
+.system-layer-filter input:focus-visible + .system-filter-shape {
   outline: 5px solid var(--system-focus);
   outline-offset: 5px;
 }

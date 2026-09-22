@@ -77,6 +77,14 @@ defineEmits<{ close: [] }>()
       <section>
         <h3>{{ copy.scientificExplanation }}</h3>
         <p lang="en" dir="ltr">{{ detail.definition }}</p>
+        <NuxtLink
+          v-if="detail.category === 'behaviour'"
+          class="system-behaviour-link"
+          :to="`/${locale}/behaviours/${detail.id}`"
+          :prefetch="false"
+        >
+          {{ copy.exploreBehaviour }}
+        </NuxtLink>
       </section>
 
       <section class="system-evidence-entry">

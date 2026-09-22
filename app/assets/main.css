@@ -202,47 +202,6 @@ bdi[dir="auto"] {
   font-weight: 700;
 }
 
-.foundation-shell {
-  display: grid;
-  min-height: 100vh;
-  place-items: center;
-  padding: var(--app-space-6);
-}
-
-.foundation-panel {
-  width: min(46rem, 100%);
-  box-shadow: var(--app-shadow-md);
-}
-
-.foundation-panel .app-panel__content {
-  padding: clamp(2rem, 6vw, 4rem);
-}
-
-.foundation-panel .app-page-header {
-  display: block;
-}
-
-.foundation-actions {
-  margin-top: var(--app-space-6);
-}
-
-.locale-link {
-  display: inline-flex;
-  min-height: 2.75rem;
-  align-items: center;
-  padding: 0.65rem 1rem;
-  border: 1px solid var(--app-accent);
-  border-radius: 999px;
-  color: var(--app-accent-strong);
-  font-weight: 750;
-  text-decoration: none;
-  transition: background-color var(--app-motion-fast) ease, color var(--app-motion-fast) ease;
-}
-
-.locale-link:hover {
-  background: var(--app-accent-soft);
-}
-
 @media (max-width: 47.99rem) {
   .app-page-header {
     display: grid;

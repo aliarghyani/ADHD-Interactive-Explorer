@@ -7,6 +7,13 @@ const systemMapRoutes = ['en', 'fa'].flatMap((locale) => [
   `/${locale}/map`,
   ...canonicalNodes.nodes.map((node) => `/${locale}/map/${node.id}`),
 ])
+const behaviourEntries = JSON.parse(
+  readFileSync(new URL('./knowledge/source/behaviours/behaviours.json', import.meta.url), 'utf8'),
+) as { behaviours: Array<{ behaviourId: string }> }
+const behaviourRoutes = ['en', 'fa'].flatMap((locale) => [
+  `/${locale}/behaviours`,
+  ...behaviourEntries.behaviours.map((entry) => `/${locale}/behaviours/${entry.behaviourId}`),
+])
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
@@ -43,6 +50,7 @@ export default defineNuxtConfig({
         '/fa/spike/map',
         '/fa/spike/map/BEH1',
         ...systemMapRoutes,
+        ...behaviourRoutes,
       ],
     },
   },

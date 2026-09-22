@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+import { defineComponent, h } from 'vue'
 import { describe, expect, it } from 'vitest'
 import GraphEdgeLayer from '../../../app/components/system-map/GraphEdgeLayer.vue'
 import GraphLegend from '../../../app/components/system-map/GraphLegend.vue'
@@ -12,6 +13,13 @@ import { DomainLocalization } from '../../../localization'
 import { edgeGeometryById, nodeGeometryById, productionLayout } from '../../../visualization/system-map/layout'
 
 const localization = new DomainLocalization(systemMapRepository)
+const NuxtLinkStub = defineComponent({
+  inheritAttrs: false,
+  props: { to: { type: String, required: true } },
+  setup(props, { attrs, slots }) {
+    return () => h('a', { ...attrs, href: props.to }, slots.default?.())
+  },
+})
 const graph = buildGraphReadModel({
   repository: systemMapRepository,
   localization,
@@ -83,6 +91,7 @@ describe('System Map components', () => {
     const detail = buildSelectedNodeDetail(systemMapRepository, localization, 'BEH1', 'en')
     const wrapper = mount(NodeDetailPanel, {
       props: { detail, locale: 'en', copy: systemMapCopy.en },
+      global: { stubs: { NuxtLink: NuxtLinkStub } },
     })
 
     expect(wrapper.text()).toContain('Starting')
@@ -90,5 +99,18 @@ describe('System Map components', () => {
     expect(wrapper.text()).toContain('Scientific explanation')
     expect(wrapper.text()).toContain('Evidence entry point')
     expect(wrapper.text()).toContain('REG3')
+    expect(wrapper.html()).toContain('/en/behaviours/BEH1')
+    expect(wrapper.text()).toContain('Explore this Behaviour in plain language')
+  })
+
+  it('offers Behaviour Explorer entry only for canonical Behaviour nodes', () => {
+    const detail = buildSelectedNodeDetail(systemMapRepository, localization, 'REG3', 'en')
+    const wrapper = mount(NodeDetailPanel, {
+      props: { detail, locale: 'en', copy: systemMapCopy.en },
+      global: { stubs: { NuxtLink: NuxtLinkStub } },
+    })
+
+    expect(wrapper.html()).not.toContain('/en/behaviours/REG3')
+    expect(wrapper.text()).not.toContain('Explore this Behaviour in plain language')
   })
 })
