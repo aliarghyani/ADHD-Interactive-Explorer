@@ -5,6 +5,7 @@ export interface SystemMapCopy {
   readonly kicker: string
   readonly title: string
   readonly introduction: string
+  readonly safetyHeading: string
   readonly languageNavigation: string
   readonly layers: string
   readonly showLayer: string
@@ -76,6 +77,7 @@ export const systemMapCopy = Object.freeze({
     kicker: 'ADHD Interactive Explorer',
     title: 'Explore the system map',
     introduction: 'See how context, regulation, observable behaviour, recurring patterns, and areas of life can relate without treating the map as a diagnosis or prediction.',
+    safetyHeading: 'Educational safety information',
     languageNavigation: 'Language',
     layers: 'Visible layers',
     showLayer: 'Show layer',
@@ -145,6 +147,7 @@ export const systemMapCopy = Object.freeze({
     kicker: 'کاوشگر تعاملی ADHD',
     title: 'کاوش در نقشه سامانه',
     introduction: 'رابطه احتمالی میان بافت، تنظیم، رفتار مشاهده‌پذیر، الگوهای تکرارشونده و حوزه‌های زندگی را ببینید؛ بدون اینکه این نقشه ابزار تشخیص یا پیش‌بینی تلقی شود.',
+    safetyHeading: 'اطلاعات ایمنی آموزشی',
     languageNavigation: 'زبان',
     layers: 'لایه‌های نمایان',
     showLayer: 'نمایش لایه',

@@ -77,7 +77,7 @@ async function restorePendingGraphFocus(): Promise<void> {
 </script>
 
 <template>
-  <section class="system-desktop-experience" aria-label="Desktop system map">
+  <section class="system-desktop-experience" :aria-label="copy.mapHeading">
     <LayerFilter
       :locale="locale"
       :visible-layers="visibleLayers"

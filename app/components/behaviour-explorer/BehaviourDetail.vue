@@ -193,7 +193,7 @@ function setDisclosure(section: string, event: Event): void {
               <button
                 type="button"
                 :aria-expanded="openEvidenceId === selectedPathway.evidenceEntries[index]!.id"
-                aria-controls="behaviour-evidence-preview"
+                :aria-controls="openEvidenceId === selectedPathway.evidenceEntries[index]!.id ? 'behaviour-evidence-preview' : undefined"
                 @click="toggleEvidence(selectedPathway.evidenceEntries[index]!, $event)"
               >
                 {{ copy.evidence }}
@@ -217,7 +217,7 @@ function setDisclosure(section: string, event: Event): void {
               <bdi dir="ltr" class="app-canonical-id">{{ pattern.concept.id }}</bdi>
               <p>{{ pattern.conceptualThreshold }}</p>
               <p>{{ pattern.singleEventCaution }}</p>
-              <button type="button" :aria-expanded="openEvidenceId === pattern.evidenceEntry.id" aria-controls="behaviour-evidence-preview" @click="toggleEvidence(pattern.evidenceEntry, $event)">{{ copy.evidence }}</button>
+              <button type="button" :aria-expanded="openEvidenceId === pattern.evidenceEntry.id" :aria-controls="openEvidenceId === pattern.evidenceEntry.id ? 'behaviour-evidence-preview' : undefined" @click="toggleEvidence(pattern.evidenceEntry, $event)">{{ copy.evidence }}</button>
             </article>
           </div>
           <p v-else>{{ copy.noPattern }}</p>
@@ -235,7 +235,7 @@ function setDisclosure(section: string, event: Event): void {
               <h3>{{ example.concept.label }}</h3>
               <bdi dir="ltr" class="app-canonical-id">{{ example.concept.id }}</bdi>
               <p>{{ example.example }}</p>
-              <button v-if="example.evidenceEntry" type="button" :aria-expanded="openEvidenceId === example.evidenceEntry.id" aria-controls="behaviour-evidence-preview" @click="toggleEvidence(example.evidenceEntry, $event)">{{ copy.evidence }}</button>
+              <button v-if="example.evidenceEntry" type="button" :aria-expanded="openEvidenceId === example.evidenceEntry.id" :aria-controls="openEvidenceId === example.evidenceEntry.id ? 'behaviour-evidence-preview' : undefined" @click="toggleEvidence(example.evidenceEntry, $event)">{{ copy.evidence }}</button>
               <small v-else>{{ copy.evidenceUnavailable }}</small>
             </article>
           </div>

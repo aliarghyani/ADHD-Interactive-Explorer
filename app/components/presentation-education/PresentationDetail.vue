@@ -99,7 +99,7 @@ const sourcesOpen = ref(false)
         color="neutral"
         variant="outline"
         :aria-expanded="sourcesOpen"
-        aria-controls="presentation-source-preview"
+        :aria-controls="sourcesOpen ? 'presentation-source-preview' : undefined"
         @click="sourcesOpen = !sourcesOpen"
       >
         {{ sourcesOpen ? copy.hideSources : copy.showSources }}
@@ -280,6 +280,10 @@ const sourcesOpen = ref(false)
 
 .presentation-switcher small {
   color: var(--app-text-muted);
+}
+
+.presentation-switcher span[aria-current='page'] small {
+  color: var(--app-accent-strong);
 }
 
 @media (max-width: 52rem) {

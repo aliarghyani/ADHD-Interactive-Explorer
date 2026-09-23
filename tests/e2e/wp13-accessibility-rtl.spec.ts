@@ -4,6 +4,14 @@ async function waitForHydration(page: Page): Promise<void> {
   await expect(page.locator('.app-shell')).toHaveAttribute('data-hydrated', 'true', { timeout: 15_000 })
 }
 
+async function expectControlsResolve(page: Page): Promise<void> {
+  const dangling = await page.locator('[aria-controls]').evaluateAll(elements => elements.flatMap((element) =>
+    (element.getAttribute('aria-controls') ?? '').split(/\s+/).filter(Boolean)
+      .filter(id => !document.getElementById(id)),
+  ))
+  expect(dangling).toEqual([])
+}
+
 test.describe('WP-13 accessibility and RTL hardening', () => {
   test('uses meaningful language names and preserves canonical route identity', async ({ page }) => {
     await page.goto('/en/map/BEH1')
@@ -22,6 +30,7 @@ test.describe('WP-13 accessibility and RTL hardening', () => {
   test('implements roving radio keys and evidence-panel focus restoration in Behaviour', async ({ page }) => {
     await page.goto('/en/behaviours/BEH1')
     await waitForHydration(page)
+    await expectControlsResolve(page)
 
     const radios = page.getByRole('radio')
     await expect(radios).toHaveCount(4)
@@ -36,14 +45,17 @@ test.describe('WP-13 accessibility and RTL hardening', () => {
     await expect(trigger).toHaveAttribute('aria-expanded', 'true')
     await expect(trigger).toHaveAttribute('aria-controls', 'behaviour-evidence-preview')
     await expect(page.locator('#behaviour-evidence-title')).toBeFocused()
+    await expectControlsResolve(page)
     await page.getByRole('button', { name: 'Close evidence preview' }).click()
     await expect(trigger).toBeFocused()
     await expect(trigger).toHaveAttribute('aria-expanded', 'false')
+    await expectControlsResolve(page)
   })
 
   test('implements roving radio keys and evidence-panel focus restoration in Context', async ({ page }) => {
     await page.goto('/en/context/CTX4')
     await waitForHydration(page)
+    await expectControlsResolve(page)
 
     const stateGroup = page.locator('.context-state__options')
     const radios = stateGroup.getByRole('radio')
@@ -59,13 +71,33 @@ test.describe('WP-13 accessibility and RTL hardening', () => {
     const controlledId = await feedback.getAttribute('aria-controls')
     expect(controlledId).toBeTruthy()
     await expect(page.locator(`#${controlledId}`)).toBeVisible()
+    await expectControlsResolve(page)
 
     const trigger = page.locator('.context-feedback__evidence')
     await trigger.click()
     await expect(trigger).toHaveAttribute('aria-expanded', 'true')
     await expect(page.locator('#context-evidence-title')).toBeFocused()
+    await expectControlsResolve(page)
     await page.getByRole('button', { name: 'Close evidence preview' }).click()
     await expect(trigger).toBeFocused()
+    await expectControlsResolve(page)
+  })
+
+  test('labels the Persian desktop map and keeps presentation disclosure references valid', async ({ page }) => {
+    await page.goto('/fa/map/BEH1')
+    await waitForHydration(page)
+    await expect(page.locator('.system-desktop-experience')).toHaveAttribute('aria-label', 'شبکه توضیحی')
+    await expect(page.locator('.system-safety-stack')).toHaveAttribute('aria-label', 'اطلاعات ایمنی آموزشی')
+
+    await page.goto('/fa/presentations/PRESENTATION_INATTENTIVE')
+    await waitForHydration(page)
+    await expectControlsResolve(page)
+    const sources = page.locator('.presentation-evidence button[aria-expanded]')
+    await sources.click()
+    await expect(sources).toHaveAttribute('aria-controls', 'presentation-source-preview')
+    await expectControlsResolve(page)
+    await sources.click()
+    await expectControlsResolve(page)
   })
 
   test('keeps Persian citations structurally readable and narrow text reflow contained', async ({ page }) => {

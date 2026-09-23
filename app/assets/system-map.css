@@ -154,7 +154,7 @@
   min-height: 2.75rem;
   cursor: pointer;
 }
-.system-viewport-controls .system-reset-button { min-width: auto; padding-inline: 0.9rem; }
+.system-viewport-controls .system-reset-button { min-width: auto; padding-inline: 0.9rem; color: var(--app-accent-strong); }
 
 .system-graph-viewport {
   width: 100%;
@@ -283,7 +283,7 @@
 .system-relationship-summary small { grid-column: 2; color: var(--system-muted); }
 .system-evidence-entry { border: 1px dashed var(--app-border-strong) !important; padding: 0.8rem !important; background: var(--app-surface-quiet); }
 .system-clinical-separation { padding: 0.8rem; border-inline-start: 0.3rem solid #4e5561; border-radius: var(--app-radius-sm); background: #f1f2f4; font-size: 0.85rem; line-height: 1.55; }
-.system-show-in-graph { min-height: 2.75rem; margin-top: 0.9rem; font-weight: 750; }
+.system-show-in-graph { min-height: 2.75rem; margin-top: 0.9rem; color: var(--app-accent-strong); font-weight: 750; }
 .system-show-in-graph:focus-visible,
 .system-semantic-relationship:focus-visible { outline: 4px solid var(--system-focus); outline-offset: 3px; }
 .system-semantic-groups { display: grid; gap: 1rem; margin-top: 1rem; }

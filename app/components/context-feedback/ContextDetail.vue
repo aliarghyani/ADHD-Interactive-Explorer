@@ -236,7 +236,7 @@ function reset(): void {
           </li>
           <li class="context-mapping__relationship">
             <span aria-hidden="true">↓</span><strong>{{ copy.modulates }}</strong>
-            <button type="button" :aria-expanded="openEvidenceId === mapping.contextEvidence.id" aria-controls="context-evidence-preview" @click="toggleEvidence(mapping.contextEvidence, $event)">{{ copy.evidence }}</button>
+            <button type="button" :aria-expanded="openEvidenceId === mapping.contextEvidence.id" :aria-controls="openEvidenceId === mapping.contextEvidence.id ? 'context-evidence-preview' : undefined" @click="toggleEvidence(mapping.contextEvidence, $event)">{{ copy.evidence }}</button>
           </li>
           <li>
             <small>{{ copy.regulation }}</small>
@@ -246,7 +246,7 @@ function reset(): void {
           </li>
           <li class="context-mapping__relationship">
             <span aria-hidden="true">↓</span><strong>{{ copy.contributes }}</strong>
-            <button type="button" :aria-expanded="openEvidenceId === mapping.behaviourEvidence.id" aria-controls="context-evidence-preview" @click="toggleEvidence(mapping.behaviourEvidence, $event)">{{ copy.evidence }}</button>
+            <button type="button" :aria-expanded="openEvidenceId === mapping.behaviourEvidence.id" :aria-controls="openEvidenceId === mapping.behaviourEvidence.id ? 'context-evidence-preview' : undefined" @click="toggleEvidence(mapping.behaviourEvidence, $event)">{{ copy.evidence }}</button>
           </li>
           <li>
             <small>{{ copy.behaviour }}</small>
@@ -295,7 +295,7 @@ function reset(): void {
       </div>
       <template v-if="detail.feedbackLoops.length">
         <article v-for="loop in detail.feedbackLoops" :key="loop.id" class="context-feedback__loop">
-          <button type="button" :aria-expanded="openFeedbackIds.has(loop.id)" :aria-controls="`context-feedback-${loop.id}`" @click="toggleFeedback(loop.id)">
+          <button type="button" :aria-expanded="openFeedbackIds.has(loop.id)" :aria-controls="openFeedbackIds.has(loop.id) ? `context-feedback-${loop.id}` : undefined" @click="toggleFeedback(loop.id)">
             <span>↺ {{ loop.title }}</span>
             <bdi dir="ltr">{{ loop.id }}</bdi>
           </button>
@@ -324,7 +324,7 @@ function reset(): void {
               </div>
             </dl>
             <SafetyNotice :text="loop.caution" kind="graph" />
-            <button class="context-feedback__evidence" type="button" :aria-expanded="openEvidenceId === loop.evidenceEntry.id" aria-controls="context-evidence-preview" @click="toggleEvidence(loop.evidenceEntry, $event)">{{ copy.feedbackEvidence }}</button>
+            <button class="context-feedback__evidence" type="button" :aria-expanded="openEvidenceId === loop.evidenceEntry.id" :aria-controls="openEvidenceId === loop.evidenceEntry.id ? 'context-evidence-preview' : undefined" @click="toggleEvidence(loop.evidenceEntry, $event)">{{ copy.feedbackEvidence }}</button>
           </AppPanel>
         </article>
       </template>

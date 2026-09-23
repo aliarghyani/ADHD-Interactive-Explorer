@@ -58,14 +58,14 @@ function safetyParts(): string[] {
           <BidiIsolation v-if="locale === 'fa'" direction="ltr" class="home-canonical-term">Clinical Anchor</BidiIsolation>
           <p>{{ content.clinical.anchorDescription }}</p>
         </AppPanel>
-        <span class="home-distinction__operator" aria-label="is distinct from">≠</span>
+        <span class="home-distinction__operator" aria-hidden="true">≠</span>
         <AppPanel as="div" tone="quiet" role="listitem" class="home-distinction__card">
           <span class="home-distinction__number">02</span>
           <h3>{{ content.clinical.regulationLabel }}</h3>
           <BidiIsolation v-if="locale === 'fa'" direction="ltr" class="home-canonical-term">Regulation</BidiIsolation>
           <p>{{ content.clinical.regulationDescription }}</p>
         </AppPanel>
-        <span class="home-distinction__operator" aria-label="is distinct from">≠</span>
+        <span class="home-distinction__operator" aria-hidden="true">≠</span>
         <AppPanel as="div" tone="quiet" role="listitem" class="home-distinction__card">
           <span class="home-distinction__number">03</span>
           <h3>{{ content.clinical.behaviourLabel }}</h3>
@@ -335,7 +335,7 @@ function safetyParts(): string[] {
 .home-canonical-term {
   display: inline-block;
   margin-block-start: var(--app-space-2);
-  color: var(--app-text-muted);
+  color: var(--app-text-secondary);
   font-size: 0.75rem;
   font-weight: 750;
 }

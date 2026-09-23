@@ -70,7 +70,7 @@ useHead(() => ({
     <UContainer class="system-map-container">
       <AppPageHeader :kicker="copy.kicker" :title="copy.title" :summary="copy.introduction" />
 
-      <section class="system-safety-stack" aria-label="Educational safety information">
+      <section class="system-safety-stack" :aria-label="copy.safetyHeading">
         <SafetyNotice :text="globalSafetyText" kind="global" />
         <SafetyNotice :text="graphSafetyText" kind="graph" />
       </section>
