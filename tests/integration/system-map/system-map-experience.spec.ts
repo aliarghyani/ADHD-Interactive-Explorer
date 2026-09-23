@@ -4,6 +4,7 @@ import { nextTick, ref } from 'vue'
 import { describe, expect, it, vi } from 'vitest'
 import type { Locale } from '../../../domain'
 import { systemMapRepository } from '../../../features/system-map/knowledge'
+import { buildSemanticRelationshipModel } from '../../../features/system-map/semantic-browser'
 import { useSystemMapExperience } from '../../../features/system-map/system-map-experience'
 import { DomainLocalization, geometryForLocale } from '../../../localization'
 import { SafetyAccess } from '../../../safety'
@@ -79,6 +80,30 @@ describe('SystemMapExperience integration', () => {
     expect(experience.selectedNodeId.value).toBe(relatedId)
     expect(experience.graph.value.selectedNodeId).toBe(relatedId)
     expect(experience.semantic.value?.id).toBe(relatedId)
+  })
+
+  it('preserves every canonical edge direction and evidence identity across locales', () => {
+    const localization = new DomainLocalization(systemMapRepository)
+    for (const node of systemMapRepository.nodes) {
+      const en = buildSemanticRelationshipModel(systemMapRepository, localization, node.id, 'en')
+      const fa = buildSemanticRelationshipModel(systemMapRepository, localization, node.id, 'fa')
+      const identity = (items: typeof en.incoming) => items.map((item) => ({
+        edgeId: item.edgeId,
+        sourceId: item.sourceId,
+        targetId: item.targetId,
+        evidenceIds: item.evidenceIds,
+      }))
+      expect(identity(en.incoming)).toEqual(systemMapRepository.getIncomingRelationships(node.id).map((edge) => ({
+        edgeId: edge.id, sourceId: edge.sourceId, targetId: edge.targetId, evidenceIds: edge.evidenceIds,
+      })))
+      expect(identity(en.outgoing)).toEqual(systemMapRepository.getOutgoingRelationships(node.id).map((edge) => ({
+        edgeId: edge.id, sourceId: edge.sourceId, targetId: edge.targetId, evidenceIds: edge.evidenceIds,
+      })))
+      expect(identity(fa.incoming)).toEqual(identity(en.incoming))
+      expect(identity(fa.outgoing)).toEqual(identity(en.outgoing))
+      expect(identity(en.upstream)).toEqual(identity(en.incoming.filter((item) => item.relationshipType !== 'FEEDBACK_WITH')))
+      expect(identity(en.downstream)).toEqual(identity(en.outgoing.filter((item) => item.relationshipType !== 'FEEDBACK_WITH')))
+    }
   })
 
   it('keeps semantic content available after experience recomputation and remount', () => {

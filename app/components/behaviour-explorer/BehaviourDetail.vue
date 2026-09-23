@@ -35,6 +35,12 @@ const invalidPathway = computed(() => Boolean(
 const selectedPathway = computed<BehaviourPathway | undefined>(() =>
   props.detail.pathways.find((pathway) => pathway.id === selectedPathwayId.value) ?? props.detail.pathways[0],
 )
+const evidenceReturnPath = computed(() => {
+  const path = `/${props.locale}/behaviours/${props.detail.id}`
+  return props.requestedPathway === selectedPathway.value?.id
+    ? `${path}?pathway=${encodeURIComponent(props.requestedPathway)}`
+    : path
+})
 const availableEvidence = computed(() => [
   ...(selectedPathway.value?.evidenceEntries ?? []),
   ...props.detail.patterns.map((pattern) => pattern.evidenceEntry),
@@ -264,7 +270,7 @@ function setDisclosure(section: string, event: Event): void {
         v-if="openEvidence"
         ref="evidencePreview"
         :locale="locale"
-        :return-path="`/${locale}/behaviours/${detail.id}`"
+        :return-path="evidenceReturnPath"
         :entry="openEvidence"
         :copy="copy"
         :safety-text="detail.safety.evidence"

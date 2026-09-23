@@ -37,6 +37,12 @@ const selectedMappingId = ref(props.detail.mappings[0]?.id ?? '')
 let compactQuery: MediaQueryList | null = null
 
 const invalidState = computed(() => props.requestedState !== null && !isQualitativeState(props.requestedState))
+const evidenceReturnPath = computed(() => {
+  const path = `/${props.locale}/context/${props.detail.id}`
+  return isQualitativeState(props.requestedState) && props.requestedState !== 'neutral'
+    ? `${path}?state=${props.requestedState}`
+    : path
+})
 const evidenceEntries = computed(() => [
   ...props.detail.mappings.flatMap((mapping) => [mapping.contextEvidence, mapping.behaviourEvidence]),
   ...props.detail.feedbackLoops.map((loop) => loop.evidenceEntry),
@@ -335,7 +341,7 @@ function reset(): void {
       v-if="openEvidence"
       ref="evidencePreview"
       :locale="locale"
-      :return-path="`/${locale}/context/${detail.id}`"
+      :return-path="evidenceReturnPath"
       :entry="openEvidence"
       :copy="copy"
       :safety-text="detail.safety.evidence"

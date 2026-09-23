@@ -7,6 +7,17 @@ async function hydrated(page: Page, path: string): Promise<void> {
 
 test.describe('WP-14A functional journeys', () => {
   test.use({ viewport: { width: 1440, height: 900 } })
+  const runtimeErrors = new WeakMap<Page, string[]>()
+
+  test.beforeEach(({ page }) => {
+    const errors: string[] = []
+    runtimeErrors.set(page, errors)
+    page.on('pageerror', (error) => errors.push(error.message))
+  })
+
+  test.afterEach(({ page }) => {
+    expect(runtimeErrors.get(page)).toEqual([])
+  })
 
   test('A: Home to canonical map relationship, evidence, and return', async ({ page }) => {
     await hydrated(page, '/en')
@@ -57,6 +68,16 @@ test.describe('WP-14A functional journeys', () => {
     await expect(page.locator('.context-feedback__details')).toContainText('EDGE_FUN1_CTX2_FEEDBACK_WITH')
     await page.locator('.context-feedback__evidence').click()
     await expect(page.locator('.context-evidence')).toContainText('EVID_FUNCTION_STRESS_FEEDBACK_LOOP')
+    await page.locator('.context-evidence__detail-link').first().click()
+    await expect(page).toHaveURL(/\/en\/evidence\/EVID_/)
+    await page.locator('.evidence-detail__return a').first().click()
+    await expect(page).toHaveURL('/en/context/CTX2?state=demanding')
+    await expect(page.getByRole('radio', { name: 'More demanding' })).toHaveAttribute('aria-checked', 'true')
+    await page.locator('.context-detail__map-link').click()
+    await expect(page).toHaveURL('/en/map/CTX2')
+    await expect(page.getByTestId('semantic-selected-summary').locator('.app-canonical-id')).toHaveText('CTX2')
+    await page.goBack()
+    await expect(page).toHaveURL('/en/context/CTX2?state=demanding')
     await page.locator('.context-mapping a[href^="/en/behaviours/"]').first().click()
     await expect(page).toHaveURL(/\/en\/behaviours\/BEH\d+$/)
     await expect(page.locator('.behaviour-detail__identity .app-canonical-id')).toHaveText(/^BEH\d+$/)
@@ -77,6 +98,9 @@ test.describe('WP-14A functional journeys', () => {
     }
     await page.getByRole('button', { name: 'View source preview' }).click()
     await expect(page.locator('.presentation-source').first()).toBeVisible()
+    await page.getByText('Find evidence records using this source').first().click()
+    await expect(page).toHaveURL(/\/en\/evidence\?source=SRC_/)
+    await expect(page.locator('.evidence-card').first()).toBeVisible()
   })
 
   test('E: relationship evidence has source, limitations, and safe return', async ({ page }) => {
