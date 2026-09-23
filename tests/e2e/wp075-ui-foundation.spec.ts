@@ -32,7 +32,7 @@ test.describe('WP-07.5 UI foundation behavior', () => {
     await expect(page.locator('[data-safety-kind="global"]')).toContainText('does not diagnose ADHD')
     await expect(page.locator('[data-safety-kind="graph"]')).toContainText('possible associations or influences')
     await expect(page.getByTestId('system-visual-graph')).toBeVisible({ timeout: 20_000 })
-    const evidenceLabel = await page.locator('[data-evidence-level]').innerText()
+    const evidenceLabel = await page.locator('[data-evidence-level]').first().innerText()
     expect(evidenceLabel).toBe('Descriptive')
     expect(evidenceLabel).not.toMatch(/%|score|confidence/i)
 
@@ -88,7 +88,7 @@ test.describe('WP-07.5 UI foundation behavior', () => {
 
     await page.setViewportSize({ width: 390, height: 844 })
     await expect(page.getByTestId('system-visual-graph')).toBeHidden()
-    await expect(page.locator('.system-mobile-boundary')).toBeVisible()
+    await expect(page.getByTestId('mobile-focused-path')).toBeVisible()
     await page.screenshot({ path: reviewPath('06-en-mobile-deferred.png') })
   })
 

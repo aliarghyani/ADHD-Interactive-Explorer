@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import type { ContextCopy } from '../../../features/context-feedback/copy'
 import type { ContextEvidencePreview } from '../../../features/context-feedback/model'
 import AppPanel from '../ui/AppPanel.vue'
@@ -14,14 +15,22 @@ defineProps<{
 }>()
 
 defineEmits<{ close: [] }>()
+
+const heading = ref<HTMLElement | null>(null)
+
+function focusHeading(): void {
+  heading.value?.focus({ preventScroll: true })
+}
+
+defineExpose({ focusHeading })
 </script>
 
 <template>
-  <AppPanel as="aside" class="context-evidence" labelledby="context-evidence-title">
+  <AppPanel id="context-evidence-preview" as="aside" class="context-evidence" labelledby="context-evidence-title">
     <div class="context-evidence__heading">
       <div>
         <p>{{ copy.evidencePreview }}</p>
-        <h2 id="context-evidence-title">{{ entry.label }}</h2>
+        <h2 id="context-evidence-title" ref="heading" tabindex="-1">{{ entry.label }}</h2>
         <bdi v-if="entry.edgeId" dir="ltr" class="app-canonical-id">{{ entry.edgeId }}</bdi>
       </div>
       <UButton type="button" color="neutral" variant="ghost" @click="$emit('close')">{{ copy.closeEvidence }}</UButton>

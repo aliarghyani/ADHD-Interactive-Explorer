@@ -29,6 +29,7 @@
     "test:wp11": "nuxt prepare && vitest run tests/component/evidence tests/integration/evidence",
     "test:wp115": "nuxt prepare && vitest run tests/component/methodology tests/integration/methodology",
     "test:wp12": "nuxt prepare && vitest run tests/mobile tests/integration/system-map",
+    "test:wp13": "nuxt prepare && vitest run tests/accessibility tests/rtl tests/component/behaviour tests/component/context",
     "knowledge:ingest": "node scripts/knowledge/ingest-production-pack.mjs",
     "knowledge:validate": "node scripts/knowledge/validate.mjs",
     "postinstall": "nuxt prepare"

@@ -57,9 +57,11 @@ describe('WP-08 Behaviour Explorer components', () => {
     const options = wrapper.findAll('[role="radio"]')
     expect(options).toHaveLength(4)
     expect(options[0]?.attributes('aria-checked')).toBe('true')
-    await options[1]?.trigger('click')
+    expect(options.map(option => option.attributes('tabindex'))).toEqual(['0', '-1', '-1', '-1'])
+    await options[0]?.trigger('keydown', { key: 'ArrowRight' })
     expect(wrapper.emitted('pathwayChange')?.[0]).toEqual(['PATH_BEH1_DELAYED_REWARD'])
     expect(options[1]?.attributes('aria-checked')).toBe('true')
+    expect(options.map(option => option.attributes('tabindex'))).toEqual(['-1', '0', '-1', '-1'])
     expect(wrapper.text()).not.toMatch(/recommended|most likely|score|percentage/i)
   })
 
@@ -71,9 +73,15 @@ describe('WP-08 Behaviour Explorer components', () => {
       behaviourRepository.getAlternativeExplanations('BEH1').length,
     )
     expect(wrapper.findAll('.behaviour-detail__map-link').map((link) => link.attributes('href'))).toEqual(['/en/map/BEH1', '/en/context'])
-    await wrapper.get('.behaviour-pathway__relationship button').trigger('click')
+    const trigger = wrapper.get('.behaviour-pathway__relationship button')
+    await trigger.trigger('click')
+    expect(trigger.attributes()).toMatchObject({
+      'aria-controls': 'behaviour-evidence-preview',
+      'aria-expanded': 'true',
+    })
     expect(wrapper.get('.behaviour-evidence').text()).toContain('group-level tendencies')
     expect(wrapper.get('.behaviour-evidence').text()).toContain('Limitations')
+    expect(wrapper.get('.behaviour-evidence').attributes('id')).toBe('behaviour-evidence-preview')
     await wrapper.findAll('button').find((button) => button.text() === behaviourCopy.en.reset)?.trigger('click')
     expect(wrapper.emitted('reset')).toHaveLength(1)
   })

@@ -31,7 +31,7 @@ test.describe('WP-07.6 Home desktop review', () => {
     await expect(page.getByRole('heading', { level: 2, name: 'Clinical definition is not the explanatory network' })).toBeVisible()
     await expect(page.getByRole('heading', { level: 2, name: 'Relationships are many-to-many' })).toBeVisible()
     await expect(page.locator('.home-entry')).toHaveCount(4)
-    await expect(page.locator('.home-entry__unavailable')).toHaveCount(1)
+    await expect(page.locator('.home-entry__unavailable')).toHaveCount(0)
     await expect(page.getByRole('link', { name: /Behaviour Explorer: Start with a behaviour/ })).toHaveAttribute('href', '/en/behaviours')
     await expect(page.getByRole('link', { name: /Context & Feedback Explorer/ })).toHaveAttribute('href', '/en/context')
     await expect(page.getByRole('link', { name: /System Map: See the whole system/ })).toHaveAttribute('href', '/en/map')

@@ -86,7 +86,7 @@ test.describe('WP-12 mobile focused-path navigator', () => {
     await page.goForward()
     await expect(page).toHaveURL(/\/en\/map\/BEH4$/)
 
-    await page.getByRole('link', { name: 'FA', exact: true }).click()
+    await page.getByRole('link', { name: 'فارسی', exact: true }).click()
     await expect(page).toHaveURL(/\/fa\/map\/BEH4$/)
     await expect(page.locator('.mobile-focused-path__current')).toContainText('BEH4')
     await page.locator('.mobile-focused-path__reset').click()

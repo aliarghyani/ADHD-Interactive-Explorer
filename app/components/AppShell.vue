@@ -68,7 +68,6 @@ function isCurrent(item: HomeNavigationItem): boolean {
           :to="switchHref"
           :prefetch="false"
           :hreflang="locale === 'en' ? 'fa' : 'en'"
-          :aria-label="locale === 'en' ? 'FA' : 'EN'"
         >
           {{ switchLabel }}
         </NuxtLink>
@@ -164,7 +163,7 @@ function isCurrent(item: HomeNavigationItem): boolean {
 .app-shell__nav-link,
 .app-shell__locale-link {
   display: inline-flex;
-  min-height: 2.5rem;
+  min-height: 2.75rem;
   align-items: center;
   gap: var(--app-space-2);
   padding: 0.45rem 0.7rem;

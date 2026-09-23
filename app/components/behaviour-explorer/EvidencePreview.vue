@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import type { EvidencePreview } from '../../../features/behaviour-explorer/model'
 import type { BehaviourCopy } from '../../../features/behaviour-explorer/copy'
 import AppPanel from '../ui/AppPanel.vue'
@@ -14,14 +15,22 @@ defineProps<{
 }>()
 
 defineEmits<{ close: [] }>()
+
+const heading = ref<HTMLElement | null>(null)
+
+function focusHeading(): void {
+  heading.value?.focus({ preventScroll: true })
+}
+
+defineExpose({ focusHeading })
 </script>
 
 <template>
-  <AppPanel as="aside" class="behaviour-evidence" labelledby="behaviour-evidence-title">
+  <AppPanel id="behaviour-evidence-preview" as="aside" class="behaviour-evidence" labelledby="behaviour-evidence-title">
     <div class="behaviour-evidence__heading">
       <div>
         <p>{{ copy.evidencePreview }}</p>
-        <h2 id="behaviour-evidence-title">
+        <h2 id="behaviour-evidence-title" ref="heading" tabindex="-1">
           <bdi v-if="entry.edgeId" dir="ltr">{{ entry.edgeId }}</bdi>
           <template v-else>{{ copy.pattern }}</template>
         </h2>

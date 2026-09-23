@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
+import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
+import { nextRovingRadioIndex } from '../../../accessibility/roving-radio'
 import type { ContextCopy } from '../../../features/context-feedback/copy'
 import {
   isQualitativeState,
@@ -28,6 +29,8 @@ const emit = defineEmits<{
 const initialState = (): QualitativeState => isQualitativeState(props.requestedState) ? props.requestedState : 'neutral'
 const selectedState = ref<QualitativeState>(initialState())
 const openEvidenceId = ref<string | null>(null)
+const evidencePreview = ref<{ focusHeading: () => void } | null>(null)
+const evidenceTrigger = ref<HTMLElement | null>(null)
 const openFeedbackIds = ref(new Set<string>())
 const compactLayout = ref(false)
 const selectedMappingId = ref(props.detail.mappings[0]?.id ?? '')
@@ -75,8 +78,52 @@ function selectState(state: QualitativeState): void {
   emit('stateChange', state)
 }
 
-function toggleEvidence(entry: ContextEvidencePreview): void {
-  openEvidenceId.value = openEvidenceId.value === entry.id ? null : entry.id
+async function moveStateRadio(state: QualitativeState, event: KeyboardEvent): Promise<void> {
+  const currentIndex = qualitativeStates.indexOf(state)
+  const nextIndex = nextRovingRadioIndex(qualitativeStates.length, currentIndex, event.key)
+  if (nextIndex === null) return
+  event.preventDefault()
+  const nextState = qualitativeStates[nextIndex]
+  if (!nextState) return
+  const group = (event.currentTarget as HTMLElement).closest('[role="radiogroup"]')
+  selectState(nextState)
+  await focusRadioAt(group, nextIndex)
+}
+
+async function moveMappingRadio(mappingId: string, event: KeyboardEvent): Promise<void> {
+  const currentIndex = props.detail.mappings.findIndex(mapping => mapping.id === mappingId)
+  const nextIndex = nextRovingRadioIndex(props.detail.mappings.length, currentIndex, event.key)
+  if (nextIndex === null) return
+  event.preventDefault()
+  const nextMapping = props.detail.mappings[nextIndex]
+  if (!nextMapping) return
+  const group = (event.currentTarget as HTMLElement).closest('[role="radiogroup"]')
+  selectedMappingId.value = nextMapping.id
+  openEvidenceId.value = null
+  await focusRadioAt(group, nextIndex)
+}
+
+async function focusRadioAt(group: Element | null, index: number): Promise<void> {
+  await nextTick()
+  group?.querySelectorAll<HTMLElement>('[role="radio"]')[index]?.focus()
+}
+
+async function toggleEvidence(entry: ContextEvidencePreview, event: MouseEvent): Promise<void> {
+  const closing = openEvidenceId.value === entry.id
+  if (closing) {
+    openEvidenceId.value = null
+    return
+  }
+  evidenceTrigger.value = event.currentTarget as HTMLElement
+  openEvidenceId.value = entry.id
+  await nextTick()
+  evidencePreview.value?.focusHeading()
+}
+
+async function closeEvidence(): Promise<void> {
+  openEvidenceId.value = null
+  await nextTick()
+  evidenceTrigger.value?.focus({ preventScroll: true })
 }
 
 function toggleFeedback(id: string): void {
@@ -138,8 +185,10 @@ function reset(): void {
           type="button"
           role="radio"
           :aria-checked="selectedState === state"
+          :tabindex="selectedState === state ? 0 : -1"
           :class="{ 'context-state__option--selected': selectedState === state }"
           @click="selectState(state)"
+          @keydown="moveStateRadio(state, $event)"
         >
           {{ copy[state] }}
         </button>
@@ -164,7 +213,9 @@ function reset(): void {
           type="button"
           role="radio"
           :aria-checked="selectedMappingId === mapping.id"
+          :tabindex="selectedMappingId === mapping.id ? 0 : -1"
           @click="selectedMappingId = mapping.id; openEvidenceId = null"
+          @keydown="moveMappingRadio(mapping.id, $event)"
         >
           <span>{{ copy.possibleRelationship }} {{ index + 1 }}</span>
           <small>{{ mapping.regulation.label }} → {{ mapping.behaviour.label }}</small>
@@ -185,7 +236,7 @@ function reset(): void {
           </li>
           <li class="context-mapping__relationship">
             <span aria-hidden="true">↓</span><strong>{{ copy.modulates }}</strong>
-            <button type="button" @click="toggleEvidence(mapping.contextEvidence)">{{ copy.evidence }}</button>
+            <button type="button" :aria-expanded="openEvidenceId === mapping.contextEvidence.id" aria-controls="context-evidence-preview" @click="toggleEvidence(mapping.contextEvidence, $event)">{{ copy.evidence }}</button>
           </li>
           <li>
             <small>{{ copy.regulation }}</small>
@@ -195,7 +246,7 @@ function reset(): void {
           </li>
           <li class="context-mapping__relationship">
             <span aria-hidden="true">↓</span><strong>{{ copy.contributes }}</strong>
-            <button type="button" @click="toggleEvidence(mapping.behaviourEvidence)">{{ copy.evidence }}</button>
+            <button type="button" :aria-expanded="openEvidenceId === mapping.behaviourEvidence.id" aria-controls="context-evidence-preview" @click="toggleEvidence(mapping.behaviourEvidence, $event)">{{ copy.evidence }}</button>
           </li>
           <li>
             <small>{{ copy.behaviour }}</small>
@@ -244,11 +295,11 @@ function reset(): void {
       </div>
       <template v-if="detail.feedbackLoops.length">
         <article v-for="loop in detail.feedbackLoops" :key="loop.id" class="context-feedback__loop">
-          <button type="button" :aria-expanded="openFeedbackIds.has(loop.id)" @click="toggleFeedback(loop.id)">
+          <button type="button" :aria-expanded="openFeedbackIds.has(loop.id)" :aria-controls="`context-feedback-${loop.id}`" @click="toggleFeedback(loop.id)">
             <span>↺ {{ loop.title }}</span>
             <bdi dir="ltr">{{ loop.id }}</bdi>
           </button>
-          <AppPanel v-if="openFeedbackIds.has(loop.id)" tone="secondary">
+          <AppPanel v-if="openFeedbackIds.has(loop.id)" :id="`context-feedback-${loop.id}`" tone="secondary">
             <dl class="context-feedback__details">
               <div>
                 <dt>{{ copy.startingConcept }}</dt>
@@ -273,7 +324,7 @@ function reset(): void {
               </div>
             </dl>
             <SafetyNotice :text="loop.caution" kind="graph" />
-            <button class="context-feedback__evidence" type="button" @click="toggleEvidence(loop.evidenceEntry)">{{ copy.feedbackEvidence }}</button>
+            <button class="context-feedback__evidence" type="button" :aria-expanded="openEvidenceId === loop.evidenceEntry.id" aria-controls="context-evidence-preview" @click="toggleEvidence(loop.evidenceEntry, $event)">{{ copy.feedbackEvidence }}</button>
           </AppPanel>
         </article>
       </template>
@@ -282,12 +333,13 @@ function reset(): void {
 
     <ContextEvidencePreviewPanel
       v-if="openEvidence"
+      ref="evidencePreview"
       :locale="locale"
       :return-path="`/${locale}/context/${detail.id}`"
       :entry="openEvidence"
       :copy="copy"
       :safety-text="detail.safety.evidence"
-      @close="openEvidenceId = null"
+      @close="closeEvidence"
     />
   </main>
 </template>
@@ -478,7 +530,8 @@ function reset(): void {
 
 .context-mapping__relationship button,
 .context-feedback__evidence {
-  padding: 0;
+  min-height: 2.75rem;
+  padding: 0.55rem 0.25rem;
   border: 0;
   background: transparent;
   color: var(--app-accent-strong);

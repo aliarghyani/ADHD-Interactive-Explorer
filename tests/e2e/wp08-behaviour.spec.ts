@@ -87,7 +87,7 @@ test.describe('WP-08 Behaviour desktop review', () => {
     await page.goto('/en/behaviours/beh1')
     await waitForHydration(page)
     await expect(page.getByRole('heading', { level: 1, name: 'Behaviour not found' })).toBeVisible()
-    await expect(page.getByRole('navigation')).toBeVisible()
+    await expect(page.getByRole('navigation', { name: 'Primary navigation' })).toBeVisible()
     await expect(page.locator('[data-safety-kind="global"]')).toBeVisible()
     await page.screenshot({ path: reviewPath('07-invalid-behaviour.png'), fullPage: true })
 
@@ -121,7 +121,7 @@ test.describe('WP-08 Behaviour mobile and keyboard review', () => {
     await waitForHydration(page)
     await page.getByRole('radio').first().focus()
     await expect(page.getByRole('radio').first()).toBeFocused()
-    await page.keyboard.press('Tab')
+    await page.keyboard.press('ArrowRight')
     await expect(page.getByRole('radio').nth(1)).toBeFocused()
     await page.keyboard.press('Enter')
     await expect(page.getByRole('radio').nth(1)).toHaveAttribute('aria-checked', 'true')

@@ -100,7 +100,7 @@ test.describe('WP-09 Context desktop review', () => {
     await page.goto('/en/context/ctx2')
     await waitForHydration(page)
     await expect(page.getByRole('heading', { level: 1, name: 'Context not found' })).toBeVisible()
-    await expect(page.getByRole('navigation')).toBeVisible()
+    await expect(page.getByRole('navigation', { name: 'Primary navigation' })).toBeVisible()
     await page.screenshot({ path: reviewPath('08-invalid-context.png'), fullPage: true })
 
     await page.goto('/en/context/CTX2?state=high')

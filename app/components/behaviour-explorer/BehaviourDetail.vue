@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
+import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
+import { nextRovingRadioIndex } from '../../../accessibility/roving-radio'
 import type { BehaviourCopy } from '../../../features/behaviour-explorer/copy'
 import type { BehaviourDetail, BehaviourPathway, EvidencePreview } from '../../../features/behaviour-explorer/model'
 import AppPageHeader from '../ui/AppPageHeader.vue'
@@ -23,6 +24,8 @@ const initialPathway = () => props.detail.pathways.find((pathway) => pathway.id 
   ?? props.detail.pathways[0]
 const selectedPathwayId = ref(initialPathway()?.id ?? '')
 const openEvidenceId = ref<string | null>(null)
+const evidencePreview = ref<{ focusHeading: () => void } | null>(null)
+const evidenceTrigger = ref<HTMLElement | null>(null)
 const compactLayout = ref(false)
 const expandedSections = ref(new Set(['pattern', 'function', 'alternatives']))
 let compactQuery: MediaQueryList | null = null
@@ -72,8 +75,35 @@ function reset(): void {
   emit('reset')
 }
 
-function toggleEvidence(entry: EvidencePreview): void {
-  openEvidenceId.value = openEvidenceId.value === entry.id ? null : entry.id
+async function handlePathwayKeydown(pathwayId: string, event: KeyboardEvent): Promise<void> {
+  const currentIndex = props.detail.pathways.findIndex(pathway => pathway.id === pathwayId)
+  const nextIndex = nextRovingRadioIndex(props.detail.pathways.length, currentIndex, event.key)
+  if (nextIndex === null) return
+  event.preventDefault()
+  const nextPathway = props.detail.pathways[nextIndex]
+  if (!nextPathway) return
+  const group = (event.currentTarget as HTMLElement).closest('[role="radiogroup"]')
+  selectPathway(nextPathway.id)
+  await nextTick()
+  group?.querySelectorAll<HTMLElement>('[role="radio"]')[nextIndex]?.focus()
+}
+
+async function toggleEvidence(entry: EvidencePreview, event: MouseEvent): Promise<void> {
+  const closing = openEvidenceId.value === entry.id
+  if (closing) {
+    openEvidenceId.value = null
+    return
+  }
+  evidenceTrigger.value = event.currentTarget as HTMLElement
+  openEvidenceId.value = entry.id
+  await nextTick()
+  evidencePreview.value?.focusHeading()
+}
+
+async function closeEvidence(): Promise<void> {
+  openEvidenceId.value = null
+  await nextTick()
+  evidenceTrigger.value?.focus({ preventScroll: true })
 }
 
 function setDisclosure(section: string, event: Event): void {
@@ -130,8 +160,10 @@ function setDisclosure(section: string, event: Event): void {
           type="button"
           role="radio"
           :aria-checked="selectedPathway?.id === pathway.id"
+          :tabindex="selectedPathway?.id === pathway.id ? 0 : -1"
           :class="{ 'behaviour-pathway-option--selected': selectedPathway?.id === pathway.id }"
           @click="selectPathway(pathway.id)"
+          @keydown="handlePathwayKeydown(pathway.id, $event)"
         >
           <span>{{ copy.possiblePathway }} {{ index + 1 }}</span>
           <bdi dir="ltr">{{ pathway.id }}</bdi>
@@ -158,7 +190,12 @@ function setDisclosure(section: string, event: Event): void {
             <div v-if="selectedPathway.evidenceEntries[index]" class="behaviour-pathway__relationship">
               <span aria-hidden="true">↓</span>
               <strong>{{ copy.semantics[selectedPathway.evidenceEntries[index].relationshipType!] }}</strong>
-              <button type="button" @click="toggleEvidence(selectedPathway.evidenceEntries[index])">
+              <button
+                type="button"
+                :aria-expanded="openEvidenceId === selectedPathway.evidenceEntries[index]!.id"
+                aria-controls="behaviour-evidence-preview"
+                @click="toggleEvidence(selectedPathway.evidenceEntries[index]!, $event)"
+              >
                 {{ copy.evidence }}
               </button>
             </div>
@@ -180,7 +217,7 @@ function setDisclosure(section: string, event: Event): void {
               <bdi dir="ltr" class="app-canonical-id">{{ pattern.concept.id }}</bdi>
               <p>{{ pattern.conceptualThreshold }}</p>
               <p>{{ pattern.singleEventCaution }}</p>
-              <button type="button" @click="toggleEvidence(pattern.evidenceEntry)">{{ copy.evidence }}</button>
+              <button type="button" :aria-expanded="openEvidenceId === pattern.evidenceEntry.id" aria-controls="behaviour-evidence-preview" @click="toggleEvidence(pattern.evidenceEntry, $event)">{{ copy.evidence }}</button>
             </article>
           </div>
           <p v-else>{{ copy.noPattern }}</p>
@@ -198,7 +235,7 @@ function setDisclosure(section: string, event: Event): void {
               <h3>{{ example.concept.label }}</h3>
               <bdi dir="ltr" class="app-canonical-id">{{ example.concept.id }}</bdi>
               <p>{{ example.example }}</p>
-              <button v-if="example.evidenceEntry" type="button" @click="toggleEvidence(example.evidenceEntry)">{{ copy.evidence }}</button>
+              <button v-if="example.evidenceEntry" type="button" :aria-expanded="openEvidenceId === example.evidenceEntry.id" aria-controls="behaviour-evidence-preview" @click="toggleEvidence(example.evidenceEntry, $event)">{{ copy.evidence }}</button>
               <small v-else>{{ copy.evidenceUnavailable }}</small>
             </article>
           </div>
@@ -225,12 +262,13 @@ function setDisclosure(section: string, event: Event): void {
 
       <EvidencePreviewPanel
         v-if="openEvidence"
+        ref="evidencePreview"
         :locale="locale"
         :return-path="`/${locale}/behaviours/${detail.id}`"
         :entry="openEvidence"
         :copy="copy"
         :safety-text="detail.safety.evidence"
-        @close="openEvidenceId = null"
+        @close="closeEvidence"
       />
     </template>
   </main>
@@ -399,7 +437,8 @@ function setDisclosure(section: string, event: Event): void {
 
 .behaviour-pathway__relationship button,
 .behaviour-possibilities button {
-  padding: 0;
+  min-height: 2.75rem;
+  padding: 0.55rem 0.25rem;
   border: 0;
   background: transparent;
   color: var(--app-accent-strong);

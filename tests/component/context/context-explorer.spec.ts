@@ -50,9 +50,11 @@ describe('WP-09 Context & Feedback components', () => {
     const options = wrapper.findAll('[role="radio"]')
     expect(options).toHaveLength(3)
     expect(options[1]?.attributes('aria-checked')).toBe('true')
-    await options[0]?.trigger('click')
-    expect(wrapper.emitted('stateChange')?.[0]).toEqual(['supportive'])
-    expect(options[0]?.attributes('aria-checked')).toBe('true')
+    expect(options.map(option => option.attributes('tabindex'))).toEqual(['-1', '0', '-1'])
+    await options[1]?.trigger('keydown', { key: 'ArrowRight' })
+    expect(wrapper.emitted('stateChange')?.[0]).toEqual(['demanding'])
+    expect(options[2]?.attributes('aria-checked')).toBe('true')
+    expect(options.map(option => option.attributes('tabindex'))).toEqual(['-1', '-1', '0'])
     expect(wrapper.text()).not.toMatch(/\d+%|your score|likelihood|forecast/i)
   })
 
@@ -68,11 +70,17 @@ describe('WP-09 Context & Feedback components', () => {
     const wrapper = mountDetail('CTX4')
     expect(wrapper.findAll('.context-feedback__loop')).toHaveLength(1)
     await wrapper.get('.context-feedback__loop > button').trigger('click')
+    expect(wrapper.get('.context-feedback__loop > button').attributes('aria-controls')).toContain('context-feedback-')
     expect(wrapper.text()).toContain('not universal')
     expect(wrapper.text()).toContain('EDGE_PAT1_CTX4_FEEDBACK_WITH')
     await wrapper.get('.context-feedback__evidence').trigger('click')
+    expect(wrapper.get('.context-feedback__evidence').attributes()).toMatchObject({
+      'aria-controls': 'context-evidence-preview',
+      'aria-expanded': 'true',
+    })
     expect(wrapper.get('.context-evidence').text()).toContain('group-level tendencies')
     expect(wrapper.get('.context-evidence').text()).toContain('Limitations')
+    expect(wrapper.get('.context-evidence').attributes('id')).toBe('context-evidence-preview')
   })
 
   it('shows a controlled empty Feedback state and resets only temporary exploration', async () => {

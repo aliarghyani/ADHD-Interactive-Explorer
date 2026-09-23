@@ -43,7 +43,7 @@ test.describe('WP-06 System Map routes', () => {
     await expect(page.getByRole('heading', { level: 2, name: 'Starting' })).toBeVisible()
     const englishGeometry = await page.locator('[data-node-id="BEH1"]').getAttribute('style')
 
-    await page.getByRole('link', { name: 'FA' }).click()
+    await page.getByRole('link', { name: 'فارسی', exact: true }).click()
     await expect(page).toHaveURL(/\/fa\/map\/BEH1$/)
     await expect(page.locator('[data-node-id="BEH1"]')).toHaveAttribute('aria-pressed', 'true')
     await expect(page.getByRole('heading', { level: 2, name: 'شروع کردن' })).toBeVisible()
