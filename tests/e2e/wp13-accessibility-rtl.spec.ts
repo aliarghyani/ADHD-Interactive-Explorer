@@ -91,6 +91,24 @@ test.describe('WP-13 accessibility and RTL hardening', () => {
     await expect(page.getByText('10.1016/j.biopsych.2005.02.006', { exact: true })).toBeVisible()
   })
 
+  test('keeps narrow Behaviour and Context evidence controls pointer-operable', async ({ page }) => {
+    await page.setViewportSize({ width: 380, height: 820 })
+    await page.goto('/en/behaviours/BEH1')
+    await waitForHydration(page)
+
+    const behaviourTrigger = page.getByRole('button', { name: 'View relationship evidence' }).first()
+    await behaviourTrigger.click()
+    await expect(page.locator('#behaviour-evidence-title')).toBeFocused()
+    await page.getByRole('button', { name: 'Close evidence preview' }).click()
+    await expect(behaviourTrigger).toBeFocused()
+
+    await page.goto('/en/context/CTX2')
+    await waitForHydration(page)
+    const contextTrigger = page.locator('.context-mapping__relationship button').first()
+    await contextTrigger.click()
+    await expect(page.locator('#context-evidence-title')).toBeFocused()
+  })
+
   test('keeps the mobile focused path operable, directional, and touch sized in RTL', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 })
     await page.goto('/fa/map/CTX2')

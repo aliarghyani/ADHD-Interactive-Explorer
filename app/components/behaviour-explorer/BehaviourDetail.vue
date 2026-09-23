@@ -396,11 +396,16 @@ function setDisclosure(section: string, event: Event): void {
 .behaviour-pathway__steps article {
   display: flex;
   gap: var(--app-space-3);
-  min-height: 100%;
+  min-height: 0;
   padding: var(--app-space-4);
   border: 1px solid var(--app-border);
   border-radius: var(--app-radius-md);
   background: var(--app-surface-secondary);
+}
+
+.behaviour-pathway__steps > li {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
 }
 
 .behaviour-pathway__steps article > span {
