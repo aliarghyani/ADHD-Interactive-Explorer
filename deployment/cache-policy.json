@@ -1,0 +1,5 @@
+{
+  "html": "public, max-age=0, must-revalidate",
+  "hashedAssets": "public, max-age=31536000, immutable",
+  "mutableAssets": "public, max-age=0, must-revalidate"
+}

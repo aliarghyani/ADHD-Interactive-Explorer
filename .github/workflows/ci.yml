@@ -27,29 +27,8 @@ jobs:
           node-version: 22.19.0
           cache: pnpm
 
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Validate production knowledge contract
-        run: pnpm knowledge:validate
-
-      - name: Typecheck
-        run: pnpm typecheck
-
-      - name: Lint
-        run: pnpm lint
-
-      - name: Unit and component tests
-        run: pnpm test
-
-      - name: Build
-        run: pnpm build
-
-      - name: Generate static output
-        run: pnpm generate
-
       - name: Install Playwright Chromium
-        run: pnpm exec playwright install --with-deps chromium
+        run: pnpm install --frozen-lockfile && pnpm exec playwright install --with-deps chromium
 
-      - name: Browser smoke tests
-        run: pnpm test:e2e
+      - name: Verify static release
+        run: pnpm release:verify

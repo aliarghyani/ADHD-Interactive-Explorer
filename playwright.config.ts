@@ -23,9 +23,9 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'pnpm dev --host 127.0.0.1 --port 3000',
+    command: process.env.PLAYWRIGHT_STATIC_ARTIFACT ? `"${process.execPath}" scripts/release/serve.mjs` : 'pnpm dev --host 127.0.0.1 --port 3000',
     url: 'http://127.0.0.1:3000/en',
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: !process.env.CI && !process.env.PLAYWRIGHT_STATIC_ARTIFACT,
     timeout: 120_000,
   },
 })
