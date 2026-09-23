@@ -8,7 +8,9 @@
       "comingSoon": "Coming soon",
       "live": "Live",
       "skipToContent": "Skip to main content",
-      "switchLocale": "فارسی"
+      "switchLocale": "فارسی",
+      "supportNavigation": "Product information",
+      "educationalBoundary": "Educational boundary"
     },
     "navigation": {
       "home": "Home",
@@ -17,7 +19,8 @@
       "context": "Context",
       "presentations": "Presentations",
       "evidence": "Evidence / Sources",
-      "methodology": "Methodology / About"
+      "methodology": "Methodology",
+      "about": "About"
     },
     "hero": {
       "kicker": "Interactive educational model",

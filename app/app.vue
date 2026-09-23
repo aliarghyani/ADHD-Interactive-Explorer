@@ -13,6 +13,15 @@ const documentLocale = computed<'en' | 'fa'>(() => {
 const documentAttributes = computed(() => documentAttributesForLocale(documentLocale.value))
 const alternateLocale = computed<'en' | 'fa'>(() => documentLocale.value === 'en' ? 'fa' : 'en')
 const shellContent = computed(() => createHomeContent(t, documentLocale.value))
+const { data: shellSafety } = await useAsyncData(
+  () => `shell-safety-${documentLocale.value}`,
+  async () => {
+    if (import.meta.server) {
+      const { getSupportingKnowledge } = await import('../features/methodology/supporting-knowledge.server')
+      return getSupportingKnowledge(documentLocale.value).globalDisclaimer
+    }
+  },
+)
 const switchHref = computed(() => {
   if (!/^\/(en|fa)(?=\/|\?|#|$)/.test(route.fullPath)) return `/${alternateLocale.value}`
   return switchLocaleInPath(route.fullPath, alternateLocale.value)
@@ -40,6 +49,9 @@ useHead(() => ({
       :switch-label="t('home.shell.switchLocale')"
       :current-path="route.path"
       :navigation="shellContent.navigation"
+      :global-disclaimer="shellSafety ?? ''"
+      :support-navigation-label="t('home.shell.supportNavigation')"
+      :educational-boundary-label="t('home.shell.educationalBoundary')"
     >
       <NuxtPage />
     </AppShell>

@@ -37,6 +37,10 @@ const evidenceRoutes = ['en', 'fa'].flatMap((locale) => [
   `/${locale}/evidence`,
   ...evidenceEntries.evidence.map((entry) => `/${locale}/evidence/${entry.id}`),
 ])
+const supportingRoutes = ['en', 'fa'].flatMap((locale) => [
+  `/${locale}/methodology`,
+  `/${locale}/about`,
+])
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
@@ -77,6 +81,7 @@ export default defineNuxtConfig({
         ...contextRoutes,
         ...presentationRoutes,
         ...evidenceRoutes,
+        ...supportingRoutes,
       ],
     },
   },

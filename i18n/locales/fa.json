@@ -8,7 +8,9 @@
       "comingSoon": "به‌زودی",
       "live": "فعال",
       "skipToContent": "رفتن به محتوای اصلی",
-      "switchLocale": "English"
+      "switchLocale": "English",
+      "supportNavigation": "اطلاعات محصول",
+      "educationalBoundary": "مرز آموزشی"
     },
     "navigation": {
       "home": "خانه",
@@ -17,7 +19,8 @@
       "context": "بافت",
       "presentations": "نمودهای بالینی",
       "evidence": "شواهد و منابع",
-      "methodology": "روش‌شناسی و درباره"
+      "methodology": "روش‌شناسی",
+      "about": "درباره"
     },
     "hero": {
       "kicker": "مدل آموزشی تعاملی",

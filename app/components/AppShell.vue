@@ -13,6 +13,9 @@ const props = defineProps<{
   switchLabel: string
   currentPath: string
   navigation: readonly HomeNavigationItem[]
+  globalDisclaimer: string
+  supportNavigationLabel: string
+  educationalBoundaryLabel: string
 }>()
 const hydrated = ref(false)
 
@@ -44,7 +47,7 @@ function isCurrent(item: HomeNavigationItem): boolean {
               <NuxtLink
                 v-if="item.available && item.href"
                 class="app-shell__nav-link"
-                :class="{ 'app-shell__nav-link--current': isCurrent(item) }"
+                :class="{ 'app-shell__nav-link--current': isCurrent(item), 'app-shell__nav-link--supporting': item.id === 'methodology' || item.id === 'about' }"
                 :to="item.href"
                 :prefetch="false"
                 :aria-current="isCurrent(item) ? 'page' : undefined"
@@ -75,6 +78,18 @@ function isCurrent(item: HomeNavigationItem): boolean {
     <div id="main-content" class="app-shell__main" tabindex="-1">
       <slot />
     </div>
+
+    <footer class="app-shell__footer">
+      <div>
+        <p class="app-shell__footer-label">{{ educationalBoundaryLabel }}</p>
+        <p>{{ globalDisclaimer }}</p>
+      </div>
+      <nav :aria-label="supportNavigationLabel">
+        <NuxtLink :to="`/${locale}/methodology`" :prefetch="false">{{ navigation.find((item) => item.id === 'methodology')?.label }}</NuxtLink>
+        <NuxtLink :to="`/${locale}/about`" :prefetch="false">{{ navigation.find((item) => item.id === 'about')?.label }}</NuxtLink>
+        <NuxtLink :to="`/${locale}/evidence`" :prefetch="false">{{ navigation.find((item) => item.id === 'evidence')?.label }}</NuxtLink>
+      </nav>
+    </footer>
   </div>
 </template>
 
@@ -166,6 +181,10 @@ function isCurrent(item: HomeNavigationItem): boolean {
   color: var(--app-accent-strong);
 }
 
+.app-shell__nav-link--supporting {
+  font-weight: 650;
+}
+
 .app-shell__nav-link--disabled {
   color: var(--app-text-muted);
   cursor: not-allowed;
@@ -197,6 +216,22 @@ function isCurrent(item: HomeNavigationItem): boolean {
   margin-inline: auto;
   padding-block: var(--app-space-4) var(--app-space-7);
 }
+
+.app-shell__footer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  width: min(90rem, calc(100% - 2rem));
+  gap: var(--app-space-5);
+  margin-inline: auto;
+  padding-block: var(--app-space-6);
+  border-block-start: 1px solid var(--app-border);
+  color: var(--app-text-secondary);
+}
+
+.app-shell__footer p { max-width: 65ch; margin: 0; }
+.app-shell__footer-label { color: var(--app-text); font-size: .78rem; font-weight: 800; }
+.app-shell__footer nav { display: flex; flex-wrap: wrap; align-content: flex-start; justify-content: flex-end; gap: var(--app-space-3); }
+.app-shell__footer a { font-weight: 720; }
 
 @media (max-width: 74rem) {
   .app-shell__header {
@@ -237,5 +272,8 @@ function isCurrent(item: HomeNavigationItem): boolean {
   .app-shell__locale-link {
     width: max-content;
   }
+
+  .app-shell__footer { grid-template-columns: 1fr; }
+  .app-shell__footer nav { justify-content: flex-start; }
 }
 </style>

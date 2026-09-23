@@ -3,7 +3,7 @@ import type { Locale } from '../../domain'
 type Translate = (key: string) => string
 
 export interface HomeNavigationItem {
-  readonly id: 'home' | 'map' | 'behaviours' | 'context' | 'presentations' | 'evidence' | 'methodology'
+  readonly id: 'home' | 'map' | 'behaviours' | 'context' | 'presentations' | 'evidence' | 'methodology' | 'about'
   readonly label: string
   readonly href?: string
   readonly available: boolean
@@ -145,7 +145,8 @@ export function createHomeContent(t: Translate, locale: Locale): HomeContent {
       { id: 'context', label: t('home.navigation.context'), href: `${prefix}/context`, available: true },
       { id: 'presentations', label: t('home.navigation.presentations'), href: `${prefix}/presentations`, available: true },
       { id: 'evidence', label: t('home.navigation.evidence'), href: `${prefix}/evidence`, available: true },
-      { id: 'methodology', label: t('home.navigation.methodology'), available: false },
+      { id: 'methodology', label: t('home.navigation.methodology'), href: `${prefix}/methodology`, available: true },
+      { id: 'about', label: t('home.navigation.about'), href: `${prefix}/about`, available: true },
     ] satisfies HomeNavigationItem[]),
     entryPoints: Object.freeze([
       {
