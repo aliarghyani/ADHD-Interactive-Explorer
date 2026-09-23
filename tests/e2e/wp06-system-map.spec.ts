@@ -19,7 +19,7 @@ test.describe('WP-06 System Map routes', () => {
 
     await page.goto('/en/map')
     await expect(page.getByRole('heading', { level: 1, name: 'Explore the system map' })).toBeVisible()
-    await expect(page.getByTestId('system-visual-graph')).toBeVisible()
+    await expect(page.getByTestId('system-visual-graph')).toBeVisible({ timeout: 20_000 })
     await expect(page.locator('[data-node-id]')).toHaveCount(30)
     await expect(page.locator('[data-edge-id]')).toHaveCount(49)
     await expect(page.locator('[aria-pressed="true"]')).toHaveCount(0)
@@ -110,14 +110,13 @@ test.describe('WP-06 responsive boundary', () => {
     await page.screenshot({ path: testInfo.outputPath('tablet-selected.png'), fullPage: true })
   })
 
-  test('shows the controlled non-final fallback on mobile', async ({ page }) => {
+  test('shows the production focused-path orientation on mobile', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 })
     await page.goto('/en/map')
 
     await expect(page.getByTestId('system-visual-graph')).toBeHidden()
-    await expect(page.getByRole('heading', {
-      level: 2,
-      name: 'A focused mobile map is coming in a later work package',
-    })).toBeVisible()
+    await expect(page.getByTestId('mobile-focused-path')).toBeVisible()
+    await expect(page.getByRole('heading', { level: 2, name: 'Explore one concept at a time' })).toBeVisible()
+    await expect(page.locator('[data-category]')).toHaveCount(6)
   })
 })

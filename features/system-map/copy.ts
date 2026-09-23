@@ -45,6 +45,26 @@ export interface SystemMapCopy {
   readonly rendererUnavailable: string
   readonly mobileTitle: string
   readonly mobileMessage: string
+  readonly mobileManyToMany: string
+  readonly mobileHowToStart: string
+  readonly browseByLayer: string
+  readonly chooseConcept: string
+  readonly focusedPath: string
+  readonly currentConceptAnnouncement: string
+  readonly startOver: string
+  readonly upstreamQuestion: string
+  readonly downstreamQuestion: string
+  readonly feedbackQuestion: string
+  readonly scientificDirection: string
+  readonly reciprocalDirection: string
+  readonly feedbackCaution: string
+  readonly educationalExplanation: string
+  readonly moreDetail: string
+  readonly evidenceAvailable: string
+  readonly evidenceUnavailable: string
+  readonly nextActions: string
+  readonly methodologyAction: string
+  readonly conceptCount: string
   readonly loading: string
   readonly exploreBehaviour: string
   readonly exploreContext: string
@@ -94,8 +114,28 @@ export const systemMapCopy = Object.freeze({
     invalidMessage: 'This canonical node ID is not part of the published map.',
     backToMap: 'Return to the full map',
     rendererUnavailable: 'The visual map could not load. Use the semantic relationship browser to continue exploring the selected concept and its relationships.',
-    mobileTitle: 'A focused mobile map is coming in a later work package',
-    mobileMessage: 'This desktop graph is intentionally not compressed into a phone-sized diagram. Use a tablet or desktop for this map.',
+    mobileTitle: 'Explore one concept at a time',
+    mobileMessage: 'The layers organize formal clinical domains, contexts, regulation processes, observable behaviours, recurring patterns, and areas of life. The Clinical Anchor remains separate from the explanatory network.',
+    mobileManyToMany: 'Relationships are many-to-many: a concept can connect with several possible influences and outcomes.',
+    mobileHowToStart: 'Choose a layer, then choose a canonical concept. You can move through direct relationships without operating a spatial graph.',
+    browseByLayer: 'Browse concepts by layer',
+    chooseConcept: 'Choose a concept',
+    focusedPath: 'Focused-path navigator',
+    currentConceptAnnouncement: 'Current concept',
+    startOver: 'Start over',
+    upstreamQuestion: 'What may influence this?',
+    downstreamQuestion: 'What may follow from this?',
+    feedbackQuestion: 'Which relationships may recur in both directions?',
+    scientificDirection: 'Scientific direction',
+    reciprocalDirection: 'Reciprocal relationship',
+    feedbackCaution: 'Feedback describes a reciprocal or recurrent conceptual relationship. It does not imply inevitability, prognosis, or guaranteed worsening.',
+    educationalExplanation: 'Educational explanation',
+    moreDetail: 'More scientific detail',
+    evidenceAvailable: 'Evidence is available',
+    evidenceUnavailable: 'No optional evidence record is linked to this concept.',
+    nextActions: 'Continue exploring',
+    methodologyAction: 'How to interpret this model',
+    conceptCount: 'concepts',
     loading: 'Loading visual map…',
     exploreBehaviour: 'Explore this Behaviour in plain language',
     exploreContext: 'Explore how this Context may affect functioning',
@@ -143,8 +183,28 @@ export const systemMapCopy = Object.freeze({
     invalidMessage: 'این شناسه معیار در نقشه منتشرشده وجود ندارد.',
     backToMap: 'بازگشت به نقشه کامل',
     rendererUnavailable: 'نقشه دیداری بارگیری نشد. برای ادامه کاوش در مفهوم انتخاب‌شده و رابطه‌های آن از مرورگر معنایی رابطه‌ها استفاده کنید.',
-    mobileTitle: 'نقشه متمرکز موبایل در بسته کاری بعدی ارائه می‌شود',
-    mobileMessage: 'این گراف دسکتاپ عمداً به نموداری کوچک برای تلفن تبدیل نشده است. برای دیدن این نقشه از تبلت یا دسکتاپ استفاده کنید.',
+    mobileTitle: 'هر بار یک مفهوم را کاوش کنید',
+    mobileMessage: 'لایه‌ها حوزه‌های رسمی بالینی، بافت‌ها، فرایندهای تنظیم، رفتارهای مشاهده‌پذیر، الگوهای تکرارشونده و حوزه‌های زندگی را سازمان می‌دهند. لنگر بالینی از شبکه توضیحی جدا می‌ماند.',
+    mobileManyToMany: 'رابطه‌ها چندبه‌چند هستند: یک مفهوم می‌تواند با چند اثرگذار یا پیامد احتمالی ارتباط داشته باشد.',
+    mobileHowToStart: 'یک لایه و سپس یک مفهوم معیار را انتخاب کنید. بدون کار با گراف فضایی می‌توانید میان رابطه‌های مستقیم حرکت کنید.',
+    browseByLayer: 'مرور مفهوم‌ها بر اساس لایه',
+    chooseConcept: 'انتخاب یک مفهوم',
+    focusedPath: 'راهبر مسیر متمرکز',
+    currentConceptAnnouncement: 'مفهوم کنونی',
+    startOver: 'شروع دوباره',
+    upstreamQuestion: 'چه چیزهایی ممکن است بر این مفهوم اثر بگذارند؟',
+    downstreamQuestion: 'چه چیزهایی ممکن است پس از این مفهوم دیده شوند؟',
+    feedbackQuestion: 'کدام رابطه‌ها ممکن است در هر دو جهت تکرار شوند؟',
+    scientificDirection: 'جهت علمی رابطه',
+    reciprocalDirection: 'رابطه دوسویه',
+    feedbackCaution: 'بازخورد یک رابطه مفهومی دوسویه یا تکرارشونده را توصیف می‌کند و به معنای اجتناب‌ناپذیری، پیش‌آگهی یا بدترشدن قطعی نیست.',
+    educationalExplanation: 'توضیح آموزشی',
+    moreDetail: 'جزئیات علمی بیشتر',
+    evidenceAvailable: 'شواهد در دسترس است',
+    evidenceUnavailable: 'رکورد شواهد اختیاری به این مفهوم پیوند نشده است.',
+    nextActions: 'ادامه کاوش',
+    methodologyAction: 'راهنمای تفسیر این مدل',
+    conceptCount: 'مفهوم',
     loading: 'در حال بارگیری نقشه دیداری…',
     exploreBehaviour: 'این رفتار را با زبان ساده کاوش کنید',
     exploreContext: 'بررسی کنید این بافت چگونه ممکن است بر عملکرد اثر بگذارد',

@@ -311,7 +311,12 @@
 .system-renderer-error,
 .system-graph-loading { max-width: 48rem; padding: 1.5rem; }
 .system-invalid-state h2 { margin: 0.25rem 0; }
-.system-mobile-boundary { display: none; }
+.system-desktop-experience { display: none; }
+
+@media (min-width: 48rem) {
+  .system-desktop-experience { display: block; }
+  .system-mobile-experience { display: none !important; }
+}
 
 @media (max-width: 68rem) {
   .system-map-workspace { grid-template-columns: 1fr; }
@@ -329,8 +334,6 @@
   .system-map-workspace { display: block; }
   .system-renderer-boundary-shell { display: none; }
   .system-semantic-browser { position: static; margin-top: 1rem; }
-  .system-mobile-boundary { display: block; }
-  .system-mobile-boundary h2 { margin-top: 0; font-size: 1.3rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

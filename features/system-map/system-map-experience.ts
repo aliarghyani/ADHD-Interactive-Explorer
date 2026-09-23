@@ -10,13 +10,17 @@ import {
   type FilterableLayer,
   type GraphReadModel,
 } from './graph-read-model'
-import { buildSemanticRelationshipModel, type SemanticRelationshipModel } from './semantic-browser'
+import type { SemanticRelationshipModel } from './semantic-browser'
+import {
+  buildMobileFocusedPathModel,
+  type MobileFocusedPathModel,
+} from './mobile/focused-path'
 
 export interface SystemMapExperienceOptions {
   readonly repository: KnowledgeRepository
   readonly localization: DomainLocalization
   readonly safety: SafetyAccess
-  readonly layout: LayoutArtifact
+  readonly layout?: LayoutArtifact
   readonly locale: Ref<Locale>
   readonly requestedNodeId: Ref<string | null>
   readonly navigate: (path: string) => Promise<unknown> | unknown
@@ -29,9 +33,10 @@ export interface SystemMapExperience {
   readonly graph: ComputedRef<GraphReadModel>
   readonly detail: ComputedRef<SelectedNodeDetail | null>
   readonly semantic: ComputedRef<SemanticRelationshipModel | null>
+  readonly mobile: ComputedRef<MobileFocusedPathModel>
   readonly graphSafetyText: ComputedRef<string>
   readonly globalSafetyText: ComputedRef<string>
-  readonly layout: LayoutArtifact
+  readonly layout?: LayoutArtifact
   routeFor(nodeId?: CanonicalNodeId | null, targetLocale?: Locale): string
   selectNode(nodeId: CanonicalNodeId): Promise<unknown>
   clearSelection(): Promise<unknown>
@@ -60,9 +65,13 @@ export function useSystemMapExperience(options: SystemMapExperienceOptions): Sys
     selectedNodeId: selectedNodeId.value,
     visibleLayers: visibleLayers.value,
   }))
-  const semantic = computed(() => selectedNodeId.value
-    ? buildSemanticRelationshipModel(options.repository, options.localization, selectedNodeId.value, options.locale.value)
-    : null)
+  const mobile = computed(() => buildMobileFocusedPathModel(
+    options.repository,
+    options.localization,
+    options.locale.value,
+    selectedNodeId.value,
+  ))
+  const semantic = computed(() => mobile.value.selectedConcept)
   const detail = computed(() => semantic.value ? semanticModelToSelectedNodeDetail(semantic.value) : null)
   const graphSafetyText = computed(() => {
     const content = options.safety.getRequired('graphDisclaimer', options.locale.value)
@@ -99,6 +108,7 @@ export function useSystemMapExperience(options: SystemMapExperienceOptions): Sys
     graph,
     detail,
     semantic,
+    mobile,
     graphSafetyText,
     globalSafetyText,
     layout: options.layout,

@@ -41,6 +41,8 @@ const supportingRoutes = ['en', 'fa'].flatMap((locale) => [
   `/${locale}/methodology`,
   `/${locale}/about`,
 ])
+const systemMapPageSource = 'pages/[locale]/map/[[nodeId]].vue'
+const desktopSystemMapSource = 'components/system-map/DesktopSystemMap.client.vue'
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
@@ -87,6 +89,20 @@ export default defineNuxtConfig({
   },
   routeRules: {
     '/': { redirect: '/en' },
+  },
+  hooks: {
+    'build:manifest': (manifest) => {
+      const systemMapPage = manifest[systemMapPageSource]
+
+      // The desktop graph is a real dynamic import, but an SSR resource hint would
+      // download it on small screens before the client media gate can run. Removing
+      // only that hint preserves the on-demand import for desktop clients.
+      if (systemMapPage?.dynamicImports) {
+        systemMapPage.dynamicImports = systemMapPage.dynamicImports.filter(
+          source => source !== desktopSystemMapSource,
+        )
+      }
+    },
   },
   typescript: {
     strict: true,

@@ -13,6 +13,8 @@ import type { DomainLocalization } from '../../localization'
 export interface SemanticRelationshipItem {
   readonly edgeId: RelationshipEdgeId
   readonly nodeId: CanonicalNodeId
+  readonly sourceId: CanonicalNodeId
+  readonly targetId: CanonicalNodeId
   readonly label: string
   readonly category: ConceptCategory
   readonly relationshipType: RelationshipType
@@ -58,6 +60,8 @@ function relationshipItem(
   return Object.freeze({
     edgeId: edge.id,
     nodeId,
+    sourceId: edge.sourceId,
+    targetId: edge.targetId,
     label: localizedLabel(localization, nodeId, locale),
     category: node.category,
     relationshipType: edge.relationshipType,

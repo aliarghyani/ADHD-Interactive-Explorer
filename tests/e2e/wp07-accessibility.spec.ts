@@ -114,7 +114,7 @@ test.describe('WP-07 renderer resilience and responsive boundary', () => {
     await expect(page.locator('#system-semantic-heading')).not.toHaveText('Starting')
   })
 
-  test('keeps the visual graph at tablet width and only the bounded semantic surface on mobile', async ({ page }) => {
+  test('keeps the visual graph at tablet width and the focused-path surface on mobile', async ({ page }) => {
     await page.setViewportSize({ width: 900, height: 1000 })
     await page.goto('/en/map/BEH1')
     await expect(page.getByTestId('system-visual-graph')).toBeVisible()
@@ -123,8 +123,8 @@ test.describe('WP-07 renderer resilience and responsive boundary', () => {
 
     await page.setViewportSize({ width: 390, height: 844 })
     await expect(page.getByTestId('system-visual-graph')).toBeHidden()
-    await expect(page.locator('.system-mobile-boundary')).toBeVisible()
-    await expect(page.locator('#system-semantic-heading')).toHaveText('Starting')
+    await expect(page.getByTestId('mobile-focused-path')).toBeVisible()
+    await expect(page.locator('.mobile-focused-path__current h2')).toHaveText('Starting')
   })
 })
 
